@@ -26,7 +26,14 @@ GS——没有名称（segment part 3）
 --0x0000c200:操作系统地址(OS)
 --0x000a0000~~0x000affff:VRAM显卡内存地址
 --其它：暂时没人用
---0xf0000地址：存放这BIOS程序本身
+--0x000f0000地址：存放这BIOS程序本身
+--0x0026f800~0x0026ffff: IDT
+--0x00270000~0x0027ffff: GDT
+--0x00280000~0x002fffff: bootpack.hrb
+
+
+
+
 
 4.BIOS中断和DOS中断的区别
 bios是主板预装好的input、output系统，而dos是需要安装才能使用操作系统。用int条用中断以后可以通过不同的系统达到不同的目的和效果。其中int 1 -20 是bios中断，int21 专门用于dos中断。
@@ -40,4 +47,12 @@ bios是主板预装好的input、output系统，而dos是需要安装才能使�
 该指令用于指定32位汇编
 
 
+7.GDT
+GDT是“global segment descriptor table“的缩写，意思是全局短号记录表。大小64K（8192*8 = 64K）
+将这些数据整齐地排列在内存的某个地方，然后将内存的起始地址和有效设定个数放在CPU内被称作GDTR的特殊寄存器中，设定就完成了。
+
+8.IDT
+IDT是“interrupt descriptor table”的缩写，直译过来就是“中断记录表”。当CPU遇到外部状况变化，或者是内部偶然发生某些错误时，会临时切花过去处理这种突发事件。这就是中断功能。
+
+IDT记录了0~255的中断号码和调用函数的对应关系。
 
