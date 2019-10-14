@@ -21,6 +21,7 @@ GS——没有名称（segment part 3）
 
 3.操作系统对内存的使用
 --0地址：BOIS程序用来实现各种功能的地方。
+--0x00000ff0: BOOTINFO
 --0x00007c00~~0x00007dff:启动区内容的装载地址。(IPL)
 --0x00008000:磁盘内容拷贝到内存的地址。
 --0x0000c200:操作系统地址(OS)
@@ -55,4 +56,11 @@ GDT是“global segment descriptor table“的缩写，意思是全局短号记�
 IDT是“interrupt descriptor table”的缩写，直译过来就是“中断记录表”。当CPU遇到外部状况变化，或者是内部偶然发生某些错误时，会临时切花过去处理这种突发事件。这就是中断功能。
 
 IDT记录了0~255的中断号码和调用函数的对应关系。
+
+9.PIC
+PIC:programmable interrupt controller.) 可编程中断控制器。
+IMR: interrupt mask register, 中断屏蔽寄存器
+ICW: initial control word. 初始化控制数据
+
+
 
