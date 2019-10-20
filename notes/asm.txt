@@ -52,6 +52,7 @@ bios是主板预装好的input、output系统，而dos是需要安装才能使�
 （1）INSTRSET指令
     [INSTRSET "i486p"]              ; 使用到486为止的指令，为了能够使用386以后的LGDT，EAX，CR0等关键字。
 （2）LGDT，读取GDT
+（3）ALIGNB 16，一直添加DB 0，直到地址被16整除。
 
 7.GDT
 GDT是“global segment descriptor table“的缩写，意思是全局短号记录表。大小64K（8192*8 = 64K）
