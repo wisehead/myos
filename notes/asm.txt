@@ -20,6 +20,7 @@ CR0——特殊的32位寄存器，也就是control register 0，是一个非常
 
 2.寄存器限制
 只有BX、BP、SI、DI几个寄存器，可以用寄存器指定内存地址，剩下的AX、CX、DX、SP不可以。
+C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随便使用，其它寄存器只能读，不能写。因为其它寄存器在编译C语言时，用来存重要的值。
 
 3.操作系统对内存的使用
 0x00000000 ~ 0x000fffff: 虽然在启动中会多次使用，但之后就变空。（1MB）
@@ -53,6 +54,7 @@ bios是主板预装好的input、output系统，而dos是需要安装才能使�
     [INSTRSET "i486p"]              ; 使用到486为止的指令，为了能够使用386以后的LGDT，EAX，CR0等关键字。
 （2）LGDT，读取GDT
 （3）ALIGNB 16，一直添加DB 0，直到地址被16整除。
+（4）PUSHFD，POPFD；读写EFLAGS的指令
 
 7.GDT
 GDT是“global segment descriptor table“的缩写，意思是全局短号记录表。大小64K（8192*8 = 64K）
@@ -102,6 +104,11 @@ pipelineflush:
 11. IN / OUT port
 0x64 PORT_KEYCMD//键盘
 0x64 PORT_KEYDAT//鼠标
+0x03c7//读调色板号
+0x03c8//写调色板号
+0x03c9//调色板RGB数据
+//将想要设定的调色板号码写入0x03c8,紧接着，按R,G,B的顺序写入0x03c9。
+//如果想要读出当前调色板的状态，首先要将调色板的好吗写入0x03c7，再从0x03c9读取三次。
 
 12. IN / OUT comand
 0xd1 —— KEYCMD_WRITE_OUTPORT  //
@@ -111,6 +118,39 @@ pipelineflush:
 //这次输出0xdf所要完成的功能，是让A20GATE信号线变成ON的状态。这条信号线的作用是什么呢？？？它能使内存1MB以上的部分变成可用状态。最初出现电脑的时候，CPU只有16位模式，所以内存最大只有1MB（ES*16+DS）。
 //后来CPU变聪明了，可以使用很大的内存了。但为了兼容旧版的操作系统，在执行激活指令之前，电路被限制为智能使用1MB内存。和鼠标的情况类似，A20GATE信号线正是用来使用这个电路停止从而让所有的内存都可以使用的东西。
 
+13.CPU家族
+8086->80186->286->386->486->Pentium->PentiumPro->PentiumII->PentiumIII->Pentium4...
+到286为止是16位，而386以后CPU是32位。
+
+14.调色板颜色列表
+#define COL8_000000     0   //黑
+#define COL8_FF0000     1   //亮红
+#define COL8_00FF00     2   //亮绿
+#define COL8_FFFF00     3   //亮黄
+#define COL8_0000FF     4   //亮蓝
+#define COL8_FF00FF     5   //亮紫
+#define COL8_00FFFF     6   //浅亮蓝
+#define COL8_FFFFFF     7   //白
+#define COL8_C6C6C6     8   //亮灰
+#define COL8_840000     9   //暗红
+#define COL8_008400     10  //暗绿
+#define COL8_848400     11  //暗黄
+#define COL8_000084     12  //暗青
+#define COL8_840084     13  //暗紫
+#define COL8_008484     14  //浅暗蓝
+#define COL8_848484     15  //暗灰
+
+15.CLI STI
+CLI：将中断标志（interrupt flag）置为0的指令（clear interrupt flag）。
+STI：是要将这个终端标志置为1的指令（set interrupt flag）。
+
+16.EFLAGS
+它是一个叫做EFLAGS的特殊寄存器。这是由名为FLAGS的16位寄存器扩展而来的32位寄存器。FLAGS是存储进位标志和中断标志等标志的寄存器。
+进位标志可以通过JC货JNC等跳转指令来简单地判断到底是0还是1.但对于中断标志，没有类似的JI或JNI命令，所以只能读入EFLAGS，再检查第九位是0还是1.顺便说一下，进位标志是EFLAGS的第0位。
+
+能够用来读写EFLAGS的，只有PUSHFD和POPFD指令。
+PUSHFD： push flags double-word，意思是将标志位的值按双字节长压入栈。其实它所做的，就是“PUSH EFLAGS”。
+POPFD： pop flags double-word, 意思是按双字节长将标志位从栈弹出。它所做的，就是“POP EFLAGS”
 
 
 
