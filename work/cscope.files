@@ -4,3 +4,5 @@
 ./fifo.c
 ./graphic.c
 ./int.c
+./keyboard.c
+./mouse.c
