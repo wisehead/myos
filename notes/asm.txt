@@ -19,6 +19,8 @@ GS——没有名称（segment part 3）
 CR0——特殊的32位寄存器，也就是control register 0，是一个非常重要的寄存器，只有操作系统才能使用。
 EFLAGS——存储CPU运算的一些标志位
 GDT0——保存GDT的地址。
+IMR: interrupt mask register, 中断屏蔽寄存器
+ICW: initial control word. 初始化控制数据
 
 2.寄存器限制
 只有BX、BP、SI、DI几个寄存器，可以用寄存器指定内存地址，剩下的AX、CX、DX、SP不可以。
@@ -58,10 +60,48 @@ bios是主板预装好的input、output系统，而dos是需要安装才能使�
 （3）ALIGNB 16，一直添加DB 0，直到地址被16整除。
 （4）PUSHFD，POPFD；读写EFLAGS的指令
 （5）ORG 0x1234；程序加载到0x1234，指定内存地址。
+（6）IRETD；中断处理完成后，不能执行RET，必须执行IRETD。
+（7）PUSHAD；相当于
+    -PUSH EAX
+    -PUSH EBX
+    -PUSH ECX
+    -PUSH EDX
+    -PUSH ESP
+    -PUSH EBP
+    -PUSH ESI
+    -PUSH EDI
+（8）POPAD；相当于以上相反的顺序，把它们全部POP出来。
+（9）STI；它是CLI的逆指令。执行STI后，IF（interrup flag）变为1，CPU接受来自外部设备的中断。
 
-7.GDT
-GDT是“global segment descriptor table“的缩写，意思是全局短号记录表。大小64K（8192*8 = 64K）
-将这些数据整齐地排列在内存的某个地方，然后将内存的起始地址和有效设定个数放在CPU内被称作GDTR的特殊寄存器中，设定就完成了。
+
+7.GDT，分段
+分段使用段寄存器。16位的时候，如果计算地址，只要将地址乘以16就可以了。
+但现在是32位，如果写成“MOV AL,[DS:EBX]”，地址计算是DS+EBX，不再需要DS乘以16. 如果省略DS的地址，也会认为指定了DS，为0.
+
+按照这种分段方法，为了表示一个段，需要一下信息。
+--段的大小
+--段的起始地址
+--段的管理属性（禁止写入，禁止执行，系统专用等）
+CPU用8个字节（64bit）来表示这些信息。但是用于指定段的寄存器只有16位。
+段号可以用0~8191的数。因为段寄存器是16位，本来可以处理0~65535范围的数，但由于CPU设计上的原因，段寄存器的低三位不能使用。因此能够使用的部分只有13位，能够处理的就只有位于0~8191的段了。
+
+所以管理这么多段的元数据就需要 8192*8 = 64KB。
+CPU没那么大存储能力，不可能存储这么多数据，需要写入内存。这64KB的数据就成为GDT。
+
+GDT 是 global segment descriptor table的缩写，意思是全局段号记录表。将这些数据整齐地排列在内存的某个地方，然后将内存的起始地址和有效设定个数放在CPU内被称作GDTR的特殊寄存器中，设定就完成了。
+
+--段起始地址：32位表示，low（2byte），mid（1byte），high（1byte）
+--段上限：只能使用20位，原则上段上限最大指定1MB。所以这里有一个trick，在段的属性里设置了一个标志位，叫做Gbit。这个标志位是1的时候，limit的单位不解释成字节byte，而是解释成页page。
+    这样一来，4K * 1MB = 4GB，所以可以指定4G的段。 limit_low(2byte), limit_high(0.5byte = 4bit)
+--段属性：12bit，高4位放在limit_high的高4位里，ar有16bit。
+    --高4位：扩展访问权。这四位在286时代没有，386才开始。这四位是由“GD00”构成，G是指刚才所说的Gbit，D是指段的模式，1是指32位模式，0是指16位模式。
+    --低8位：
+        --00000000（0x00）：未使用的记录表
+        --10010010（0x92）：系统专用，可读写的段。不可执行。
+        --10011010（0x9a）：系统专用，可执行的段。可读不可写。
+        --11110010（0xf2）：应用程序用，可读写的段，不可执行。
+        --11111010（0xfa）：应用程序用，可执行的段，可读不可写。
+        CPU到底处于系统模式还是应用模式，取决于执行中的应用程序是位于访问权为0x9a的段，还是0xfa的段。
 
 8.IDT
 IDT是“interrupt descriptor table”的缩写，直译过来就是“中断记录表”。当CPU遇到外部状况变化，或者是内部偶然发生某些错误时，会临时切花过去处理这种突发事件。这就是中断功能。
@@ -70,8 +110,51 @@ IDT记录了0~255的中断号码和调用函数的对应关系。
 
 9.PIC
 PIC:programmable interrupt controller.) 可编程中断控制器。
-IMR: interrupt mask register, 中断屏蔽寄存器
+IMR: interrupt mask register, 中断屏蔽寄存器（8位）
+ICW: initial control word. 初始化控制数据（8位）
+
+CPU只能处理一个中断，不够用，所以IBM在主板上增加了辅助芯片。现在他们已经被集成到一个芯片组里了。
+
+PIC是将8个中断信号集合成一个中断信号的装置。PIC监视着输入管教的8个中断信号。只要有一个中断信号进来，就将唯一的输出管教信号变成ON，并通知给CPU。IBM想要通过增加PIC来处理更多的中断信号，因为电脑上会有8个以上的外部设备，所以就把中断信号设计成15个，并为此增设了两个PIC。
+
+与CPU直接相连的PIC是主PIC，与主PIC相连的PIC是从PIC。主PIC负责处理0号到7号的中断信号，从PIC负责处理从8号到15号的中断信号。
+另外，从PIC通过2号IRQ与主PIC相连。
+
+void init_pic(void)
+/* PIC初始化 */
+{
+    io_out8(PIC0_IMR,  0xff  ); /* 禁止所有中断 */
+    io_out8(PIC1_IMR,  0xff  ); /* 禁止所有中断 */
+
+    io_out8(PIC0_ICW1, 0x11  ); /* 边缘触发模式（edge trigger mode） */
+    io_out8(PIC0_ICW2, 0x20  ); /* IRQ0-7由INT20-27接收 */
+    io_out8(PIC0_ICW3, 1 << 2); /* PIC1由IRQ2相连 */
+    io_out8(PIC0_ICW4, 0x01  ); /* 无缓冲区模式 */
+
+    io_out8(PIC1_ICW1, 0x11  ); /* 边缘触发模式（edge trigger mode） */
+    io_out8(PIC1_ICW2, 0x28  ); /* IRQ8-15由INT28-2f接收 */
+    io_out8(PIC1_ICW3, 2     ); /* PIC1由IRQ2连接 */
+    io_out8(PIC1_ICW4, 0x01  ); /* 无缓冲区模式 */
+
+    io_out8(PIC0_IMR,  0xfb  ); /* 11111011 PIC1以外全部禁止 */
+    io_out8(PIC1_IMR,  0xff  ); /* 11111111 禁止所有中断 */
+
+    return;
+}
+
+
+IMR: interrupt mask register, 中断屏蔽寄存器。
+8位分别对应8路IRQ信号。如果某一位的值是1，则该位所对应的IRQ信号被屏蔽，PIC就忽略该信号。
+
 ICW: initial control word. 初始化控制数据
+ICW有4个，分别编号为1~4，共有4个字节的数据。
+
+INT0x20~0x2f接收中断信号IRQ0~15，INT 0x00~0x1f不能用。当应用程序想要干坏事的时候，CPU内部会自动产生INT0x00~0x1f，如果IRQ与这些号码重复了，CPU就分不清它到底是IRQ，还是CPU的系统保护通知。
+
+鼠标是IRQ12，键盘是IRQ1
+所以用int 0x2c 和int 0x21的中断处理程序来处理二者的中断。
+
+
 
 10.切换32位保护模式
 ;   切换到保护模式
@@ -105,6 +188,21 @@ pipelineflush:
 
 
 11. IN / OUT port
+//PIC初始化相关
+#define PIC0_ICW1       0x0020
+#define PIC0_OCW2       0x0020
+#define PIC0_IMR        0x0021
+#define PIC0_ICW2       0x0021
+#define PIC0_ICW3       0x0021
+#define PIC0_ICW4       0x0021
+#define PIC1_ICW1       0x00a0
+#define PIC1_OCW2       0x00a0
+#define PIC1_IMR        0x00a1
+#define PIC1_ICW2       0x00a1
+#define PIC1_ICW3       0x00a1
+#define PIC1_ICW4       0x00a1
+
+
 0x64 PORT_KEYCMD//键盘
 0x64 PORT_KEYDAT//鼠标
 0x03c7//读调色板号
@@ -154,22 +252,6 @@ STI：是要将这个终端标志置为1的指令（set interrupt flag）。
 能够用来读写EFLAGS的，只有PUSHFD和POPFD指令。
 PUSHFD： push flags double-word，意思是将标志位的值按双字节长压入栈。其实它所做的，就是“PUSH EFLAGS”。
 POPFD： pop flags double-word, 意思是按双字节长将标志位从栈弹出。它所做的，就是“POP EFLAGS”
-
-17.GDT，分段
-分段使用段寄存器。16位的时候，如果计算地址，只要将地址乘以16就可以了。
-但现在是32位，如果写成“MOV AL,[DS:EBX]”，地址计算是DS+EBX，不再需要DS乘以16. 如果省略DS的地址，也会认为指定了DS，为0.
-
-按照这种分段方法，为了表示一个段，需要一下信息。
---段的大小
---段的起始地址
---段的管理属性（禁止写入，禁止执行，系统专用等）
-CPU用8个字节（64bit）来表示这些信息。但是用于指定段的寄存器只有16位。
-段号可以用0~8191的数。因为段寄存器是16位，本来可以处理0~65535范围的数，但由于CPU设计上的原因，段寄存器的低三位不能使用。因此能够使用的部分只有13位，能够处理的就只有位于0~8191的段了。
-
-所以管理这么多段的元数据就需要 8192*8 = 64KB。
-CPU没那么大存储能力，不可能存储这么多数据，需要写入内存。这64KB的数据就成为GDT。
-
-GDT 是 global segment descriptor table的缩写，意思是全局段号记录表。将这些数据整齐地排列在内存的某个地方，然后将内存的起始地址和有效设定个数放在CPU内被称作GDTR的特殊寄存器中，设定就完成了。
 
 18.IDT
 IDT是interrupt descriptor table的缩写，意思是中断记录表。当CPU遇到外部状况变化，或者是内部偶然发生某些错误时，会淋湿切换过去处理这种突发事件。这就是中断功能。
