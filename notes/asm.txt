@@ -202,9 +202,10 @@ pipelineflush:
 #define PIC1_ICW3       0x00a1
 #define PIC1_ICW4       0x00a1
 
-
+0x60 PORT_KEYDAT//键盘
+0x64 PORT_KEYSTA//键盘控制电路
 0x64 PORT_KEYCMD//键盘
-0x64 PORT_KEYDAT//鼠标
+
 0x03c7//读调色板号
 0x03c8//写调色板号
 0x03c9//调色板RGB数据
@@ -212,8 +213,53 @@ pipelineflush:
 //如果想要读出当前调色板的状态，首先要将调色板的好吗写入0x03c7，再从0x03c9读取三次。
 
 12. IN / OUT comand
+0x02 —— KEYSTA_SEND_NOTREADY//if (io_in8(PORT_KEYSTA) & KEYSTA_SEND_NOTREADY == 0)
+0x47 —— KBC_MODE
+0x60 —— KEYCMD_WRITE_MODE
+
+void wait_KBC_sendready(void) {
+    /* 等待键盘控制电路准备完毕 */
+    for (;;) {
+        if ((io_in8(PORT_KEYSTA) & KEYSTA_SEND_NOTREADY) == 0) {
+            break;
+        }
+    }
+    return;
+}
+
+//让键盘控制电路做好准备工作，等待控制指令的到来。如果键盘电路可以接受CPU指令了，CPU从设备号码0x0064处所读取的数据的倒数第二位应该是0.在确认到这一位是0之前，程序一直通过for语句循环查询。
+
+void init_keyboard(void) {
+    /* 初始化键盘控制电路 */
+    wait_KBC_sendready();
+    io_out8(PORT_KEYCMD, KEYCMD_WRITE_MODE);
+    wait_KBC_sendready();
+    io_out8(PORT_KEYDAT, KBC_MODE);
+    return;
+}
+
+//一边确认可否往键盘控制电路发送信息，一步安发送模式指定指令，指令中包含着设定为何种模式。模式设定的指令是0x60，利用鼠标模式的模式号码是0x47.
+
+#define KEYCMD_SENDTO_MOUSE   0xd4
+#define MOUSECMD_ENABLE     0xf4
+void enable_mouse(struct MOUSE_DEC *mdec) {
+    /* 鼠标有效 */
+    wait_KBC_sendready();
+    io_out8(PORT_KEYCMD, KEYCMD_SENDTO_MOUSE);
+    wait_KBC_sendready();
+    io_out8(PORT_KEYDAT, MOUSECMD_ENABLE);
+    /* 顺利的话，ACK(0xfa)会被送过来 */
+    mdec->phase = 0; /* 等待0xfa的阶段 */
+    return;
+}
+
+//如果往键盘控制电路发送0xd4指令，下一个数据就会自动发给鼠标。我们根据这一特性来发送激活鼠标的指令。
+//另一方面，鼠标收到激活指令以后，马上就给CPU发送答复信息，这个答复信息就是oxfa。
+
+
 0xd1 —— KEYCMD_WRITE_OUTPORT  //
 0xdf —— KBC_OUTPORT_A20G_ENABLE
+
 
 //这里发送的指令，是指令键盘控制电路的附属端口输出0xdf。这个附属端口连接着主板上的很多地方，通过这个端口发送不同的指令，就可以实现各种各样的控制功能。
 //这次输出0xdf所要完成的功能，是让A20GATE信号线变成ON的状态。这条信号线的作用是什么呢？？？它能使内存1MB以上的部分变成可用状态。最初出现电脑的时候，CPU只有16位模式，所以内存最大只有1MB（ES*16+DS）。
