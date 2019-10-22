@@ -260,6 +260,23 @@ void enable_mouse(struct MOUSE_DEC *mdec) {
 0xd1 —— KEYCMD_WRITE_OUTPORT  //
 0xdf —— KBC_OUTPORT_A20G_ENABLE
 
+;   为了让CPU能够访问1MB以上的内存空间，设定A20GATE
+
+        CALL    waitkbdout
+        MOV     AL,0xd1
+        OUT     0x64,AL
+        CALL    waitkbdout
+        MOV     AL,0xdf         ; enable A20
+        OUT     0x60,AL
+        CALL    waitkbdout
+
+/*A20GATE的设定*/
+wait_KBC_sendready();
+io_out8(PORT_KEYCMD, KEYCMD_WRITE_OUTPORT);
+wait_KBC_sendready();
+io_out8(PORT_KEYDAT, KBC_OUTPORT_A20G_ENABLE);
+wait_KBC_sendready();
+
 
 //这里发送的指令，是指令键盘控制电路的附属端口输出0xdf。这个附属端口连接着主板上的很多地方，通过这个端口发送不同的指令，就可以实现各种各样的控制功能。
 //这次输出0xdf所要完成的功能，是让A20GATE信号线变成ON的状态。这条信号线的作用是什么呢？？？它能使内存1MB以上的部分变成可用状态。最初出现电脑的时候，CPU只有16位模式，所以内存最大只有1MB（ES*16+DS）。
