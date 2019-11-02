@@ -31,12 +31,19 @@ C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随
 --------------------------------------------
 --0地址：BOIS程序用来实现各种功能的地方。
 --0x00000ff0: BOOTINFO
---0x00007c00~~0x00007dff:启动区内容的装载地址。(IBM大叔规定的)//fake os装载地址。
---0x00008000:磁盘内容拷贝到内存的地址。
+; BOOT_INFO相关
+CYLS    EQU     0x0ff0          ; 引导扇区设置
+LEDS    EQU     0x0ff1
+VMODE   EQU     0x0ff2          ; 关于颜色的信息
+SCRNX   EQU     0x0ff4          ; 分辨率X
+SCRNY   EQU     0x0ff6          ; 分辨率Y
+VRAM    EQU     0x0ff8          ; 图像缓冲区的起始地址
+--0x00007c00~~0x00007dff:启动区内容的装载地址。(IPL，IBM大叔规定的，MOV SP,0x7c00)//fake os装载地址。SP指向的地方。并不是代码段的地方？？？？
+--0x00008000:软盘磁盘内容拷贝到内存的地址。//拷贝的地址和真正的装载地址不是一回事。磁盘的第一个sector是启动区代码，BIOS直接转载到7c00.可能会拷贝到8000.
 --0x00008000 ~ 0x000081ff  启动区内容（启动区和装载器的区别？？？？？？？）
 --0x00008200 ~ 0x000083ff （IPL，启动程序装载器）
 --0x0000c200:操作系统地址(OS)//asmhead装载地址 ORG     0xc200
---0x000a0000~~0x000affff:VRAM显卡内存地址
+--0x000a0000~~0x000affff:VRAM显卡内存地址（64KB）
 --0x000f0000地址：存放这BIOS程序本身
 --------------------------------------------
 --0x00100000 ~ 0x00267fff: 用于保存软盘的内容（1440KB）
@@ -46,6 +53,14 @@ C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随
 --0x00280000 ~ 0x002fffff: bootpack.hrb（512KB）
 --0x00300000 ~ 0x003fffff: 栈及其它（1MB）
 --0x00400000 ~ NIL       ：空
+
+
+0x7c00，是ipl的运行地址。
+0x8000，是ipl代码内容的拷贝地址。
+0xc200，真正操作系统代码的地址。运行地址？？这部分包括asmhead.nas + bootpack.c。
+
+现在的程序从启动区开始，把磁盘上的内容装载到内存0x8000号地址，所以磁盘的0x4200处的内容，就是位于内存0x8000+0x4200 = 0xc200号地址。是真正操作系统的代码地址。
+所以ORG的意思，就是将二进制代码段部署到某个内存地址。
 
 
 4.BIOS中断和DOS中断的区别
@@ -384,11 +399,27 @@ ASM： XOR DWORD [EBX], 0xffffffff
 21.作者编译程序顺序
 asm->making-->run
 
-nas文件：汇编语言文件，类似于ASM。
-bin文件：二进制文件。类似于obj？？？
-img文件：真正的镜像文件，可执行文件。类似于exe
+c文件：c语言文件。
+gas文件：c语言生成的汇编语言，只不过是gcc版的asm，不是作者用的nas汇编。（$(CC1) cc1.exe -o bootpack.gas bootpack.c）
+nas文件：汇编语言文件，类似于ASM。gas文件可以生成nas文件。（$(GAS2NASK) gas2nask.exe bootpack.gas bootpack.nas）
+obj文件：目标文件，nas文件生成。（$(NASK) nask.exe bootpack.nas bootpack.obj bootpack.lst）
+bim文件：obj文件生成bim文件。经过link操作的二进制文件。（$(OBJ2BIM) obj2bim.exe @$(RULEFILE) out:bootpack.bim stack:3136k map:bootpack.map bootpack.obj naskfunc.obj）
+//问题？？bim和obj，bin的关系？？？？？？？
+hrb文件：bim生成hrb文件。在bim的基础上，还需要针对每一种操作系统的要求进行必要的加工，比如加上识别用的文件头，或者压缩等。($(BIM2HRB) bim2hrb.exe bootpack.bim bootpack.hrb 0)
+
+bin文件：二进制文件，nas文件生成。类似于obj？？？
+sys文件：hrb文件+ asmhead.bin文件生成，操作系统的全部代码（haribote.sys : asmhead.bin bootpack.hrb Makefile  ———— copy /B asmhead.bin+bootpack.hrb haribote.sys）
+img文件：真正的镜像文件，可执行文件。sys文件+ipl.bin。（haribote.img : ipl10.bin haribote.sys Makefile
+    $(EDIMG)   imgin:../z_tools/fdimg0at.tek \
+        wbinimg src:ipl10.bin len:512 from:0 to:0 \
+        copy from:haribote.sys to:@: \
+        imgout:haribote.img）
+
 lst文件：文本文件，简单的确认每个指令是怎样翻译成机器语言的。（../z_tools/nask.exe ipl.nas ipl.bin ipl.lst）
 
+
+
+推导规则：
 nask.exe: *.nas-->*.bin
 edimg.exe: *.bin --> *.img
 
@@ -414,6 +445,7 @@ JB——below，小于时跳转。
 
 23.INT
 (1)INT 0x10——调用显卡BIOS
+AH:0x00 :设置显卡模式。AL指定模式。
 AH:0x0e ：显示一个文字。BX指定文字颜色。
 
 (2)INT 0x13——磁盘读写，扇区校验(verify)，以及寻道(seek)。具体参数查阅百度
