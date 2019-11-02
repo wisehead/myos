@@ -31,9 +31,11 @@ C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随
 --------------------------------------------
 --0地址：BOIS程序用来实现各种功能的地方。
 --0x00000ff0: BOOTINFO
---0x00007c00~~0x00007dff:启动区内容的装载地址。(IPL，IBM大叔规定的)
+--0x00007c00~~0x00007dff:启动区内容的装载地址。(IBM大叔规定的)//fake os装载地址。
 --0x00008000:磁盘内容拷贝到内存的地址。
---0x0000c200:操作系统地址(OS)
+--0x00008000 ~ 0x000081ff  启动区内容（启动区和装载器的区别？？？？？？？）
+--0x00008200 ~ 0x000083ff （IPL，启动程序装载器）
+--0x0000c200:操作系统地址(OS)//asmhead装载地址 ORG     0xc200
 --0x000a0000~~0x000affff:VRAM显卡内存地址
 --0x000f0000地址：存放这BIOS程序本身
 --------------------------------------------
@@ -81,7 +83,7 @@ INT后面是个数字，不同的数字可以调用不同的函数。这次我�
 （11）RESB 10；空出10个空字节。
      RESB 0x1fe-$，$的意思是这一行现在的字节数。
 （12）HLT；HLT是让CPU停止动作的指令，不过并不是彻底的停止（如果要彻底停止CPU的动作，只能切断电源），而是让CPU进入待机状态。只要外部发生变化，比如按下键盘，或是移动鼠标，CPU就会活过来，继续执行程序。
-（13）
+（13）EQU：相当于C语言的#define，用来声明常数。CYLS EQU 10.
 
 7.GDT，分段
 分段使用段寄存器。16位的时候，如果计算地址，只要将地址乘以16就可以了。
@@ -382,7 +384,46 @@ ASM： XOR DWORD [EBX], 0xffffffff
 21.作者编译程序顺序
 asm->making-->run
 
-nas文件-->bin文件
+nas文件：汇编语言文件，类似于ASM。
+bin文件：二进制文件。类似于obj？？？
+img文件：真正的镜像文件，可执行文件。类似于exe
+lst文件：文本文件，简单的确认每个指令是怎样翻译成机器语言的。（../z_tools/nask.exe ipl.nas ipl.bin ipl.lst）
+
+nask.exe: *.nas-->*.bin
+edimg.exe: *.bin --> *.img
+
+run:
+    copy helloos.img ..\z_tools\qemu\fdimage0.bin
+    ../z_tools/make.exe -C ../z_tools/qemu
+
+install://暂时用不到，用于真正的windows机器。我们用虚拟机，所以make run就可以。
+    ../z_tools/make.exe img
+    ../z_tools/imgtol.com w a: helloos.img
+
+
+22.JUMP相关
+注意区分int和unsighed int。
+
+JE—— equal。相等跳转。
+JC—— carry。如果进位标志(carry flag)是1的话，就跳转。
+JNC——not carry。进位标志是0就跳转。
+JAE——above or equal，大于或等于时跳转。
+JBE——below or equal，小于或等于时跳转。
+JB——below，小于时跳转。
+
+
+23.INT
+(1)INT 0x10——调用显卡BIOS
+AH:0x0e ：显示一个文字。BX指定文字颜色。
+
+(2)INT 0x13——磁盘读写，扇区校验(verify)，以及寻道(seek)。具体参数查阅百度
+AH:0x00 :系统复位
+AH:0x02 :读盘
+AH:0x03 :写盘
+AH:0x04 :校验
+AH:0x0c :寻道
+
+
 
 
 
