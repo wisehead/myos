@@ -80,7 +80,7 @@ INT后面是个数字，不同的数字可以调用不同的函数。这次我�
     [INSTRSET "i486p"]              ; 使用到486为止的指令，为了能够使用386以后的LGDT，EAX，CR0等关键字。
 （2）LGDT，读取GDT
 （3）ALIGNB 16，一直添加DB 0，直到地址被16整除。
-（4）PUSHFD，POPFD；读写EFLAGS的指令
+（4）PUSHFD，POPFD；读写EFLAGS的指令。push flags double-word，将标志位的值按双字节压入栈。
 （5）ORG 0x7c00；程序加载到0x7c00，指定内存地址。//IBM大叔规定的
 （6）IRETD；中断处理完成后，不能执行RET，必须执行IRETD。
 （7）PUSHAD；相当于
@@ -99,6 +99,7 @@ INT后面是个数字，不同的数字可以调用不同的函数。这次我�
      RESB 0x1fe-$，$的意思是这一行现在的字节数。
 （12）HLT；HLT是让CPU停止动作的指令，不过并不是彻底的停止（如果要彻底停止CPU的动作，只能切断电源），而是让CPU进入待机状态。只要外部发生变化，比如按下键盘，或是移动鼠标，CPU就会活过来，继续执行程序。
 （13）EQU：相当于C语言的#define，用来声明常数。CYLS EQU 10.
+（14）CLI：将中断标志置为0的指令。
 
 7.GDT，分段
 分段使用段寄存器。16位的时候，如果计算地址，只要将地址乘以16就可以了。
@@ -313,6 +314,7 @@ wait_KBC_sendready();
 到286为止是16位，而386以后CPU是32位。
 
 14.调色板颜色列表
+自己定义的，也可以不是这样。
 #define COL8_000000     0   //黑
 #define COL8_FF0000     1   //亮红
 #define COL8_00FF00     2   //亮绿
@@ -407,7 +409,7 @@ bim文件：obj文件生成bim文件。经过link操作的二进制文件。（$
 //问题？？bim和obj，bin的关系？？？？？？？
 hrb文件：bim生成hrb文件。在bim的基础上，还需要针对每一种操作系统的要求进行必要的加工，比如加上识别用的文件头，或者压缩等。($(BIM2HRB) bim2hrb.exe bootpack.bim bootpack.hrb 0)
 
-bin文件：二进制文件，nas文件生成。类似于obj？？？
+bin文件：二进制文件，nas文件生成。但是这个文件不能和目标文件连接，因为它不是目标文件。还要加上连接所需要的接口信息，将它变为目标文件。这项工作由bin2obj.exe完成。
 sys文件：hrb文件+ asmhead.bin文件生成，操作系统的全部代码（haribote.sys : asmhead.bin bootpack.hrb Makefile  ———— copy /B asmhead.bin+bootpack.hrb haribote.sys）
 img文件：真正的镜像文件，可执行文件。sys文件+ipl.bin。（haribote.img : ipl10.bin haribote.sys Makefile
     $(EDIMG)   imgin:../z_tools/fdimg0at.tek \
