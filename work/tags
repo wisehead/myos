@@ -99,6 +99,7 @@ buf	bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
 bxsize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 bysize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 col_inv	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+ctl	bootpack.h	/^	struct SHTCTL *ctl;$/;"	m	struct:SHEET	typeref:struct:SHEET::SHTCTL
 cyls	bootpack.h	/^	char cyls; \/* 启动区读磁盘读到此为止 *\/$/;"	m	struct:BOOTINFO
 dw_count	bootpack.h	/^	char dw_count, access_right;$/;"	m	struct:GATE_DESCRIPTOR
 enable_mouse	mouse.c	/^void enable_mouse(struct MOUSE_DEC *mdec) {$/;"	f
@@ -127,6 +128,8 @@ limit_high	bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRI
 limit_low	bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
 losts	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 lostsize	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+make_window8	bootpack.c	/^void make_window8(unsigned char *buf, int xsize, int ysize, char *title)$/;"	f
+map	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
 maxfrees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 memman_alloc	memory.c	/^unsigned int memman_alloc(struct MEMMAN *man, unsigned int size)$/;"	f
 memman_alloc_4k	memory.c	/^unsigned int memman_alloc_4k(struct MEMMAN *man, unsigned int size)$/;"	f
@@ -153,12 +156,13 @@ set_gatedesc	dsctbl.c	/^void set_gatedesc(struct GATE_DESCRIPTOR *gd, int offset
 set_palette	graphic.c	/^void set_palette(int start, int end, unsigned char *rgb)$/;"	f
 set_segmdesc	dsctbl.c	/^void set_segmdesc(struct SEGMENT_DESCRIPTOR *sd, unsigned int limit, int base, int ar)$/;"	f
 sheet_alloc	sheet.c	/^struct SHEET *sheet_alloc(struct SHTCTL *ctl)$/;"	f
-sheet_free	sheet.c	/^void sheet_free(struct SHTCTL *ctl, struct SHEET *sht)$/;"	f
-sheet_refresh	sheet.c	/^void sheet_refresh(struct SHTCTL *ctl, struct SHEET *sht, int bx0, int by0, int bx1, int by1)$/;"	f
-sheet_refreshsub	sheet.c	/^void sheet_refreshsub(struct SHTCTL *ctl, int vx0, int vy0, int vx1, int vy1)$/;"	f
+sheet_free	sheet.c	/^void sheet_free(struct SHEET *sht)$/;"	f
+sheet_refresh	sheet.c	/^void sheet_refresh(struct SHEET *sht, int bx0, int by0, int bx1, int by1)$/;"	f
+sheet_refreshmap	sheet.c	/^void sheet_refreshmap(struct SHTCTL *ctl, int vx0, int vy0, int vx1, int vy1, int h0)$/;"	f
+sheet_refreshsub	sheet.c	/^void sheet_refreshsub(struct SHTCTL *ctl, int vx0, int vy0, int vx1, int vy1, int h0, int h1)$/;"	f
 sheet_setbuf	sheet.c	/^void sheet_setbuf(struct SHEET *sht, unsigned char *buf, int xsize, int ysize, int col_inv)$/;"	f
-sheet_slide	sheet.c	/^void sheet_slide(struct SHTCTL *ctl, struct SHEET *sht, int vx0, int vy0)$/;"	f
-sheet_updown	sheet.c	/^void sheet_updown(struct SHTCTL *ctl, struct SHEET *sht, int height)$/;"	f
+sheet_slide	sheet.c	/^void sheet_slide(struct SHEET *sht, int vx0, int vy0)$/;"	f
+sheet_updown	sheet.c	/^void sheet_updown(struct SHEET *sht, int height)$/;"	f
 sheets	bootpack.h	/^	struct SHEET *sheets[MAX_SHEETS];$/;"	m	struct:SHTCTL	typeref:struct:SHTCTL::SHEET
 sheets0	bootpack.h	/^	struct SHEET sheets0[MAX_SHEETS];$/;"	m	struct:SHTCTL	typeref:struct:SHTCTL::SHEET
 shtctl_init	sheet.c	/^struct SHTCTL *shtctl_init(struct MEMMAN *memman, unsigned char *vram, int xsize, int ysize)$/;"	f
@@ -167,7 +171,7 @@ size	bootpack.h	/^	unsigned int addr, size;$/;"	m	struct:FREEINFO
 top	bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
 vmode	bootpack.h	/^	char vmode; \/* 显卡模式为多少位彩色 *\/$/;"	m	struct:BOOTINFO
 vram	bootpack.h	/^	char *vram;$/;"	m	struct:BOOTINFO
-vram	bootpack.h	/^	unsigned char *vram;$/;"	m	struct:SHTCTL
+vram	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
 vx0	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 vy0	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 wait_KBC_sendready	keyboard.c	/^void wait_KBC_sendready(void) {$/;"	f

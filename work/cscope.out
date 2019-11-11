@@ -1,4 +1,4 @@
-cscope 15 $HOME/github/myos/work -q 0000002528 0002476311
+cscope 15 $HOME/github/myos/work -q 0000002539 0002480348
 	@bootpack.c
 
 3 
@@ -39,7 +39,9 @@ i
 
 11 
 memtŸÆ
-;
+, 
+cou¡
+ = 0;
 
 12 
 MOUSE_DEC
@@ -67,13 +69,17 @@ SHEET
 sht_back
 , *
 sht_mou£
+, *
+sht_wö
 ;
 
 16 *
 buf_back
 , 
 buf_mou£
-[256];
+[256], *
+buf_wö
+;
 
 18 
 	`öô_gdtidt
@@ -188,6 +194,14 @@ sht˘l
 );
 
 38 
+sht_wö
+ = 
+	`shìt_Æloc
+(
+sht˘l
+);
+
+39 
 buf_back
  = (*Ë
 	`memm™_Æloc_4k
@@ -201,7 +215,15 @@ s¸nx
 s¸ny
 );
 
-39 
+40 
+buf_wö
+ = (*Ë
+	`memm™_Æloc_4k
+(
+memm™
+, 160 * 52);
+
+41 
 	`shìt_£tbuf
 (
 sht_back
@@ -215,7 +237,7 @@ s¸nx
 s¸ny
 , -1);
 
-40 
+42 
 	`shìt_£tbuf
 (
 sht_mou£
@@ -223,7 +245,15 @@ sht_mou£
 buf_mou£
 , 16, 16, 99);
 
-41 
+43 
+	`shìt_£tbuf
+(
+sht_wö
+, 
+buf_wö
+, 160, 52, -1);
+
+44 
 	`öô_s¸ìn8
 (
 buf_back
@@ -235,21 +265,25 @@ s¸nx
 s¸ny
 );
 
-42 
+45 
 	`öô_mou£_curs‹8
 (
 buf_mou£
 , 99);
 
-43 
+46 
+	`make_wödow8
+(
+buf_wö
+, 160, 52, "counter");
+
+47 
 	`shìt_¶ide
 (
-sht˘l
-, 
 sht_back
 , 0, 0);
 
-44 
+48 
 mx
  = (
 böfo
@@ -257,7 +291,7 @@ böfo
 s¸nx
  - 16) / 2;
 
-45 
+49 
 my
  = (
 böfo
@@ -265,11 +299,9 @@ böfo
 s¸ny
  - 28 - 16) / 2;
 
-46 
+50 
 	`shìt_¶ide
 (
-sht˘l
-, 
 sht_mou£
 , 
 mx
@@ -277,23 +309,31 @@ mx
 my
 );
 
-47 
+51 
+	`shìt_¶ide
+(
+sht_wö
+, 80, 72);
+
+52 
 	`shìt_updown
 (
-sht˘l
-, 
 sht_back
 , 0);
 
-48 
+53 
 	`shìt_updown
 (
-sht˘l
-, 
-sht_mou£
+sht_wö
 , 1);
 
-49 
+54 
+	`shìt_updown
+(
+sht_mou£
+, 2);
+
+55 
 	`•rötf
 (
 s
@@ -303,7 +343,7 @@ mx
 my
 );
 
-50 
+56 
 	`putf⁄ts8_asc
 (
 buf_back
@@ -317,7 +357,7 @@ COL8_FFFFFF
 s
 );
 
-51 
+57 
 	`•rötf
 (
 s
@@ -329,7 +369,7 @@ memtŸÆ
 memm™
 ) / 1024);
 
-52 
+58 
 	`putf⁄ts8_asc
 (
 buf_back
@@ -343,11 +383,9 @@ COL8_FFFFFF
 s
 );
 
-53 
+59 
 	`shìt_ª‰esh
 (
-sht˘l
-, 
 sht_back
 , 0, 0, 
 böfo
@@ -355,11 +393,47 @@ böfo
 s¸nx
 , 48);
 
-56 
+62 
+cou¡
+++;
+
+63 
+	`•rötf
+(
+s
+, "%010d", 
+cou¡
+);
+
+64 
+	`boxfûl8
+(
+buf_wö
+, 160, 
+COL8_C6C6C6
+, 40, 28, 119, 43);
+
+65 
+	`putf⁄ts8_asc
+(
+buf_wö
+, 160, 40, 28, 
+COL8_000000
+, 
+s
+);
+
+66 
+	`shìt_ª‰esh
+(
+sht_wö
+, 40, 28, 120, 44);
+
+68 
 	`io_˛i
 ();
 
-57 i‡(
+69 i‡(
 	`fifo8_°©us
 (&
 keyfifo
@@ -367,17 +441,17 @@ keyfifo
 mou£fifo
 ) == 0) {
 
-58 
-	`io_°ih…
+70 
+	`io_°i
 ();
 
-60 i‡(
+72 i‡(
 	`fifo8_°©us
 (&
 keyfifo
 ) != 0) {
 
-61 
+73 
 i
  = 
 	`fifo8_gë
@@ -385,11 +459,11 @@ i
 keyfifo
 );
 
-62 
+74 
 	`io_°i
 ();
 
-63 
+75 
 	`•rötf
 (
 s
@@ -397,7 +471,7 @@ s
 i
 );
 
-64 
+76 
 	`boxfûl8
 (
 buf_back
@@ -409,7 +483,7 @@ s¸nx
 COL8_008484
 , 0, 16, 15, 31);
 
-65 
+77 
 	`putf⁄ts8_asc
 (
 buf_back
@@ -423,21 +497,19 @@ COL8_FFFFFF
 s
 );
 
-66 
+78 
 	`shìt_ª‰esh
 (
-sht˘l
-, 
 sht_back
 , 0, 16, 16, 32);
 
-67 } i‡(
+79 } i‡(
 	`fifo8_°©us
 (&
 mou£fifo
 ) != 0) {
 
-68 
+80 
 i
  = 
 	`fifo8_gë
@@ -445,11 +517,11 @@ i
 mou£fifo
 );
 
-69 
+81 
 	`io_°i
 ();
 
-70 i‡(
+82 i‡(
 	`mou£_decode
 (&
 mdec
@@ -457,7 +529,7 @@ mdec
 i
 ) != 0) {
 
-72 
+84 
 	`•rötf
 (
 s
@@ -469,37 +541,37 @@ x
 y
 );
 
-73 i‡((
+85 i‡((
 mdec
 .
 bä
  & 0x01) != 0) {
 
-74 
+86 
 s
 [1] = 'L';
 
-76 i‡((
+88 i‡((
 mdec
 .
 bä
  & 0x02) != 0) {
 
-77 
+89 
 s
 [3] = 'R';
 
-79 i‡((
+91 i‡((
 mdec
 .
 bä
  & 0x04) != 0) {
 
-80 
+92 
 s
 [2] = 'C';
 
-82 
+94 
 	`boxfûl8
 (
 buf_back
@@ -511,7 +583,7 @@ s¸nx
 COL8_008484
 , 32, 16, 32 + 15 * 8 - 1, 31);
 
-83 
+95 
 	`putf⁄ts8_asc
 (
 buf_back
@@ -525,15 +597,13 @@ COL8_FFFFFF
 s
 );
 
-84 
+96 
 	`shìt_ª‰esh
 (
-sht˘l
-, 
 sht_back
 , 32, 16, 32 + 15 * 8, 32);
 
-86 
+98 
 mx
  +
 mdec
@@ -541,7 +611,7 @@ mdec
 x
 ;
 
-87 
+99 
 my
  +
 mdec
@@ -549,55 +619,55 @@ mdec
 y
 ;
 
-88 i‡(
+100 i‡(
 mx
  < 0) {
 
-89 
+101 
 mx
  = 0;
 
-91 i‡(
+103 i‡(
 my
  < 0) {
 
-92 
+104 
 my
  = 0;
 
-94 i‡(
+106 i‡(
 mx
  > 
 böfo
 ->
 s¸nx
- - 16) {
+ - 1) {
 
-95 
+107 
 mx
  = 
 böfo
 ->
 s¸nx
- - 16;
+ - 1;
 
-97 i‡(
+109 i‡(
 my
  > 
 böfo
 ->
 s¸ny
- - 16) {
+ - 1) {
 
-98 
+110 
 my
  = 
 böfo
 ->
 s¸ny
- - 16;
+ - 1;
 
-100 
+112 
 	`•rötf
 (
 s
@@ -607,7 +677,7 @@ mx
 my
 );
 
-101 
+113 
 	`boxfûl8
 (
 buf_back
@@ -619,7 +689,7 @@ s¸nx
 COL8_008484
 , 0, 0, 79, 15);
 
-102 
+114 
 	`putf⁄ts8_asc
 (
 buf_back
@@ -633,19 +703,15 @@ COL8_FFFFFF
 s
 );
 
-103 
+115 
 	`shìt_ª‰esh
 (
-sht˘l
-, 
 sht_back
 , 0, 0, 80, 16);
 
-104 
+116 
 	`shìt_¶ide
 (
-sht˘l
-, 
 sht_mou£
 , 
 mx
@@ -653,7 +719,229 @@ mx
 my
 );
 
-109 
+121 
+	}
+}
+
+123 
+	$make_wödow8
+(*
+buf
+, 
+xsize
+, 
+ysize
+, *
+tôÀ
+)
+
+125 
+˛o£bä
+[14][16] = {
+
+142 
+x
+, 
+y
+;
+
+143 
+c
+;
+
+144 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_C6C6C6
+, 0, 0, xsize - 1, 0 );
+
+145 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_FFFFFF
+, 1, 1, xsize - 2, 1 );
+
+146 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_C6C6C6
+, 0, 0, 0, 
+ysize
+ - 1);
+
+147 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_FFFFFF
+, 1, 1, 1, 
+ysize
+ - 2);
+
+148 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_848484
+, xsizê- 2, 1, xsizê- 2, 
+ysize
+ - 2);
+
+149 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_000000
+, xsizê- 1, 0, xsizê- 1, 
+ysize
+ - 1);
+
+150 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_C6C6C6
+, 2, 2, xsizê- 3, 
+ysize
+ - 3);
+
+151 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_000084
+, 3, 3, xsize - 4, 20 );
+
+152 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_848484
+, 1, 
+ysize
+ - 2, xsize - 2, ysize - 2);
+
+153 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_000000
+, 0, 
+ysize
+ - 1, xsize - 1, ysize - 1);
+
+154 
+	`putf⁄ts8_asc
+(
+buf
+, 
+xsize
+, 24, 4, 
+COL8_FFFFFF
+, 
+tôÀ
+);
+
+156 
+y
+ = 0; y < 14; y++) {
+
+157 
+x
+ = 0; x < 16; x++) {
+
+158 
+c
+ = 
+˛o£bä
+[
+y
+][
+x
+];
+
+159 i‡(
+c
+ == '@') {
+
+160 
+c
+ = 
+COL8_000000
+;
+
+161 } i‡(
+c
+ == '$') {
+
+162 
+c
+ = 
+COL8_848484
+;
+
+163 } i‡(
+c
+ == 'Q') {
+
+164 
+c
+ = 
+COL8_C6C6C6
+;
+
+166 
+c
+ = 
+COL8_FFFFFF
+;
+
+168 
+buf
+[(5 + 
+y
+Ë* 
+xsize
+ + (xsizê- 21 + 
+x
+)] = 
+c
+;
+
+172 
 	}
 }
 
@@ -1477,15 +1765,23 @@ size
 	mÊags
 ;
 
-154 
+152 
+SHTCTL
+ *
+	m˘l
+;
+
+155 
 	sSHTCTL
  {
 
-155 *
+156 *
 	mvøm
+, *
+	mm≠
 ;
 
-156 
+157 
 	mxsize
 , 
 	mysize
@@ -1493,7 +1789,7 @@ size
 	mt›
 ;
 
-157 
+158 
 SHEET
  *
 	mshìts
@@ -1501,7 +1797,7 @@ SHEET
 MAX_SHEETS
 ];
 
-158 
+159 
 SHEET
  
 	mshìts0
@@ -1509,7 +1805,7 @@ SHEET
 MAX_SHEETS
 ];
 
-161 
+162 
 SHTCTL
  *
 sht˘l_öô
@@ -1525,7 +1821,7 @@ xsize
 ysize
 );
 
-162 
+163 
 SHEET
  *
 shìt_Æloc
@@ -1535,7 +1831,7 @@ SHTCTL
 ˘l
 );
 
-163 
+164 
 shìt_£tbuf
 (
 SHEET
@@ -1551,13 +1847,9 @@ ysize
 cﬁ_öv
 );
 
-164 
+165 
 shìt_updown
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
@@ -1565,13 +1857,9 @@ sht
 height
 );
 
-165 
+166 
 shìt_ª‰esh
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
@@ -1585,13 +1873,9 @@ bx1
 by1
 );
 
-166 
+167 
 shìt_¶ide
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
@@ -1601,13 +1885,9 @@ vx0
 vy0
 );
 
-167 
+168 
 shìt_‰ì
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
@@ -3938,34 +4218,68 @@ memm™
 15 
 ˘l
 ->
+m≠
+ = (*Ë
+	`memm™_Æloc_4k
+(
+memm™
+, 
+xsize
+ * 
+ysize
+);
+
+16 i‡(
+˘l
+->
+m≠
+ == 0) {
+
+17 
+	`memm™_‰ì_4k
+(
+memm™
+, (Ë
+˘l
+,  (
+SHTCTL
+));
+
+18 
+îr
+;
+
+20 
+˘l
+->
 vøm
  = vram;
 
-16 
+21 
 ˘l
 ->
 xsize
  = xsize;
 
-17 
+22 
 ˘l
 ->
 ysize
  = ysize;
 
-18 
+23 
 ˘l
 ->
 t›
  = -1;
 
-19 
+24 
 i
  = 0; i < 
 MAX_SHEETS
 ; i++) {
 
-20 
+25 
 ˘l
 ->
 shìts0
@@ -3975,19 +4289,27 @@ i
 Êags
  = 0;
 
-22 
+26 
+˘l
+->
+shìts0
+[
+i
+].ctl = ctl;
+
+28 
 îr
 :
 
-23  
+29  
 ˘l
 ;
 
-24 
+30 
 	}
 }
 
-26 
+32 
 SHEET
  *
 	$shìt_Æloc
@@ -3997,23 +4319,23 @@ SHTCTL
 ˘l
 )
 
-28 
+34 
 SHEET
  *
 sht
 ;
 
-29 
+35 
 i
 ;
 
-30 
+36 
 i
  = 0; i < 
 MAX_SHEETS
 ; i++) {
 
-31 i‡(
+37 i‡(
 ˘l
 ->
 shìts0
@@ -4023,7 +4345,7 @@ i
 Êags
  == 0) {
 
-32 
+38 
 sht
  = &
 ˘l
@@ -4033,7 +4355,7 @@ shìts0
 i
 ];
 
-33 
+39 
 sht
 ->
 Êags
@@ -4041,21 +4363,21 @@ sht
 SHEET_USE
 ;
 
-34 
+40 
 sht
 ->
 height
  = -1;
 
-35  
+41  
 sht
 ;
 
-39 
+45 
 	}
 }
 
-41 
+47 
 	$shìt_£tbuf
 (
 SHEET
@@ -4071,13 +4393,13 @@ ysize
 cﬁ_öv
 )
 
-43 
+49 
 sht
 ->
 buf
  = buf;
 
-44 
+50 
 sht
 ->
 bxsize
@@ -4085,7 +4407,7 @@ bxsize
 xsize
 ;
 
-45 
+51 
 sht
 ->
 bysize
@@ -4093,23 +4415,19 @@ bysize
 ysize
 ;
 
-46 
+52 
 sht
 ->
 cﬁ_öv
  = col_inv;
 
-48 
+54 
 	}
 }
 
-50 
+56 
 	$shìt_updown
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
@@ -4117,7 +4435,15 @@ sht
 height
 )
 
-52 
+58 
+SHTCTL
+ *
+˘l
+ = 
+sht
+->ctl;
+
+59 
 h
 , 
 ﬁd
@@ -4127,7 +4453,7 @@ sht
 height
 ;
 
-53 i‡(
+60 i‡(
 height
  > 
 ˘l
@@ -4135,7 +4461,7 @@ height
 t›
  + 1) {
 
-54 
+61 
 height
  = 
 ˘l
@@ -4143,31 +4469,31 @@ height
 t›
  + 1;
 
-56 i‡(
+63 i‡(
 height
  < -1) {
 
-57 
+64 
 height
  = -1;
 
-59 
+66 
 sht
 ->
 height
  = height;
 
-62 i‡(
+69 i‡(
 ﬁd
  > 
 height
 ) {
 
-63 i‡(
+70 i‡(
 height
  >= 0) {
 
-65 
+72 
 h
  = 
 ﬁd
@@ -4175,7 +4501,7 @@ h
 height
 ; h--) {
 
-66 
+73 
 ˘l
 ->
 shìts
@@ -4183,7 +4509,7 @@ shìts
 h
 ] = ctl->sheets[h - 1];
 
-67 
+74 
 ˘l
 ->
 shìts
@@ -4193,7 +4519,7 @@ h
 height
  = h;
 
-69 
+76 
 ˘l
 ->
 shìts
@@ -4203,49 +4529,25 @@ height
 sht
 ;
 
-71 i‡(
+77 
+	`shìt_ª‰eshm≠
+(
 ˘l
+, 
+sht
 ->
-t›
- > 
-ﬁd
-) {
-
-73 
-h
- = 
-ﬁd
-; h < 
-˘l
-->
-t›
-; h++) {
-
-74 
-˘l
-->
-shìts
-[
-h
-] = ctl->sheets[h + 1];
-
-75 
-˘l
-->
-shìts
-[
-h
-]->
+vx0
+, sht->
+vy0
+, sht->vx0 + sht->
+bxsize
+, sht->vy0 + sht->
+bysize
+, 
 height
- = h;
+ + 1);
 
 78 
-˘l
-->
-t›
---;
-
-80 
 	`shìt_ª‰eshsub
 (
 ˘l
@@ -4259,27 +4561,31 @@ vy0
 bxsize
 , sht->vy0 + sht->
 bysize
+, 
+height
+ + 1, 
+ﬁd
 );
 
-81 } i‡(
+80 i‡(
+˘l
+->
+t›
+ > 
 ﬁd
- < 
-height
 ) {
 
-82 i‡(
-ﬁd
- >= 0) {
-
-84 
+82 
 h
  = 
 ﬁd
 ; h < 
-height
+˘l
+->
+t›
 ; h++) {
 
-85 
+83 
 ˘l
 ->
 shìts
@@ -4287,7 +4593,7 @@ shìts
 h
 ] = ctl->sheets[h + 1];
 
-86 
+84 
 ˘l
 ->
 shìts
@@ -4297,7 +4603,83 @@ h
 height
  = h;
 
+87 
+˘l
+->
+t›
+--;
+
 88 
+	`shìt_ª‰eshm≠
+(
+˘l
+, 
+sht
+->
+vx0
+, sht->
+vy0
+, sht->vx0 + sht->
+bxsize
+, sht->vy0 + sht->
+bysize
+, 0);
+
+89 
+	`shìt_ª‰eshsub
+(
+˘l
+, 
+sht
+->
+vx0
+, sht->
+vy0
+, sht->vx0 + sht->
+bxsize
+, sht->vy0 + sht->
+bysize
+, 0, 
+ﬁd
+ - 1);
+
+91 } i‡(
+ﬁd
+ < 
+height
+) {
+
+92 i‡(
+ﬁd
+ >= 0) {
+
+94 
+h
+ = 
+ﬁd
+; h < 
+height
+; h++) {
+
+95 
+˘l
+->
+shìts
+[
+h
+] = ctl->sheets[h + 1];
+
+96 
+˘l
+->
+shìts
+[
+h
+]->
+height
+ = h;
+
+98 
 ˘l
 ->
 shìts
@@ -4307,7 +4689,7 @@ height
 sht
 ;
 
-91 
+101 
 h
  = 
 ˘l
@@ -4317,7 +4699,7 @@ t›
 height
 ; h--) {
 
-92 
+102 
 ˘l
 ->
 shìts
@@ -4325,7 +4707,7 @@ shìts
 h
  + 1] = ctl->sheets[h];
 
-93 
+103 
 ˘l
 ->
 shìts
@@ -4335,7 +4717,7 @@ h
 height
  = h + 1;
 
-95 
+105 
 ˘l
 ->
 shìts
@@ -4345,13 +4727,31 @@ height
 sht
 ;
 
-96 
+106 
 ˘l
 ->
 t›
 ++;
 
-98 
+108 
+	`shìt_ª‰eshm≠
+(
+˘l
+, 
+sht
+->
+vx0
+, sht->
+vy0
+, sht->vx0 + sht->
+bxsize
+, sht->vy0 + sht->
+bysize
+, 
+height
+);
+
+109 
 	`shìt_ª‰eshsub
 (
 ˘l
@@ -4365,19 +4765,17 @@ vy0
 bxsize
 , sht->vy0 + sht->
 bysize
-);
+, 
+height
+, height);
 
-101 
+112 
 	}
 }
 
-103 
+114 
 	$shìt_ª‰esh
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
@@ -4391,19 +4789,19 @@ bx1
 by1
 )
 
-105 i‡(
+116 i‡(
 sht
 ->
 height
  >= 0) {
 
-106 
+117 
 	`shìt_ª‰eshsub
 (
-˘l
-, 
 sht
 ->
+˘l
+, sht->
 vx0
  + 
 bx0
@@ -4415,13 +4813,15 @@ by0
 bx1
 , sht->vy0 + 
 by1
-);
+, sht->
+height
+, sht->height);
 
-109 
+120 
 	}
 }
 
-111 
+122 
 	$shìt_ª‰eshsub
 (
 SHTCTL
@@ -4435,9 +4835,13 @@ vy0
 vx1
 , 
 vy1
+, 
+h0
+, 
+h1
 )
 
-113 
+124 
 h
 , 
 bx
@@ -4457,31 +4861,59 @@ bx1
 by1
 ;
 
-114 *
+125 *
 buf
-, 
-c
 , *
 vøm
  = 
 ˘l
-->vram;
+->vøm, *
+m≠
+ = cé->m≠, 
+sid
+;
 
-115 
+126 
 SHEET
  *
 sht
 ;
 
-116 
+129 i‡(
+vx0
+ < 0) { vx0 = 0; }
+
+130 i‡(
+vy0
+ < 0) { vy0 = 0; }
+
+131 i‡(
+vx1
+ > 
+˘l
+->
+xsize
+) { vx1 = ctl->xsize; }
+
+132 i‡(
+vy1
+ > 
+˘l
+->
+ysize
+) { vy1 = ctl->ysize; }
+
+134 
 h
- = 0; h <
+ = 
+h0
+; h <
 ˘l
 ->
 t›
 ; h++) {
 
-117 
+135 
 sht
  = 
 ˘l
@@ -4491,13 +4923,23 @@ shìts
 h
 ];
 
-118 
+136 
 buf
  = 
 sht
 ->buf;
 
-120 
+137 
+sid
+ = 
+sht
+ -
+˘l
+->
+shìts0
+;
+
+140 
 bx0
  = 
 vx0
@@ -4505,7 +4947,7 @@ vx0
 sht
 ->vx0;
 
-121 
+141 
 by0
  = 
 vy0
@@ -4513,7 +4955,7 @@ vy0
 sht
 ->vy0;
 
-122 
+142 
 bx1
  = 
 vx1
@@ -4523,7 +4965,7 @@ sht
 vx0
 ;
 
-123 
+143 
 by1
  = 
 vy1
@@ -4533,15 +4975,15 @@ sht
 vy0
 ;
 
-124 i‡(
+144 i‡(
 bx0
  < 0) { bx0 = 0; }
 
-125 i‡(
+145 i‡(
 by0
  < 0) { by0 = 0; }
 
-126 i‡(
+146 i‡(
 bx1
  > 
 sht
@@ -4549,7 +4991,7 @@ sht
 bxsize
 ) { bx1 = sht->bxsize; }
 
-127 i‡(
+147 i‡(
 by1
  > 
 sht
@@ -4557,7 +4999,7 @@ sht
 bysize
 ) { by1 = sht->bysize; }
 
-129 
+149 
 by
  = 
 by0
@@ -4565,7 +5007,7 @@ by0
 by1
 ; by++) {
 
-130 
+150 
 vy
  = 
 sht
@@ -4575,7 +5017,7 @@ vy0
 by
 ;
 
-131 
+151 
 bx
  = 
 bx0
@@ -4583,7 +5025,7 @@ bx0
 bx1
 ; bx++) {
 
-132 
+152 
 vx
  = 
 sht
@@ -4593,29 +5035,21 @@ vx0
 bx
 ;
 
-133 
-c
- = 
-buf
+153 i‡(
+m≠
 [
-by
+vy
  * 
-sht
+˘l
 ->
-bxsize
+xsize
  + 
-bx
-];
-
-134 i‡(
-c
- !
-sht
-->
-cﬁ_öv
+vx
+] =
+sid
 ) {
 
-135 
+154 
 vøm
 [
 vy
@@ -4626,20 +5060,266 @@ xsize
  + 
 vx
 ] = 
-c
-;
+buf
+[
+by
+ * 
+sht
+->
+bxsize
+ + 
+bx
+];
 
-141 
+160 
 	}
 }
 
-144 
-	$shìt_¶ide
+162 
+	$shìt_ª‰eshm≠
 (
 SHTCTL
  *
 ˘l
-, 
+, 
+vx0
+, 
+vy0
+, 
+vx1
+, 
+vy1
+, 
+h0
+)
+
+164 
+h
+, 
+bx
+, 
+by
+, 
+vx
+, 
+vy
+, 
+bx0
+, 
+by0
+, 
+bx1
+, 
+by1
+;
+
+165 *
+buf
+, 
+sid
+, *
+m≠
+ = 
+˘l
+->map;
+
+166 
+SHEET
+ *
+sht
+;
+
+168 i‡(
+vx0
+ < 0) { vx0 = 0; }
+
+169 i‡(
+vy0
+ < 0) { vy0 = 0; }
+
+170 i‡(
+vx1
+ > 
+˘l
+->
+xsize
+) { vx1 = ctl->xsize; }
+
+171 i‡(
+vy1
+ > 
+˘l
+->
+ysize
+) { vy1 = ctl->ysize; }
+
+173 
+h
+ = 
+h0
+; h <
+˘l
+->
+t›
+; h++) {
+
+174 
+sht
+ = 
+˘l
+->
+shìts
+[
+h
+];
+
+175 
+sid
+ = 
+sht
+ - 
+˘l
+->
+shìts0
+;
+
+176 
+buf
+ = 
+sht
+->buf;
+
+177 
+bx0
+ = 
+vx0
+ - 
+sht
+->vx0;
+
+178 
+by0
+ = 
+vy0
+ - 
+sht
+->vy0;
+
+179 
+bx1
+ = 
+vx1
+ - 
+sht
+->
+vx0
+;
+
+180 
+by1
+ = 
+vy1
+ - 
+sht
+->
+vy0
+;
+
+181 i‡(
+bx0
+ < 0) { bx0 = 0; }
+
+182 i‡(
+by0
+ < 0) { by0 = 0; }
+
+183 i‡(
+bx1
+ > 
+sht
+->
+bxsize
+) { bx1 = sht->bxsize; }
+
+184 i‡(
+by1
+ > 
+sht
+->
+bysize
+) { by1 = sht->bysize; }
+
+186 
+by
+ = 
+by0
+; by < 
+by1
+; by++) {
+
+187 
+vy
+ = 
+sht
+->
+vy0
+ + 
+by
+;
+
+188 
+bx
+ = 
+bx0
+; bx < 
+bx1
+; bx++) {
+
+189 
+vx
+ = 
+sht
+->
+vx0
+ + 
+bx
+;
+
+190 i‡(
+buf
+[
+by
+ * 
+sht
+->
+bxsize
+ + 
+bx
+] !sht->
+cﬁ_öv
+) {
+
+191 
+m≠
+[
+vy
+ * 
+˘l
+->
+xsize
+ + 
+vx
+] = 
+sid
+;
+
+197 
+	}
+}
+
+199 
+	$shìt_¶ide
+(
 SHEET
  *
 sht
@@ -4649,7 +5329,15 @@ vx0
 vy0
 )
 
-146 
+201 
+SHTCTL
+ *
+˘l
+ = 
+sht
+->ctl;
+
+202 
 ﬁd_vx0
  = 
 sht
@@ -4661,25 +5349,59 @@ vx0
 vy0
 ;
 
-147 
+203 
 sht
 ->
 vx0
  = vx0;
 
-148 
+204 
 sht
 ->
 vy0
  = vy0;
 
-149 i‡(
+205 i‡(
 sht
 ->
 height
  >= 0) {
 
-150 
+206 
+	`shìt_ª‰eshm≠
+(
+˘l
+, 
+ﬁd_vx0
+, 
+ﬁd_vy0
+, old_vx0 + 
+sht
+->
+bxsize
+, old_vy0 + sht->
+bysize
+, 0);
+
+207 
+	`shìt_ª‰eshm≠
+(
+˘l
+, 
+vx0
+, 
+vy0
+, vx0 + 
+sht
+->
+bxsize
+, vy0 + sht->
+bysize
+, sht->
+height
+);
+
+208 
 	`shìt_ª‰eshsub
 (
 ˘l
@@ -4693,9 +5415,11 @@ sht
 bxsize
 , old_vy0 + sht->
 bysize
-);
+, 0, sht->
+height
+ - 1);
 
-151 
+209 
 	`shìt_ª‰eshsub
 (
 ˘l
@@ -4709,45 +5433,41 @@ sht
 bxsize
 , vy0 + sht->
 bysize
-);
+, sht->
+height
+, sht->height);
 
-154 
+212 
 	}
 }
 
-156 
+214 
 	$shìt_‰ì
 (
-SHTCTL
- *
-˘l
-, 
 SHEET
  *
 sht
 )
 
-158 i‡(
+216 i‡(
 sht
 ->
 height
  >= 0) {
 
-159 
+217 
 	`shìt_updown
 (
-˘l
-, 
 sht
 , -1);
 
-161 
+219 
 sht
 ->
 Êags
  = 0;
 
-163 
+221 
 	}
 }
 
