@@ -36,7 +36,7 @@ CR0_CACHE_DISABLE	memory.c	/^#define CR0_CACHE_DISABLE	/;"	d	file:
 DEL	Makefile	/^DEL      = del$/;"	m
 EDIMG	Makefile	/^EDIMG    = $(TOOLPATH)edimg.exe$/;"	m
 EFLAGS_AC_BIT	memory.c	/^#define EFLAGS_AC_BIT	/;"	d	file:
-FIFO8	bootpack.h	/^struct FIFO8 {$/;"	s
+FIFO32	bootpack.h	/^struct FIFO32 {$/;"	s
 FLAGS_OVERRUN	fifo.c	/^#define FLAGS_OVERRUN	/;"	d	file:
 FREEINFO	bootpack.h	/^struct FREEINFO { \/* 可用信息 *\/$/;"	s
 GAS2NASK	Makefile	/^GAS2NASK = $(TOOLPATH)gas2nask.exe -a$/;"	m
@@ -99,42 +99,43 @@ base_low	bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTO
 base_mid	bootpack.h	/^	char base_mid, access_right;$/;"	m	struct:SEGMENT_DESCRIPTOR
 boxfill8	graphic.c	/^void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, int x1, int y1)$/;"	f
 btn	bootpack.h	/^	int x, y, btn;$/;"	m	struct:MOUSE_DEC
-buf	bootpack.h	/^	unsigned char *buf;$/;"	m	struct:FIFO8
+buf	bootpack.h	/^	int *buf;$/;"	m	struct:FIFO32
 buf	bootpack.h	/^	unsigned char *buf;$/;"	m	struct:SHEET
 buf	bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
 bxsize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 bysize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 col_inv	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
-count	bootpack.h	/^	unsigned int count, next, using;$/;"	m	struct:TIMERCTL
+count	bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
 ctl	bootpack.h	/^	struct SHTCTL *ctl;$/;"	m	struct:SHEET	typeref:struct:SHEET::SHTCTL
 cyls	bootpack.h	/^	char cyls; \/* 启动区读磁盘读到此为止 *\/$/;"	m	struct:BOOTINFO
-data	bootpack.h	/^	unsigned char data;$/;"	m	struct:TIMER
+data	bootpack.h	/^	int data;$/;"	m	struct:TIMER
 dw_count	bootpack.h	/^	char dw_count, access_right;$/;"	m	struct:GATE_DESCRIPTOR
-enable_mouse	mouse.c	/^void enable_mouse(struct MOUSE_DEC *mdec)$/;"	f
-fifo	bootpack.h	/^	struct FIFO8 *fifo;$/;"	m	struct:TIMER	typeref:struct:TIMER::FIFO8
-fifo8_get	fifo.c	/^int fifo8_get(struct FIFO8 *fifo)$/;"	f
-fifo8_init	fifo.c	/^void fifo8_init(struct FIFO8 *fifo, int size, unsigned char *buf)$/;"	f
-fifo8_put	fifo.c	/^int fifo8_put(struct FIFO8 *fifo, unsigned char data)$/;"	f
-fifo8_status	fifo.c	/^int fifo8_status(struct FIFO8 *fifo)$/;"	f
+enable_mouse	mouse.c	/^void enable_mouse(struct FIFO32 *fifo, int data0, struct MOUSE_DEC *mdec)$/;"	f
+fifo	bootpack.h	/^	struct FIFO32 *fifo;$/;"	m	struct:TIMER	typeref:struct:TIMER::FIFO32
+fifo32_get	fifo.c	/^int fifo32_get(struct FIFO32 *fifo)$/;"	f
+fifo32_init	fifo.c	/^void fifo32_init(struct FIFO32 *fifo, int size, int *buf)$/;"	f
+fifo32_put	fifo.c	/^int fifo32_put(struct FIFO32 *fifo, int data)$/;"	f
+fifo32_status	fifo.c	/^int fifo32_status(struct FIFO32 *fifo)$/;"	f
 flags	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
-flags	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO8
+flags	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 flags	bootpack.h	/^	unsigned int timeout, flags;$/;"	m	struct:TIMER
-free	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO8
+free	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 free	bootpack.h	/^	struct FREEINFO free[MEMMAN_FREES];$/;"	m	struct:MEMMAN	typeref:struct:MEMMAN::FREEINFO
 frees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 height	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 init_gdtidt	dsctbl.c	/^void init_gdtidt(void)$/;"	f
-init_keyboard	keyboard.c	/^void init_keyboard(void) {$/;"	f
+init_keyboard	keyboard.c	/^void init_keyboard(struct FIFO32 *fifo, int data0)$/;"	f
 init_mouse_cursor8	graphic.c	/^void init_mouse_cursor8(char *mouse, char bc)$/;"	f
 init_palette	graphic.c	/^void init_palette(void)$/;"	f
 init_pic	int.c	/^void init_pic(void)$/;"	f
 init_pit	timer.c	/^void init_pit(void)$/;"	f
 init_screen8	graphic.c	/^void init_screen8(char *vram, int x, int y)$/;"	f
 inthandler20	timer.c	/^void inthandler20(int *esp)$/;"	f
-inthandler21	keyboard.c	/^void inthandler21(int *esp) {$/;"	f
+inthandler21	keyboard.c	/^void inthandler21(int *esp)$/;"	f
 inthandler27	int.c	/^void inthandler27(int *esp)$/;"	f
 inthandler2c	mouse.c	/^void inthandler2c(int *esp)$/;"	f
-keyfifo	keyboard.c	/^struct FIFO8 keyfifo;$/;"	v	typeref:struct:FIFO8
+keydata0	keyboard.c	/^int keydata0;$/;"	v
+keyfifo	keyboard.c	/^struct FIFO32 *keyfifo;$/;"	v	typeref:struct:FIFO32
 leds	bootpack.h	/^	char leds; \/* 启动时键盘的LED的状态 *\/$/;"	m	struct:BOOTINFO
 limit_high	bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRIPTOR
 limit_low	bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
@@ -151,16 +152,19 @@ memman_init	memory.c	/^void memman_init(struct MEMMAN *man)$/;"	f
 memman_total	memory.c	/^unsigned int memman_total(struct MEMMAN *man)$/;"	f
 memtest	memory.c	/^unsigned int memtest(unsigned int start, unsigned int end)$/;"	f
 mouse_decode	mouse.c	/^int mouse_decode(struct MOUSE_DEC *mdec, unsigned char dat)$/;"	f
-mousefifo	mouse.c	/^struct FIFO8 mousefifo;$/;"	v	typeref:struct:FIFO8
-next	bootpack.h	/^	unsigned int count, next, using;$/;"	m	struct:TIMERCTL
+mousedata0	mouse.c	/^int mousedata0;$/;"	v
+mousefifo	mouse.c	/^struct FIFO32 *mousefifo;$/;"	v	typeref:struct:FIFO32
+next	bootpack.h	/^	struct TIMER *next;$/;"	m	struct:TIMER	typeref:struct:TIMER::TIMER
+next	bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
 offset_high	bootpack.h	/^	short offset_high;$/;"	m	struct:GATE_DESCRIPTOR
 offset_low	bootpack.h	/^	short offset_low, selector;$/;"	m	struct:GATE_DESCRIPTOR
-p	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO8
+p	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 phase	bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
 putblock8_8	graphic.c	/^void putblock8_8(char *vram, int vxsize, int pxsize,$/;"	f
 putfont8	graphic.c	/^void putfont8(char *vram, int xsize, int x, int y, char c, char *font)$/;"	f
 putfonts8_asc	graphic.c	/^void putfonts8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s)$/;"	f
-q	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO8
+putfonts8_asc_sht	bootpack.c	/^void putfonts8_asc_sht(struct SHEET *sht, int x, int y, int c, int b, char *s, int l)$/;"	f
+q	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 reserve	bootpack.h	/^	char reserve;$/;"	m	struct:BOOTINFO
 scrnx	bootpack.h	/^	short scrnx, scrny; \/* 画面分辨率 *\/$/;"	m	struct:BOOTINFO
 scrny	bootpack.h	/^	short scrnx, scrny; \/* 画面分辨率 *\/$/;"	m	struct:BOOTINFO
@@ -179,15 +183,15 @@ sheet_updown	sheet.c	/^void sheet_updown(struct SHEET *sht, int height)$/;"	f
 sheets	bootpack.h	/^	struct SHEET *sheets[MAX_SHEETS];$/;"	m	struct:SHTCTL	typeref:struct:SHTCTL::SHEET
 sheets0	bootpack.h	/^	struct SHEET sheets0[MAX_SHEETS];$/;"	m	struct:SHTCTL	typeref:struct:SHTCTL::SHEET
 shtctl_init	sheet.c	/^struct SHTCTL *shtctl_init(struct MEMMAN *memman, unsigned char *vram, int xsize, int ysize)$/;"	f
-size	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO8
+size	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 size	bootpack.h	/^	unsigned int addr, size;$/;"	m	struct:FREEINFO
+t0	bootpack.h	/^	struct TIMER *t0;$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
 timeout	bootpack.h	/^	unsigned int timeout, flags;$/;"	m	struct:TIMER
 timer_alloc	timer.c	/^struct TIMER *timer_alloc(void)$/;"	f
 timer_free	timer.c	/^void timer_free(struct TIMER *timer)$/;"	f
-timer_init	timer.c	/^void timer_init(struct TIMER *timer, struct FIFO8 *fifo, unsigned char data)$/;"	f
+timer_init	timer.c	/^void timer_init(struct TIMER *timer, struct FIFO32 *fifo, int data)$/;"	f
 timer_settime	timer.c	/^void timer_settime(struct TIMER *timer, unsigned int timeout)$/;"	f
 timerctl	timer.c	/^struct TIMERCTL timerctl;$/;"	v	typeref:struct:TIMERCTL
-timers	bootpack.h	/^	struct TIMER *timers[MAX_TIMER];$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
 timers0	bootpack.h	/^	struct TIMER timers0[MAX_TIMER];$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
 top	bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
 vmode	bootpack.h	/^	char vmode; \/* 显卡模式为多少位彩色 *\/$/;"	m	struct:BOOTINFO
@@ -195,7 +199,7 @@ vram	bootpack.h	/^	char *vram;$/;"	m	struct:BOOTINFO
 vram	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
 vx0	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 vy0	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
-wait_KBC_sendready	keyboard.c	/^void wait_KBC_sendready(void) {$/;"	f
+wait_KBC_sendready	keyboard.c	/^void wait_KBC_sendready(void) $/;"	f
 x	bootpack.h	/^	int x, y, btn;$/;"	m	struct:MOUSE_DEC
 xsize	bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
 y	bootpack.h	/^	int x, y, btn;$/;"	m	struct:MOUSE_DEC
