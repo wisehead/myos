@@ -92,6 +92,23 @@ INT后面是个数字，不同的数字可以调用不同的函数。这次我�
     -PUSH EBP
     -PUSH ESI
     -PUSH EDI
+
+    PUSHAD指令压入32位寄存器，其入栈顺序是:EAX,ECX,EDX,EBX,ESP,EBP,ESI,EDI .
+要注意,PUSHA/PUSHAD,POPA/POPAD从80286处理器开始使用.执行PUSHA/PUSHAD,POPA/POPAD时,其堆栈指针SP将分别需要减16/32和加16/32.
+PUSHAD POPAD不会影响标志位
+' OperandSize 32 (* PUSHAD instruction *)
+' THEN
+执行pushad，依次将EAX、ECX、EDX、EBX、ESI、EDI，执行后ESP- 32
+' Temp (SP);
+' Push(AX);
+' Push(CX);
+' Push(DX);
+' Push(BX);
+' Push(Temp);
+' Push(BP);
+' Push(SI);
+' Push(DI);
+' FI
 （8）POPAD；相当于以上相反的顺序，把它们全部POP出来。
 （9）STI；它是CLI的逆指令。执行STI后，IF（interrup flag）变为1，CPU接受来自外部设备的中断。
  (10) DB; 直接定义汇编字节，原则上可以直接生成对象二进制文件
@@ -230,6 +247,9 @@ pipelineflush:
 #define PIC1_ICW2       0x00a1
 #define PIC1_ICW3       0x00a1
 #define PIC1_ICW4       0x00a1
+
+#define PIT_CTRL    PU0x0043//PIT timer
+#define PIT_CNT0    0x0040//PIT timer
 
 0x60 PORT_KEYDAT//键盘
 0x64 PORT_KEYSTA//键盘控制电路
@@ -473,7 +493,29 @@ esp+4   ->
 
 栈的内存，从高到低放入数据，取数据从低到高。
 
-25.
+25.PIT
+PIT "Programmable Interval Timer".可编程的间隔型定时器。
+我们通过设定PIT，让定时器每隔多少秒就产生一次中断。因为在电脑中PIT连接着IRQ的0号，所以只要设定了PIT就可以设定IRQ0的中断间隔。
+在旧机器上PPIT是作为一个独立的芯片安装在主板上的，而现在已经和PIC一样被集成到别的芯片中了。
+
+#define PIT_CTRL    0x0043
+#define PIT_CNT0    0x0040
+void init_pit(void)
+{
+    int i;
+    io_out8(PIT_CTRL, 0x34);
+    io_out8(PIT_CNT0, 0x9c);
+    io_out8(PIT_CNT0, 0x2e);
+    timerctl.count = 0;
+    timerctl.next = 0xffffffff; /* 因为最初没有正在运行的定时器 */
+    timerctl.using = 0;
+    for (i = 0; i < MAX_TIMER; i++) {
+    timerctl.timers0[i].flags = 0; /* 未使用 */
+    }
+    return;
+}
+
+26.
 
 
 
