@@ -141,6 +141,7 @@ limit_high	bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRI
 limit_low	bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
 losts	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 lostsize	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+make_textbox8	bootpack.c	/^void make_textbox8(struct SHEET *sht, int x0, int y0, int sx, int sy, int c)$/;"	f
 make_window8	bootpack.c	/^void make_window8(unsigned char *buf, int xsize, int ysize, char *title)$/;"	f
 map	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
 maxfrees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN

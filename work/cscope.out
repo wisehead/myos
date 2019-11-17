@@ -1,4 +1,4 @@
-cscope 15 $HOME/github/myos/work -q 0000002566 0002484019
+cscope 15 $HOME/github/myos/work -q 0000002572 0002485702
 	@bootpack.c
 
 3 
@@ -41,11 +41,29 @@ s
 l
 );
 
-9 
+8 
+make_ãxtbox8
+(
+SHEET
+ *
+sht
+, 
+x0
+, 
+y0
+, 
+sx
+, 
+sy
+, 
+c
+);
+
+10 
 	$H¨iMaö
 ()
 
-11 
+12 
 BOOTINFO
  *
 böfo
@@ -53,21 +71,21 @@ böfo
 ADR_BOOTINFO
 ;
 
-12 
+13 
 FIFO32
  
 fifo
 ;
 
-13 
+14 
 s
 [40];
 
-14 
+15 
 fifobuf
 [128];
 
-15 
+16 
 TIMER
  *
 timî
@@ -77,27 +95,29 @@ timî2
 timî3
 ;
 
-16 
+17 
 mx
 , 
 my
 , 
 i
 , 
-cou¡
- = 0;
+curs‹_x
+, 
+curs‹_c
+;
 
-17 
+18 
 memtŸÆ
 ;
 
-18 
+19 
 MOUSE_DEC
  
 mdec
 ;
 
-19 
+20 
 MEMMAN
  *
 memm™
@@ -105,13 +125,13 @@ memm™
 MEMMAN_ADDR
 ;
 
-20 
+21 
 SHTCTL
  *
 sht˘l
 ;
 
-21 
+22 
 SHEET
  *
 sht_back
@@ -121,7 +141,7 @@ sht_mou£
 sht_wö
 ;
 
-22 *
+23 *
 buf_back
 , 
 buf_mou£
@@ -129,19 +149,23 @@ buf_mou£
 buf_wö
 ;
 
-24 
+24 
+keyèbÀ
+[0x54] = {
+
+33 
 	`öô_gdtidt
 ();
 
-25 
+34 
 	`öô_pic
 ();
 
-26 
+35 
 	`io_°i
 ();
 
-27 
+36 
 	`fifo32_öô
 (&
 fifo
@@ -149,17 +173,17 @@ fifo
 fifobuf
 );
 
-28 
+37 
 	`öô_pô
 ();
 
-29 
+38 
 	`öô_keybﬂrd
 (&
 fifo
 , 256);
 
-30 
+39 
 	`íabÀ_mou£
 (&
 fifo
@@ -167,25 +191,25 @@ fifo
 mdec
 );
 
-31 
+40 
 	`io_out8
 (
 PIC0_IMR
 , 0xf8);
 
-32 
+41 
 	`io_out8
 (
 PIC1_IMR
 , 0xef);
 
-34 
+43 
 timî
  = 
 	`timî_Æloc
 ();
 
-35 
+44 
 	`timî_öô
 (
 timî
@@ -193,19 +217,19 @@ timî
 fifo
 , 10);
 
-36 
+45 
 	`timî_£âime
 (
 timî
 , 1000);
 
-37 
+46 
 timî2
  = 
 	`timî_Æloc
 ();
 
-38 
+47 
 	`timî_öô
 (
 timî2
@@ -213,19 +237,19 @@ timî2
 fifo
 , 3);
 
-39 
+48 
 	`timî_£âime
 (
 timî2
 , 300);
 
-40 
+49 
 timî3
  = 
 	`timî_Æloc
 ();
 
-41 
+50 
 	`timî_öô
 (
 timî3
@@ -233,31 +257,31 @@ timî3
 fifo
 , 1);
 
-42 
+51 
 	`timî_£âime
 (
 timî3
 , 50);
 
-44 
+53 
 memtŸÆ
  = 
 	`memã°
 (0x00400000, 0xbfffffff);
 
-45 
+54 
 	`memm™_öô
 (
 memm™
 );
 
-46 
+55 
 	`memm™_‰ì
 (
 memm™
 , 0x00001000, 0x0009e000);
 
-47 
+56 
 	`memm™_‰ì
 (
 memm™
@@ -265,11 +289,11 @@ memm™
 memtŸÆ
  - 0x00400000);
 
-49 
+58 
 	`öô_∑Àâe
 ();
 
-50 
+59 
 sht˘l
  = 
 	`sht˘l_öô
@@ -285,7 +309,7 @@ s¸nx
 s¸ny
 );
 
-51 
+60 
 sht_back
  = 
 	`shìt_Æloc
@@ -293,7 +317,7 @@ sht_back
 sht˘l
 );
 
-52 
+61 
 sht_mou£
  = 
 	`shìt_Æloc
@@ -301,7 +325,7 @@ sht_mou£
 sht˘l
 );
 
-53 
+62 
 sht_wö
  = 
 	`shìt_Æloc
@@ -309,7 +333,7 @@ sht_wö
 sht˘l
 );
 
-54 
+63 
 buf_back
  = (*Ë
 	`memm™_Æloc_4k
@@ -323,7 +347,7 @@ s¸nx
 s¸ny
 );
 
-55 
+64 
 buf_wö
  = (*Ë
 	`memm™_Æloc_4k
@@ -331,7 +355,7 @@ buf_wö
 memm™
 , 160 * 52);
 
-56 
+65 
 	`shìt_£tbuf
 (
 sht_back
@@ -345,7 +369,7 @@ s¸nx
 s¸ny
 , -1);
 
-57 
+66 
 	`shìt_£tbuf
 (
 sht_mou£
@@ -353,7 +377,7 @@ sht_mou£
 buf_mou£
 , 16, 16, 99);
 
-58 
+67 
 	`shìt_£tbuf
 (
 sht_wö
@@ -361,7 +385,7 @@ sht_wö
 buf_wö
 , 160, 52, -1);
 
-59 
+68 
 	`öô_s¸ìn8
 (
 buf_back
@@ -373,25 +397,43 @@ s¸nx
 s¸ny
 );
 
-60 
+69 
 	`öô_mou£_curs‹8
 (
 buf_mou£
 , 99);
 
-61 
+70 
 	`make_wödow8
 (
 buf_wö
-, 160, 52, "counter");
+, 160, 52, "window");
 
-62 
+71 
+	`make_ãxtbox8
+(
+sht_wö
+, 8, 28, 144, 16, 
+COL8_FFFFFF
+);
+
+72 
+curs‹_x
+ = 8;
+
+73 
+curs‹_c
+ = 
+COL8_FFFFFF
+;
+
+74 
 	`shìt_¶ide
 (
 sht_back
 , 0, 0);
 
-63 
+75 
 mx
  = (
 böfo
@@ -399,7 +441,7 @@ böfo
 s¸nx
  - 16) / 2;
 
-64 
+76 
 my
  = (
 böfo
@@ -407,7 +449,7 @@ böfo
 s¸ny
  - 28 - 16) / 2;
 
-65 
+77 
 	`shìt_¶ide
 (
 sht_mou£
@@ -417,31 +459,31 @@ mx
 my
 );
 
-66 
+78 
 	`shìt_¶ide
 (
 sht_wö
 , 80, 72);
 
-67 
+79 
 	`shìt_updown
 (
 sht_back
 , 0);
 
-68 
+80 
 	`shìt_updown
 (
 sht_wö
 , 1);
 
-69 
+81 
 	`shìt_updown
 (
 sht_mou£
 , 2);
 
-70 
+82 
 	`•rötf
 (
 s
@@ -451,7 +493,7 @@ mx
 my
 );
 
-71 
+83 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -463,13 +505,13 @@ COL8_008484
 s
 , 10);
 
-72 
+84 
 	`•rötf
 (
 s
 , "memory %dMB free : %dKB",
 
-73 
+85 
 memtŸÆ
  / (1024 * 1024), 
 	`memm™_tŸÆ
@@ -477,7 +519,7 @@ memtŸÆ
 memm™
 ) / 1024);
 
-74 
+86 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -489,25 +531,21 @@ COL8_008484
 s
 , 40);
 
-77 
-cou¡
-++;
-
-78 
+89 
 	`io_˛i
 ();
 
-79 i‡(
+90 i‡(
 	`fifo32_°©us
 (&
 fifo
 ) == 0) {
 
-80 
-	`io_°i
+91 
+	`io_°ih…
 ();
 
-82 
+93 
 i
  = 
 	`fifo32_gë
@@ -515,15 +553,15 @@ i
 fifo
 );
 
-83 
+94 
 	`io_°i
 ();
 
-84 i‡(256 <
+95 i‡(256 <
 i
  && i <= 511) {
 
-85 
+96 
 	`•rötf
 (
 s
@@ -531,7 +569,7 @@ s
 i
  - 256);
 
-86 
+97 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -543,11 +581,97 @@ COL8_008484
 s
 , 2);
 
-87 } i‡(512 <
+98 i‡(
+i
+ < 0x54 + 256) {
+
+99 i‡(
+keyèbÀ
+[
+i
+ - 256] !0 && 
+curs‹_x
+ < 144) {
+
+100 
+s
+[0] = 
+keyèbÀ
+[
+i
+ - 256];
+
+101 
+s
+[1] = 0;
+
+102 
+	`putf⁄ts8_asc_sht
+(
+sht_wö
+, 
+curs‹_x
+, 28, 
+COL8_000000
+, 
+COL8_FFFFFF
+, 
+s
+, 1);
+
+103 
+curs‹_x
+ += 8;
+
+106 i‡(
+i
+ =256 + 0x0ê&& 
+curs‹_x
+ > 8) {
+
+108 
+	`putf⁄ts8_asc_sht
+(
+sht_wö
+, 
+curs‹_x
+, 28, 
+COL8_000000
+, 
+COL8_FFFFFF
+, " ", 1);
+
+109 
+curs‹_x
+ -= 8;
+
+112 
+	`boxfûl8
+(
+sht_wö
+->
+buf
+, sht_wö->
+bxsize
+, 
+curs‹_c
+, 
+curs‹_x
+, 28, cursor_x + 7, 43);
+
+113 
+	`shìt_ª‰esh
+(
+sht_wö
+, 
+curs‹_x
+, 28, cursor_x + 8, 44);
+
+114 } i‡(512 <
 i
  && i <= 767) {
 
-88 i‡(
+115 i‡(
 	`mou£_decode
 (&
 mdec
@@ -555,7 +679,7 @@ mdec
 i
  - 512) != 0) {
 
-90 
+117 
 	`•rötf
 (
 s
@@ -567,37 +691,37 @@ x
 y
 );
 
-91 i‡((
+118 i‡((
 mdec
 .
 bä
  & 0x01) != 0) {
 
-92 
+119 
 s
 [1] = 'L';
 
-94 i‡((
+121 i‡((
 mdec
 .
 bä
  & 0x02) != 0) {
 
-95 
+122 
 s
 [3] = 'R';
 
-97 i‡((
+124 i‡((
 mdec
 .
 bä
  & 0x04) != 0) {
 
-98 
+125 
 s
 [2] = 'C';
 
-100 
+127 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -609,7 +733,7 @@ COL8_008484
 s
 , 15);
 
-102 
+129 
 mx
  +
 mdec
@@ -617,7 +741,7 @@ mdec
 x
 ;
 
-103 
+130 
 my
  +
 mdec
@@ -625,23 +749,23 @@ mdec
 y
 ;
 
-104 i‡(
+131 i‡(
 mx
  < 0) {
 
-105 
+132 
 mx
  = 0;
 
-107 i‡(
+134 i‡(
 my
  < 0) {
 
-108 
+135 
 my
  = 0;
 
-110 i‡(
+137 i‡(
 mx
  > 
 böfo
@@ -649,7 +773,7 @@ böfo
 s¸nx
  - 1) {
 
-111 
+138 
 mx
  = 
 böfo
@@ -657,7 +781,7 @@ böfo
 s¸nx
  - 1;
 
-113 i‡(
+140 i‡(
 my
  > 
 böfo
@@ -665,7 +789,7 @@ böfo
 s¸ny
  - 1) {
 
-114 
+141 
 my
  = 
 böfo
@@ -673,7 +797,7 @@ böfo
 s¸ny
  - 1;
 
-116 
+143 
 	`•rötf
 (
 s
@@ -683,7 +807,7 @@ mx
 my
 );
 
-117 
+144 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -695,7 +819,7 @@ COL8_008484
 s
 , 10);
 
-118 
+145 
 	`shìt_¶ide
 (
 sht_mou£
@@ -705,11 +829,27 @@ mx
 my
 );
 
-120 } i‡(
+146 i‡((
+mdec
+.
+bä
+ & 0x01) != 0) {
+
+147 
+	`shìt_¶ide
+(
+sht_wö
+, 
+mx
+ - 80, 
+my
+ - 8);
+
+150 } i‡(
 i
  == 10) {
 
-121 
+151 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -719,31 +859,11 @@ COL8_FFFFFF
 COL8_008484
 , "10[sec]", 7);
 
-122 
-	`•rötf
-(
-s
-, "%010d", 
-cou¡
-);
-
-123 
-	`putf⁄ts8_asc_sht
-(
-sht_wö
-, 40, 28, 
-COL8_000000
-, 
-COL8_C6C6C6
-, 
-s
-, 10);
-
-124 } i‡(
+152 } i‡(
 i
  == 3) {
 
-125 
+153 
 	`putf⁄ts8_asc_sht
 (
 sht_back
@@ -753,15 +873,15 @@ COL8_FFFFFF
 COL8_008484
 , "3[sec]", 6);
 
-126 
-cou¡
- = 0;
-
-127 } i‡(
+154 } i‡(
 i
- == 1) {
+ <= 1) {
 
-128 
+155 i‡(
+i
+ != 0) {
+
+156 
 	`timî_öô
 (
 timî3
@@ -769,35 +889,13 @@ timî3
 fifo
 , 0);
 
-129 
-	`boxfûl8
-(
-buf_back
-, 
-böfo
-->
-s¸nx
-, 
-COL8_FFFFFF
-, 8, 96, 15, 111);
+157 
+curs‹_c
+ = 
+COL8_000000
+;
 
-130 
-	`timî_£âime
-(
-timî3
-, 50);
-
-131 
-	`shìt_ª‰esh
-(
-sht_back
-, 8, 96, 16, 112);
-
-132 } i‡(
-i
- == 0) {
-
-133 
+159 
 	`timî_öô
 (
 timî3
@@ -805,35 +903,45 @@ timî3
 fifo
 , 1);
 
-134 
-	`boxfûl8
-(
-buf_back
-, 
-böfo
-->
-s¸nx
-, 
-COL8_008484
-, 8, 96, 15, 111);
+160 
+curs‹_c
+ = 
+COL8_FFFFFF
+;
 
-135 
+162 
 	`timî_£âime
 (
 timî3
 , 50);
 
-136 
+163 
+	`boxfûl8
+(
+sht_wö
+->
+buf
+, sht_wö->
+bxsize
+, 
+curs‹_c
+, 
+curs‹_x
+, 28, cursor_x + 7, 43);
+
+164 
 	`shìt_ª‰esh
 (
-sht_back
-, 8, 96, 16, 112);
+sht_wö
+, 
+curs‹_x
+, 28, cursor_x + 8, 44);
 
-140 
+168 
 	}
 }
 
-142 
+170 
 	$make_wödow8
 (*
 buf
@@ -845,21 +953,21 @@ ysize
 tôÀ
 )
 
-144 
+172 
 ˛o£bä
 [14][16] = {
 
-160 
+188 
 x
 , 
 y
 ;
 
-161 
+189 
 c
 ;
 
-162 
+190 
 	`boxfûl8
 (
 buf
@@ -869,7 +977,7 @@ xsize
 COL8_C6C6C6
 , 0, 0, xsize - 1, 0 );
 
-163 
+191 
 	`boxfûl8
 (
 buf
@@ -879,7 +987,7 @@ xsize
 COL8_FFFFFF
 , 1, 1, xsize - 2, 1 );
 
-164 
+192 
 	`boxfûl8
 (
 buf
@@ -891,7 +999,7 @@ COL8_C6C6C6
 ysize
  - 1);
 
-165 
+193 
 	`boxfûl8
 (
 buf
@@ -903,7 +1011,7 @@ COL8_FFFFFF
 ysize
  - 2);
 
-166 
+194 
 	`boxfûl8
 (
 buf
@@ -915,7 +1023,7 @@ COL8_848484
 ysize
  - 2);
 
-167 
+195 
 	`boxfûl8
 (
 buf
@@ -927,7 +1035,7 @@ COL8_000000
 ysize
  - 1);
 
-168 
+196 
 	`boxfûl8
 (
 buf
@@ -939,7 +1047,7 @@ COL8_C6C6C6
 ysize
  - 3);
 
-169 
+197 
 	`boxfûl8
 (
 buf
@@ -949,7 +1057,7 @@ xsize
 COL8_000084
 , 3, 3, xsize - 4, 20 );
 
-170 
+198 
 	`boxfûl8
 (
 buf
@@ -961,7 +1069,7 @@ COL8_848484
 ysize
  - 2, xsize - 2, ysize - 2);
 
-171 
+199 
 	`boxfûl8
 (
 buf
@@ -973,7 +1081,7 @@ COL8_000000
 ysize
  - 1, xsize - 1, ysize - 1);
 
-172 
+200 
 	`putf⁄ts8_asc
 (
 buf
@@ -985,15 +1093,15 @@ COL8_FFFFFF
 tôÀ
 );
 
-173 
+201 
 y
  = 0; y < 14; y++) {
 
-174 
+202 
 x
  = 0; x < 16; x++) {
 
-175 
+203 
 c
  = 
 ˛o£bä
@@ -1003,43 +1111,43 @@ y
 x
 ];
 
-176 i‡(
+204 i‡(
 c
  == '@') {
 
-177 
+205 
 c
  = 
 COL8_000000
 ;
 
-178 } i‡(
+206 } i‡(
 c
  == '$') {
 
-179 
+207 
 c
  = 
 COL8_848484
 ;
 
-180 } i‡(
+208 } i‡(
 c
  == 'Q') {
 
-181 
+209 
 c
  = 
 COL8_C6C6C6
 ;
 
-183 
+211 
 c
  = 
 COL8_FFFFFF
 ;
 
-185 
+213 
 buf
 [(5 + 
 y
@@ -1051,11 +1159,11 @@ x
 c
 ;
 
-189 
+217 
 	}
 }
 
-191 
+219 
 	$putf⁄ts8_asc_sht
 (
 SHEET
@@ -1075,7 +1183,7 @@ s
 l
 )
 
-193 
+221 
 	`boxfûl8
 (
 sht
@@ -1093,7 +1201,7 @@ y
 l
  * 8 - 1, y + 15);
 
-194 
+222 
 	`putf⁄ts8_asc
 (
 sht
@@ -1111,7 +1219,7 @@ c
 s
 );
 
-195 
+223 
 	`shìt_ª‰esh
 (
 sht
@@ -1123,7 +1231,207 @@ y
 l
  * 8, y + 16);
 
-197 
+225 
+	}
+}
+
+227 
+	$make_ãxtbox8
+(
+SHEET
+ *
+sht
+, 
+x0
+, 
+y0
+, 
+sx
+, 
+sy
+, 
+c
+)
+
+229 
+x1
+ = 
+x0
+ + 
+sx
+, 
+y1
+ = 
+y0
+ + 
+sy
+;
+
+230 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_848484
+, 
+x0
+ - 2, 
+y0
+ - 3, 
+x1
+ + 1, y0 - 3);
+
+231 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_848484
+, 
+x0
+ - 3, 
+y0
+ - 3, x0 - 3, 
+y1
+ + 1);
+
+232 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_FFFFFF
+, 
+x0
+ - 3, 
+y1
+ + 2, 
+x1
+ + 1, y1 + 2);
+
+233 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_FFFFFF
+, 
+x1
+ + 2, 
+y0
+ - 3, x1 + 2, 
+y1
+ + 2);
+
+234 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_000000
+, 
+x0
+ - 1, 
+y0
+ - 2, 
+x1
+ + 0, y0 - 2);
+
+235 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_000000
+, 
+x0
+ - 2, 
+y0
+ - 2, x0 - 2, 
+y1
+ + 0);
+
+236 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_C6C6C6
+, 
+x0
+ - 2, 
+y1
+ + 1, 
+x1
+ + 0, y1 + 1);
+
+237 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_C6C6C6
+, 
+x1
+ + 1, 
+y0
+ - 2, x1 + 1, 
+y1
+ + 1);
+
+238 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+c
+, 
+x0
+ - 1, 
+y0
+ - 1, 
+x1
+ + 0, 
+y1
+ + 0);
+
+240 
 	}
 }
 
