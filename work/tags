@@ -11,6 +11,7 @@ ADR_IDT	bootpack.h	/^#define ADR_IDT	/;"	d
 AR_CODE32_ER	bootpack.h	/^#define AR_CODE32_ER	/;"	d
 AR_DATA32_RW	bootpack.h	/^#define AR_DATA32_RW	/;"	d
 AR_INTGATE32	bootpack.h	/^#define AR_INTGATE32	/;"	d
+AR_TSS32	bootpack.h	/^#define AR_TSS32	/;"	d
 BIM2HRB	Makefile	/^BIM2HRB  = $(TOOLPATH)bim2hrb.exe$/;"	m
 BIN2OBJ	Makefile	/^BIN2OBJ  = $(TOOLPATH)bin2obj.exe$/;"	m
 BOOTINFO	bootpack.h	/^struct BOOTINFO { \/* 0x0ff0-0x0fff *\/$/;"	s
@@ -54,7 +55,10 @@ LIMIT_IDT	bootpack.h	/^#define LIMIT_IDT	/;"	d
 MAKE	Makefile	/^MAKE     = $(TOOLPATH)make.exe -r$/;"	m
 MAKEFONT	Makefile	/^MAKEFONT = $(TOOLPATH)makefont.exe$/;"	m
 MAX_SHEETS	bootpack.h	/^#define MAX_SHEETS	/;"	d
-MAX_TIMER	bootpack.h	/^#define MAX_TIMER /;"	d
+MAX_TASKLEVELS	bootpack.h	/^#define MAX_TASKLEVELS /;"	d
+MAX_TASKS	bootpack.h	/^#define MAX_TASKS /;"	d
+MAX_TASKS_LV	bootpack.h	/^#define MAX_TASKS_LV /;"	d
+MAX_TIMER	bootpack.h	/^#define MAX_TIMER	/;"	d
 MEMMAN	bootpack.h	/^struct MEMMAN { \/* 内存管理 *\/$/;"	s
 MEMMAN_ADDR	bootpack.h	/^#define MEMMAN_ADDR	/;"	d
 MEMMAN_FREES	bootpack.h	/^#define MEMMAN_FREES /;"	d
@@ -83,17 +87,22 @@ PORT_KEYSTA	keyboard.c	/^#define PORT_KEYSTA	/;"	d	file:
 RULEFILE	Makefile	/^RULEFILE = $(TOOLPATH)haribote\/haribote.rul$/;"	m
 SEGMENT_DESCRIPTOR	bootpack.h	/^struct SEGMENT_DESCRIPTOR {$/;"	s
 SHEET	bootpack.h	/^struct SHEET {$/;"	s
-SHEET_USE	bootpack.h	/^#define SHEET_USE /;"	d
 SHEET_USE	sheet.c	/^#define SHEET_USE	/;"	d	file:
 SHTCTL	bootpack.h	/^struct SHTCTL {$/;"	s
+TASK	bootpack.h	/^struct TASK {$/;"	s
+TASKCTL	bootpack.h	/^struct TASKCTL {$/;"	s
+TASKLEVEL	bootpack.h	/^struct TASKLEVEL {$/;"	s
+TASK_GDT0	bootpack.h	/^#define TASK_GDT0 /;"	d
 TIMER	bootpack.h	/^struct TIMER {$/;"	s
 TIMERCTL	bootpack.h	/^struct TIMERCTL {$/;"	s
 TIMER_FLAGS_ALLOC	timer.c	/^#define TIMER_FLAGS_ALLOC /;"	d	file:
 TIMER_FLAGS_USING	timer.c	/^#define TIMER_FLAGS_USING /;"	d	file:
 TOOLPATH	Makefile	/^TOOLPATH = ..\/z_tools\/$/;"	m
+TSS32	bootpack.h	/^struct TSS32 {$/;"	s
 access_right	bootpack.h	/^	char base_mid, access_right;$/;"	m	struct:SEGMENT_DESCRIPTOR
 access_right	bootpack.h	/^	char dw_count, access_right;$/;"	m	struct:GATE_DESCRIPTOR
 addr	bootpack.h	/^	unsigned int addr, size;$/;"	m	struct:FREEINFO
+backlink	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
 base_high	bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRIPTOR
 base_low	bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
 base_mid	bootpack.h	/^	char base_mid, access_right;$/;"	m	struct:SEGMENT_DESCRIPTOR
@@ -106,22 +115,42 @@ bxsize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m
 bysize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 col_inv	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 count	bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
+cr3	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+cs	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
 ctl	bootpack.h	/^	struct SHTCTL *ctl;$/;"	m	struct:SHEET	typeref:struct:SHEET::SHTCTL
 cyls	bootpack.h	/^	char cyls; \/* 启动区读磁盘读到此为止 *\/$/;"	m	struct:BOOTINFO
 data	bootpack.h	/^	int data;$/;"	m	struct:TIMER
+ds	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
 dw_count	bootpack.h	/^	char dw_count, access_right;$/;"	m	struct:GATE_DESCRIPTOR
+eax	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+ebp	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+ebx	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+ecx	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+edi	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+edx	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+eflags	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+eip	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
 enable_mouse	mouse.c	/^void enable_mouse(struct FIFO32 *fifo, int data0, struct MOUSE_DEC *mdec)$/;"	f
+es	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+esi	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+esp	bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+esp0	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+esp1	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+esp2	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
 fifo	bootpack.h	/^	struct FIFO32 *fifo;$/;"	m	struct:TIMER	typeref:struct:TIMER::FIFO32
 fifo32_get	fifo.c	/^int fifo32_get(struct FIFO32 *fifo)$/;"	f
-fifo32_init	fifo.c	/^void fifo32_init(struct FIFO32 *fifo, int size, int *buf)$/;"	f
+fifo32_init	fifo.c	/^void fifo32_init(struct FIFO32 *fifo, int size, int *buf, struct TASK *task)$/;"	f
 fifo32_put	fifo.c	/^int fifo32_put(struct FIFO32 *fifo, int data)$/;"	f
 fifo32_status	fifo.c	/^int fifo32_status(struct FIFO32 *fifo)$/;"	f
 flags	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 flags	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
+flags	bootpack.h	/^	int sel, flags;		\/* sel用来存放GDT的编号*\/$/;"	m	struct:TASK
 flags	bootpack.h	/^	unsigned int timeout, flags;$/;"	m	struct:TIMER
 free	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 free	bootpack.h	/^	struct FREEINFO free[MEMMAN_FREES];$/;"	m	struct:MEMMAN	typeref:struct:MEMMAN::FREEINFO
 frees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+fs	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+gs	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
 height	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 init_gdtidt	dsctbl.c	/^void init_gdtidt(void)$/;"	f
 init_keyboard	keyboard.c	/^void init_keyboard(struct FIFO32 *fifo, int data0)$/;"	f
@@ -134,15 +163,20 @@ inthandler20	timer.c	/^void inthandler20(int *esp)$/;"	f
 inthandler21	keyboard.c	/^void inthandler21(int *esp)$/;"	f
 inthandler27	int.c	/^void inthandler27(int *esp)$/;"	f
 inthandler2c	mouse.c	/^void inthandler2c(int *esp)$/;"	f
+iomap	bootpack.h	/^	int ldtr, iomap;$/;"	m	struct:TSS32
 keydata0	keyboard.c	/^int keydata0;$/;"	v
 keyfifo	keyboard.c	/^struct FIFO32 *keyfifo;$/;"	v	typeref:struct:FIFO32
+ldtr	bootpack.h	/^	int ldtr, iomap;$/;"	m	struct:TSS32
 leds	bootpack.h	/^	char leds; \/* 启动时键盘的LED的状态 *\/$/;"	m	struct:BOOTINFO
+level	bootpack.h	/^	int level, priority; \/* 优先级 *\/$/;"	m	struct:TASK
+level	bootpack.h	/^	struct TASKLEVEL level[MAX_TASKLEVELS];$/;"	m	struct:TASKCTL	typeref:struct:TASKCTL::TASKLEVEL
 limit_high	bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRIPTOR
 limit_low	bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
 losts	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 lostsize	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+lv_change	bootpack.h	/^	char lv_change; \/*在下次任务切换时是否需要改变LEVEL *\/$/;"	m	struct:TASKCTL
 make_textbox8	bootpack.c	/^void make_textbox8(struct SHEET *sht, int x0, int y0, int sx, int sy, int c)$/;"	f
-make_window8	bootpack.c	/^void make_window8(unsigned char *buf, int xsize, int ysize, char *title)$/;"	f
+make_window8	bootpack.c	/^void make_window8(unsigned char *buf, int xsize, int ysize, char *title, char act)$/;"	f
 map	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
 maxfrees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 memman_alloc	memory.c	/^unsigned int memman_alloc(struct MEMMAN *man, unsigned int size)$/;"	f
@@ -157,18 +191,23 @@ mousedata0	mouse.c	/^int mousedata0;$/;"	v
 mousefifo	mouse.c	/^struct FIFO32 *mousefifo;$/;"	v	typeref:struct:FIFO32
 next	bootpack.h	/^	struct TIMER *next;$/;"	m	struct:TIMER	typeref:struct:TIMER::TIMER
 next	bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
+now	bootpack.h	/^	int now; \/*这个变量用来记录当前正在运行的是哪个任务*\/$/;"	m	struct:TASKLEVEL
+now_lv	bootpack.h	/^	int now_lv; \/*现在活动中的LEVEL *\/$/;"	m	struct:TASKCTL
 offset_high	bootpack.h	/^	short offset_high;$/;"	m	struct:GATE_DESCRIPTOR
 offset_low	bootpack.h	/^	short offset_low, selector;$/;"	m	struct:GATE_DESCRIPTOR
 p	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 phase	bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
+priority	bootpack.h	/^	int level, priority; \/* 优先级 *\/$/;"	m	struct:TASK
 putblock8_8	graphic.c	/^void putblock8_8(char *vram, int vxsize, int pxsize,$/;"	f
 putfont8	graphic.c	/^void putfont8(char *vram, int xsize, int x, int y, char c, char *font)$/;"	f
 putfonts8_asc	graphic.c	/^void putfonts8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s)$/;"	f
 putfonts8_asc_sht	bootpack.c	/^void putfonts8_asc_sht(struct SHEET *sht, int x, int y, int c, int b, char *s, int l)$/;"	f
 q	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 reserve	bootpack.h	/^	char reserve;$/;"	m	struct:BOOTINFO
+running	bootpack.h	/^	int running; \/*正在运行的任务数量*\/$/;"	m	struct:TASKLEVEL
 scrnx	bootpack.h	/^	short scrnx, scrny; \/* 画面分辨率 *\/$/;"	m	struct:BOOTINFO
 scrny	bootpack.h	/^	short scrnx, scrny; \/* 画面分辨率 *\/$/;"	m	struct:BOOTINFO
+sel	bootpack.h	/^	int sel, flags;		\/* sel用来存放GDT的编号*\/$/;"	m	struct:TASK
 selector	bootpack.h	/^	short offset_low, selector;$/;"	m	struct:GATE_DESCRIPTOR
 set_gatedesc	dsctbl.c	/^void set_gatedesc(struct GATE_DESCRIPTOR *gd, int offset, int selector, int ar)$/;"	f
 set_palette	graphic.c	/^void set_palette(int start, int end, unsigned char *rgb)$/;"	f
@@ -186,7 +225,26 @@ sheets0	bootpack.h	/^	struct SHEET sheets0[MAX_SHEETS];$/;"	m	struct:SHTCTL	type
 shtctl_init	sheet.c	/^struct SHTCTL *shtctl_init(struct MEMMAN *memman, unsigned char *vram, int xsize, int ysize)$/;"	f
 size	bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
 size	bootpack.h	/^	unsigned int addr, size;$/;"	m	struct:FREEINFO
+ss	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+ss0	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+ss1	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+ss2	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
 t0	bootpack.h	/^	struct TIMER *t0;$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
+task	bootpack.h	/^	struct TASK *task;$/;"	m	struct:FIFO32	typeref:struct:FIFO32::TASK
+task_add	mtask.c	/^void task_add(struct TASK *task)$/;"	f
+task_alloc	mtask.c	/^struct TASK *task_alloc(void)$/;"	f
+task_b_main	bootpack.c	/^void task_b_main(struct SHEET *sht_win_b)$/;"	f
+task_init	mtask.c	/^struct TASK *task_init(struct MEMMAN *memman)$/;"	f
+task_now	mtask.c	/^struct TASK *task_now(void)$/;"	f
+task_remove	mtask.c	/^void task_remove(struct TASK *task)$/;"	f
+task_run	mtask.c	/^void task_run(struct TASK *task, int level, int priority)$/;"	f
+task_sleep	mtask.c	/^void task_sleep(struct TASK *task)$/;"	f
+task_switch	mtask.c	/^void task_switch(void)$/;"	f
+task_switchsub	mtask.c	/^void task_switchsub(void)$/;"	f
+task_timer	mtask.c	/^struct TIMER *task_timer;$/;"	v	typeref:struct:TIMER
+taskctl	mtask.c	/^struct TASKCTL *taskctl;$/;"	v	typeref:struct:TASKCTL
+tasks	bootpack.h	/^	struct TASK *tasks[MAX_TASKS_LV];$/;"	m	struct:TASKLEVEL	typeref:struct:TASKLEVEL::TASK
+tasks0	bootpack.h	/^	struct TASK tasks0[MAX_TASKS];$/;"	m	struct:TASKCTL	typeref:struct:TASKCTL::TASK
 timeout	bootpack.h	/^	unsigned int timeout, flags;$/;"	m	struct:TIMER
 timer_alloc	timer.c	/^struct TIMER *timer_alloc(void)$/;"	f
 timer_free	timer.c	/^void timer_free(struct TIMER *timer)$/;"	f
@@ -195,6 +253,7 @@ timer_settime	timer.c	/^void timer_settime(struct TIMER *timer, unsigned int tim
 timerctl	timer.c	/^struct TIMERCTL timerctl;$/;"	v	typeref:struct:TIMERCTL
 timers0	bootpack.h	/^	struct TIMER timers0[MAX_TIMER];$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
 top	bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
+tss	bootpack.h	/^	struct TSS32 tss;$/;"	m	struct:TASK	typeref:struct:TASK::TSS32
 vmode	bootpack.h	/^	char vmode; \/* 显卡模式为多少位彩色 *\/$/;"	m	struct:BOOTINFO
 vram	bootpack.h	/^	char *vram;$/;"	m	struct:BOOTINFO
 vram	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
