@@ -46,6 +46,7 @@ HariMain	bootpack.c	/^void HariMain(void)$/;"	f
 IMGTOL	Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
 INCPATH	Makefile	/^INCPATH  = ..\/z_tools\/haribote\/$/;"	m
 KBC_MODE	keyboard.c	/^#define KBC_MODE	/;"	d	file:
+KEYCMD_LED	bootpack.c	/^#define KEYCMD_LED /;"	d	file:
 KEYCMD_SENDTO_MOUSE	mouse.c	/^#define KEYCMD_SENDTO_MOUSE /;"	d	file:
 KEYCMD_WRITE_MODE	keyboard.c	/^#define KEYCMD_WRITE_MODE	/;"	d	file:
 KEYSTA_SEND_NOTREADY	keyboard.c	/^#define KEYSTA_SEND_NOTREADY	/;"	d	file:
@@ -114,6 +115,7 @@ buf	bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
 bxsize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 bysize	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
 col_inv	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+console_task	bootpack.c	/^void console_task(struct SHEET *sheet)$/;"	f
 count	bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
 cr3	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
 cs	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
@@ -138,6 +140,7 @@ esp0	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	str
 esp1	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
 esp2	bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
 fifo	bootpack.h	/^	struct FIFO32 *fifo;$/;"	m	struct:TIMER	typeref:struct:TIMER::FIFO32
+fifo	bootpack.h	/^	struct FIFO32 fifo;$/;"	m	struct:TASK	typeref:struct:TASK::FIFO32
 fifo32_get	fifo.c	/^int fifo32_get(struct FIFO32 *fifo)$/;"	f
 fifo32_init	fifo.c	/^void fifo32_init(struct FIFO32 *fifo, int size, int *buf, struct TASK *task)$/;"	f
 fifo32_put	fifo.c	/^int fifo32_put(struct FIFO32 *fifo, int data)$/;"	f
@@ -177,6 +180,7 @@ lostsize	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 lv_change	bootpack.h	/^	char lv_change; \/*在下次任务切换时是否需要改变LEVEL *\/$/;"	m	struct:TASKCTL
 make_textbox8	bootpack.c	/^void make_textbox8(struct SHEET *sht, int x0, int y0, int sx, int sy, int c)$/;"	f
 make_window8	bootpack.c	/^void make_window8(unsigned char *buf, int xsize, int ysize, char *title, char act)$/;"	f
+make_wtitle8	bootpack.c	/^void make_wtitle8(unsigned char *buf, int xsize, char *title, char act)$/;"	f
 map	bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
 maxfrees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 memman_alloc	memory.c	/^unsigned int memman_alloc(struct MEMMAN *man, unsigned int size)$/;"	f
@@ -233,7 +237,7 @@ t0	bootpack.h	/^	struct TIMER *t0;$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL
 task	bootpack.h	/^	struct TASK *task;$/;"	m	struct:FIFO32	typeref:struct:FIFO32::TASK
 task_add	mtask.c	/^void task_add(struct TASK *task)$/;"	f
 task_alloc	mtask.c	/^struct TASK *task_alloc(void)$/;"	f
-task_b_main	bootpack.c	/^void task_b_main(struct SHEET *sht_win_b)$/;"	f
+task_idle	mtask.c	/^void task_idle(void)$/;"	f
 task_init	mtask.c	/^struct TASK *task_init(struct MEMMAN *memman)$/;"	f
 task_now	mtask.c	/^struct TASK *task_now(void)$/;"	f
 task_remove	mtask.c	/^void task_remove(struct TASK *task)$/;"	f

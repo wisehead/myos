@@ -3,7 +3,7 @@
 #include "bootpack.h"
 
 #define SHEET_USE		1
-//--
+
 struct SHTCTL *shtctl_init(struct MEMMAN *memman, unsigned char *vram, int xsize, int ysize)
 {
 	struct SHTCTL *ctl;
@@ -43,7 +43,7 @@ struct SHEET *sheet_alloc(struct SHTCTL *ctl)
 	}
 	return 0;  /* 所有的SHEET都处于正在使用状态*/
 }
-//--
+
 void sheet_setbuf(struct SHEET *sht, unsigned char *buf, int xsize, int ysize, int col_inv)
 {
 	sht->buf = buf;
