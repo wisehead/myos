@@ -1,4 +1,4 @@
-cscope 15 $HOME/github/myos/work -q 0000002788 0002507520
+cscope 15 $HOME/github/myos/work -q 0000002812 0002512609
 	@bootpack.c
 
 3 
@@ -9,133 +9,17 @@ cscope 15 $HOME/github/myos/work -q 0000002788 0002507520
 	~<°dio.h
 >
 
-5 
-	~<°rög.h
->
-
-7 
-	sFILEINFO
- {
-
-8 
-	m«me
-[8], 
-	mext
-[3], 
-	mty≥
-;
-
-9 
-	mª£rve
-[10];
-
-10 
-	mtime
-, 
-	md©e
-, 
-	m˛u°no
-;
-
-11 
-	msize
-;
-
-14 
-make_wödow8
-(*
-buf
-, 
-xsize
-, 
-ysize
-, *
-tôÀ
-, 
-a˘
-);
-
-15 
-putf⁄ts8_asc_sht
-(
-SHEET
- *
-sht
-, 
-x
-, 
-y
-, 
-c
-, 
-b
-, *
-s
-, 
-l
-);
-
-16 
-make_ãxtbox8
-(
-SHEET
- *
-sht
-, 
-x0
-, 
-y0
-, 
-sx
-, 
-sy
-, 
-c
-);
-
-17 
-make_wtôÀ8
-(*
-buf
-, 
-xsize
-, *
-tôÀ
-, 
-a˘
-);
-
-18 
-c⁄sﬁe_èsk
-(
-SHEET
- *
-shìt
-, 
-memtŸÆ
-);
-
-19 
-c⁄s_√wlöe
-(
-curs‹_y
-, 
-SHEET
- *
-shìt
-);
-
-21 
+6 
 	#KEYCMD_LED
  0xed
 
 	)
 
-23 
+8 
 	$H¨iMaö
 ()
 
-25 
+10 
 BOOTINFO
  *
 böfo
@@ -143,17 +27,17 @@ böfo
 ADR_BOOTINFO
 ;
 
-26 
+11 
 SHTCTL
  *
 sht˘l
 ;
 
-27 
+12 
 s
 [40];
 
-28 
+13 
 FIFO32
  
 fifo
@@ -161,13 +45,13 @@ fifo
 keycmd
 ;
 
-29 
+14 
 fifobuf
 [128], 
 keycmd_buf
 [32];
 
-30 
+15 
 mx
 , 
 my
@@ -179,17 +63,17 @@ curs‹_x
 curs‹_c
 ;
 
-31 
+16 
 memtŸÆ
 ;
 
-32 
+17 
 MOUSE_DEC
  
 mdec
 ;
 
-33 
+18 
 MEMMAN
  *
 memm™
@@ -197,7 +81,7 @@ memm™
 MEMMAN_ADDR
 ;
 
-34 *
+19 *
 buf_back
 , 
 buf_mou£
@@ -207,7 +91,7 @@ buf_wö
 buf_c⁄s
 ;
 
-35 
+20 
 SHEET
  *
 sht_back
@@ -219,7 +103,7 @@ sht_wö
 sht_c⁄s
 ;
 
-36 
+21 
 TASK
  *
 èsk_a
@@ -227,21 +111,21 @@ TASK
 èsk_c⁄s
 ;
 
-37 
+22 
 TIMER
  *
 timî
 ;
 
-38 
+23 
 keyèbÀ0
 [0x80] = {
 
-48 
+33 
 keyèbÀ1
 [0x80] = {
 
-58 
+43 
 key_to
  = 0, 
 key_shi·
@@ -255,19 +139,19 @@ böfo
 keycmd_waô
  = -1;
 
-60 
+45 
 	`öô_gdtidt
 ();
 
-61 
+46 
 	`öô_pic
 ();
 
-62 
+47 
 	`io_°i
 ();
 
-63 
+48 
 	`fifo32_öô
 (&
 fifo
@@ -275,17 +159,17 @@ fifo
 fifobuf
 , 0);
 
-64 
+49 
 	`öô_pô
 ();
 
-65 
+50 
 	`öô_keybﬂrd
 (&
 fifo
 , 256);
 
-66 
+51 
 	`íabÀ_mou£
 (&
 fifo
@@ -293,19 +177,19 @@ fifo
 mdec
 );
 
-67 
+52 
 	`io_out8
 (
 PIC0_IMR
 , 0xf8);
 
-68 
+53 
 	`io_out8
 (
 PIC1_IMR
 , 0xef);
 
-69 
+54 
 	`fifo32_öô
 (&
 keycmd
@@ -313,25 +197,25 @@ keycmd
 keycmd_buf
 , 0);
 
-71 
+56 
 memtŸÆ
  = 
 	`memã°
 (0x00400000, 0xbfffffff);
 
-72 
+57 
 	`memm™_öô
 (
 memm™
 );
 
-73 
+58 
 	`memm™_‰ì
 (
 memm™
 , 0x00001000, 0x0009e000);
 
-74 
+59 
 	`memm™_‰ì
 (
 memm™
@@ -339,11 +223,11 @@ memm™
 memtŸÆ
  - 0x00400000);
 
-76 
+61 
 	`öô_∑Àâe
 ();
 
-77 
+62 
 sht˘l
  = 
 	`sht˘l_öô
@@ -359,7 +243,7 @@ s¸nx
 s¸ny
 );
 
-78 
+63 
 èsk_a
  = 
 	`èsk_öô
@@ -367,7 +251,7 @@ s¸ny
 memm™
 );
 
-79 
+64 
 fifo
 .
 èsk
@@ -375,13 +259,13 @@ fifo
 èsk_a
 ;
 
-80 
+65 
 	`èsk_run
 (
 èsk_a
 , 1, 2);
 
-83 
+68 
 sht_back
  = 
 	`shìt_Æloc
@@ -389,7 +273,7 @@ sht_back
 sht˘l
 );
 
-84 
+69 
 buf_back
  = (*Ë
 	`memm™_Æloc_4k
@@ -403,7 +287,7 @@ s¸nx
 s¸ny
 );
 
-85 
+70 
 	`shìt_£tbuf
 (
 sht_back
@@ -417,7 +301,7 @@ s¸nx
 s¸ny
 , -1);
 
-86 
+71 
 	`öô_s¸ìn8
 (
 buf_back
@@ -429,7 +313,7 @@ s¸nx
 s¸ny
 );
 
-89 
+74 
 sht_c⁄s
  = 
 	`shìt_Æloc
@@ -437,7 +321,7 @@ sht_c⁄s
 sht˘l
 );
 
-90 
+75 
 buf_c⁄s
  = (*Ë
 	`memm™_Æloc_4k
@@ -445,7 +329,7 @@ buf_c⁄s
 memm™
 , 256 * 165);
 
-91 
+76 
 	`shìt_£tbuf
 (
 sht_c⁄s
@@ -453,13 +337,13 @@ sht_c⁄s
 buf_c⁄s
 , 256, 165, -1);
 
-92 
+77 
 	`make_wödow8
 (
 buf_c⁄s
 , 256, 165, "console", 0);
 
-93 
+78 
 	`make_ãxtbox8
 (
 sht_c⁄s
@@ -467,13 +351,13 @@ sht_c⁄s
 COL8_000000
 );
 
-94 
+79 
 èsk_c⁄s
  = 
 	`èsk_Æloc
 ();
 
-95 
+80 
 èsk_c⁄s
 ->
 tss
@@ -485,7 +369,7 @@ e•
 memm™
 , 64 * 1024) + 64 * 1024 - 12;
 
-96 
+81 
 èsk_c⁄s
 ->
 tss
@@ -495,7 +379,7 @@ eù
 c⁄sﬁe_èsk
 ;
 
-97 
+82 
 èsk_c⁄s
 ->
 tss
@@ -503,7 +387,7 @@ tss
 es
  = 1 * 8;
 
-98 
+83 
 èsk_c⁄s
 ->
 tss
@@ -511,7 +395,7 @@ tss
 cs
  = 2 * 8;
 
-99 
+84 
 èsk_c⁄s
 ->
 tss
@@ -519,7 +403,7 @@ tss
 ss
  = 1 * 8;
 
-100 
+85 
 èsk_c⁄s
 ->
 tss
@@ -527,7 +411,7 @@ tss
 ds
  = 1 * 8;
 
-101 
+86 
 èsk_c⁄s
 ->
 tss
@@ -535,7 +419,7 @@ tss
 fs
  = 1 * 8;
 
-102 
+87 
 èsk_c⁄s
 ->
 tss
@@ -543,7 +427,7 @@ tss
 gs
  = 1 * 8;
 
-103 *((*Ë(
+88 *((*Ë(
 èsk_c⁄s
 ->
 tss
@@ -553,7 +437,7 @@ e•
 sht_c⁄s
 ;
 
-104 *((*Ë(
+89 *((*Ë(
 èsk_c⁄s
 ->
 tss
@@ -563,13 +447,13 @@ e•
 memtŸÆ
 ;
 
-105 
+90 
 	`èsk_run
 (
 èsk_c⁄s
 , 2, 2);
 
-108 
+93 
 sht_wö
  = 
 	`shìt_Æloc
@@ -577,7 +461,7 @@ sht_wö
 sht˘l
 );
 
-109 
+94 
 buf_wö
  = (*Ë
 	`memm™_Æloc_4k
@@ -585,7 +469,7 @@ buf_wö
 memm™
 , 160 * 52);
 
-110 
+95 
 	`shìt_£tbuf
 (
 sht_wö
@@ -593,13 +477,13 @@ sht_wö
 buf_wö
 , 144, 52, -1);
 
-111 
+96 
 	`make_wödow8
 (
 buf_wö
 , 144, 52, "task_a", 1);
 
-112 
+97 
 	`make_ãxtbox8
 (
 sht_wö
@@ -607,23 +491,23 @@ sht_wö
 COL8_FFFFFF
 );
 
-113 
+98 
 curs‹_x
  = 8;
 
-114 
+99 
 curs‹_c
  = 
 COL8_FFFFFF
 ;
 
-115 
+100 
 timî
  = 
 	`timî_Æloc
 ();
 
-116 
+101 
 	`timî_öô
 (
 timî
@@ -631,13 +515,13 @@ timî
 fifo
 , 1);
 
-117 
+102 
 	`timî_£âime
 (
 timî
 , 50);
 
-120 
+105 
 sht_mou£
  = 
 	`shìt_Æloc
@@ -645,7 +529,7 @@ sht_mou£
 sht˘l
 );
 
-121 
+106 
 	`shìt_£tbuf
 (
 sht_mou£
@@ -653,13 +537,13 @@ sht_mou£
 buf_mou£
 , 16, 16, 99);
 
-122 
+107 
 	`öô_mou£_curs‹8
 (
 buf_mou£
 , 99);
 
-123 
+108 
 mx
  = (
 böfo
@@ -667,7 +551,7 @@ böfo
 s¸nx
  - 16) / 2;
 
-124 
+109 
 my
  = (
 böfo
@@ -675,25 +559,25 @@ böfo
 s¸ny
  - 28 - 16) / 2;
 
-126 
+111 
 	`shìt_¶ide
 (
 sht_back
 , 0, 0);
 
-127 
+112 
 	`shìt_¶ide
 (
 sht_c⁄s
 , 32, 4);
 
-128 
+113 
 	`shìt_¶ide
 (
 sht_wö
 , 64, 56);
 
-129 
+114 
 	`shìt_¶ide
 (
 sht_mou£
@@ -703,31 +587,31 @@ mx
 my
 );
 
-130 
+115 
 	`shìt_updown
 (
 sht_back
 , 0);
 
-131 
+116 
 	`shìt_updown
 (
 sht_c⁄s
 , 1);
 
-132 
+117 
 	`shìt_updown
 (
 sht_wö
 , 2);
 
-133 
+118 
 	`shìt_updown
 (
 sht_mou£
 , 3);
 
-136 
+121 
 	`fifo32_put
 (&
 keycmd
@@ -735,7 +619,7 @@ keycmd
 KEYCMD_LED
 );
 
-137 
+122 
 	`fifo32_put
 (&
 keycmd
@@ -743,7 +627,7 @@ keycmd
 key_Àds
 );
 
-140 i‡(
+125 i‡(
 	`fifo32_°©us
 (&
 keycmd
@@ -751,7 +635,7 @@ keycmd
 keycmd_waô
  < 0) {
 
-142 
+127 
 keycmd_waô
  = 
 	`fifo32_gë
@@ -759,11 +643,11 @@ keycmd_waô
 keycmd
 );
 
-143 
+128 
 	`waô_KBC_£ndªady
 ();
 
-144 
+129 
 	`io_out8
 (
 PORT_KEYDAT
@@ -771,27 +655,27 @@ PORT_KEYDAT
 keycmd_waô
 );
 
-146 
+131 
 	`io_˛i
 ();
 
-147 i‡(
+132 i‡(
 	`fifo32_°©us
 (&
 fifo
 ) == 0) {
 
-148 
+133 
 	`èsk_¶ìp
 (
 èsk_a
 );
 
-149 
+134 
 	`io_°i
 ();
 
-151 
+136 
 i
  = 
 	`fifo32_gë
@@ -799,23 +683,23 @@ i
 fifo
 );
 
-152 
+137 
 	`io_°i
 ();
 
-153 i‡(256 <
+138 i‡(256 <
 i
  && i <= 511) {
 
-154 i‡(
+139 i‡(
 i
  < 0x80 + 256) {
 
-155 i‡(
+140 i‡(
 key_shi·
  == 0) {
 
-156 
+141 
 s
 [0] = 
 keyèbÀ0
@@ -823,7 +707,7 @@ keyèbÀ0
 i
  - 256];
 
-158 
+143 
 s
 [0] = 
 keyèbÀ1
@@ -831,41 +715,41 @@ keyèbÀ1
 i
  - 256];
 
-161 
+146 
 s
 [0] = 0;
 
-163 i‡('A' <
+148 i‡('A' <
 s
 [0] && s[0] <= 'Z') {
 
-164 i‡(((
+149 i‡(((
 key_Àds
  & 4Ë=0 && 
 key_shi·
  == 0) ||((key_leds & 4) != 0 && key_shift != 0)) {
 
-165 
+150 
 s
 [0] += 0x20;
 
-168 i‡(
+153 i‡(
 s
 [0] != 0) {
 
-169 i‡(
+154 i‡(
 key_to
  == 0) {
 
-170 i‡(
+155 i‡(
 curs‹_x
  < 128) {
 
-172 
+157 
 s
 [1] = 0;
 
-173 
+158 
 	`putf⁄ts8_asc_sht
 (
 sht_wö
@@ -879,11 +763,11 @@ COL8_FFFFFF
 s
 , 1);
 
-174 
+159 
 curs‹_x
  += 8;
 
-177 
+162 
 	`fifo32_put
 (&
 èsk_c⁄s
@@ -893,19 +777,19 @@ fifo
 s
 [0] + 256);
 
-180 i‡(
+165 i‡(
 i
  == 256 + 0x0e) {
 
-181 i‡(
+166 i‡(
 key_to
  == 0) {
 
-182 i‡(
+167 i‡(
 curs‹_x
  > 8) {
 
-184 
+169 
 	`putf⁄ts8_asc_sht
 (
 sht_wö
@@ -917,11 +801,11 @@ COL8_000000
 COL8_FFFFFF
 , " ", 1);
 
-185 
+170 
 curs‹_x
  -= 8;
 
-188 
+173 
 	`fifo32_put
 (&
 èsk_c⁄s
@@ -929,15 +813,15 @@ curs‹_x
 fifo
 , 8 + 256);
 
-191 i‡(
+176 i‡(
 i
  == 256 + 0x1c) {
 
-192 i‡(
+177 i‡(
 key_to
  != 0) {
 
-193 
+178 
 	`fifo32_put
 (&
 èsk_c⁄s
@@ -945,19 +829,19 @@ key_to
 fifo
 , 10 + 256);
 
-196 i‡(
+181 i‡(
 i
  == 256 + 0x0f) {
 
-197 i‡(
+182 i‡(
 key_to
  == 0) {
 
-198 
+183 
 key_to
  = 1;
 
-199 
+184 
 	`make_wtôÀ8
 (
 buf_wö
@@ -967,7 +851,7 @@ sht_wö
 bxsize
 , "task_a", 0);
 
-200 
+185 
 	`make_wtôÀ8
 (
 buf_c⁄s
@@ -977,11 +861,11 @@ sht_c⁄s
 bxsize
 , "console", 1);
 
-201 
+186 
 curs‹_c
  = -1;
 
-202 
+187 
 	`boxfûl8
 (
 sht_wö
@@ -995,7 +879,7 @@ COL8_FFFFFF
 curs‹_x
 , 28, cursor_x + 7, 43);
 
-203 
+188 
 	`fifo32_put
 (&
 èsk_c⁄s
@@ -1003,11 +887,11 @@ curs‹_x
 fifo
 , 2);
 
-205 
+190 
 key_to
  = 0;
 
-206 
+191 
 	`make_wtôÀ8
 (
 buf_wö
@@ -1017,7 +901,7 @@ sht_wö
 bxsize
 , "task_a", 1);
 
-207 
+192 
 	`make_wtôÀ8
 (
 buf_c⁄s
@@ -1027,13 +911,13 @@ sht_c⁄s
 bxsize
 , "console", 0);
 
-208 
+193 
 curs‹_c
  = 
 COL8_000000
 ;
 
-209 
+194 
 	`fifo32_put
 (&
 èsk_c⁄s
@@ -1041,7 +925,7 @@ COL8_000000
 fifo
 , 3);
 
-211 
+196 
 	`shìt_ª‰esh
 (
 sht_wö
@@ -1049,7 +933,7 @@ sht_wö
 bxsize
 , 21);
 
-212 
+197 
 	`shìt_ª‰esh
 (
 sht_c⁄s
@@ -1057,47 +941,47 @@ sht_c⁄s
 bxsize
 , 21);
 
-214 i‡(
+199 i‡(
 i
  == 256 + 0x2a) {
 
-215 
+200 
 key_shi·
  |= 1;
 
-217 i‡(
+202 i‡(
 i
  == 256 + 0x36) {
 
-218 
+203 
 key_shi·
  |= 2;
 
-220 i‡(
+205 i‡(
 i
  == 256 + 0xaa) {
 
-221 
+206 
 key_shi·
  &= ~1;
 
-223 i‡(
+208 i‡(
 i
  == 256 + 0xb6) {
 
-224 
+209 
 key_shi·
  &= ~2;
 
-226 i‡(
+211 i‡(
 i
  == 256 + 0x3a) {
 
-227 
+212 
 key_Àds
  ^= 4;
 
-228 
+213 
 	`fifo32_put
 (&
 keycmd
@@ -1105,7 +989,7 @@ keycmd
 KEYCMD_LED
 );
 
-229 
+214 
 	`fifo32_put
 (&
 keycmd
@@ -1113,15 +997,15 @@ keycmd
 key_Àds
 );
 
-231 i‡(
+216 i‡(
 i
  == 256 + 0x45) {
 
-232 
+217 
 key_Àds
  ^= 2;
 
-233 
+218 
 	`fifo32_put
 (&
 keycmd
@@ -1129,7 +1013,7 @@ keycmd
 KEYCMD_LED
 );
 
-234 
+219 
 	`fifo32_put
 (&
 keycmd
@@ -1137,15 +1021,15 @@ keycmd
 key_Àds
 );
 
-236 i‡(
+221 i‡(
 i
  == 256 + 0x46) {
 
-237 
+222 
 key_Àds
  ^= 1;
 
-238 
+223 
 	`fifo32_put
 (&
 keycmd
@@ -1153,7 +1037,7 @@ keycmd
 KEYCMD_LED
 );
 
-239 
+224 
 	`fifo32_put
 (&
 keycmd
@@ -1161,23 +1045,23 @@ keycmd
 key_Àds
 );
 
-241 i‡(
+226 i‡(
 i
  == 256 + 0xfa) {
 
-242 
+227 
 keycmd_waô
  = -1;
 
-244 i‡(
+229 i‡(
 i
  == 256 + 0xfe) {
 
-245 
+230 
 	`waô_KBC_£ndªady
 ();
 
-246 
+231 
 	`io_out8
 (
 PORT_KEYDAT
@@ -1185,11 +1069,11 @@ PORT_KEYDAT
 keycmd_waô
 );
 
-249 i‡(
+234 i‡(
 curs‹_c
  >= 0) {
 
-250 
+235 
 	`boxfûl8
 (
 sht_wö
@@ -1203,7 +1087,7 @@ curs‹_c
 curs‹_x
 , 28, cursor_x + 7, 43);
 
-252 
+237 
 	`shìt_ª‰esh
 (
 sht_wö
@@ -1211,11 +1095,11 @@ sht_wö
 curs‹_x
 , 28, cursor_x + 8, 44);
 
-253 } i‡(512 <
+238 } i‡(512 <
 i
  && i <= 767) {
 
-254 i‡(
+239 i‡(
 	`mou£_decode
 (&
 mdec
@@ -1223,7 +1107,7 @@ mdec
 i
  - 512) != 0) {
 
-256 
+241 
 mx
  +
 mdec
@@ -1231,7 +1115,7 @@ mdec
 x
 ;
 
-257 
+242 
 my
  +
 mdec
@@ -1239,23 +1123,23 @@ mdec
 y
 ;
 
-258 i‡(
+243 i‡(
 mx
  < 0) {
 
-259 
+244 
 mx
  = 0;
 
-261 i‡(
+246 i‡(
 my
  < 0) {
 
-262 
+247 
 my
  = 0;
 
-264 i‡(
+249 i‡(
 mx
  > 
 böfo
@@ -1263,7 +1147,7 @@ böfo
 s¸nx
  - 1) {
 
-265 
+250 
 mx
  = 
 böfo
@@ -1271,7 +1155,7 @@ böfo
 s¸nx
  - 1;
 
-267 i‡(
+252 i‡(
 my
  > 
 böfo
@@ -1279,7 +1163,7 @@ böfo
 s¸ny
  - 1) {
 
-268 
+253 
 my
  = 
 böfo
@@ -1287,7 +1171,7 @@ böfo
 s¸ny
  - 1;
 
-270 
+255 
 	`shìt_¶ide
 (
 sht_mou£
@@ -1297,13 +1181,13 @@ mx
 my
 );
 
-271 i‡((
+256 i‡((
 mdec
 .
 bä
  & 0x01) != 0) {
 
-272 
+257 
 	`shìt_¶ide
 (
 sht_wö
@@ -1313,15 +1197,15 @@ mx
 my
  - 8);
 
-275 } i‡(
+260 } i‡(
 i
  <= 1) {
 
-276 i‡(
+261 i‡(
 i
  != 0) {
 
-277 
+262 
 	`timî_öô
 (
 timî
@@ -1329,17 +1213,17 @@ timî
 fifo
 , 0);
 
-278 i‡(
+263 i‡(
 curs‹_c
  >= 0) {
 
-279 
+264 
 curs‹_c
  = 
 COL8_000000
 ;
 
-282 
+267 
 	`timî_öô
 (
 timî
@@ -1347,27 +1231,27 @@ timî
 fifo
 , 1);
 
-283 i‡(
+268 i‡(
 curs‹_c
  >= 0) {
 
-284 
+269 
 curs‹_c
  = 
 COL8_FFFFFF
 ;
 
-287 
+272 
 	`timî_£âime
 (
 timî
 , 50);
 
-288 i‡(
+273 i‡(
 curs‹_c
  >= 0) {
 
-289 
+274 
 	`boxfûl8
 (
 sht_wö
@@ -1381,7 +1265,7 @@ curs‹_c
 curs‹_x
 , 28, cursor_x + 7, 43);
 
-290 
+275 
 	`shìt_ª‰esh
 (
 sht_wö
@@ -1389,1295 +1273,7 @@ sht_wö
 curs‹_x
 , 28, cursor_x + 8, 44);
 
-295 
-	}
-}
-
-297 
-	$make_wödow8
-(*
-buf
-, 
-xsize
-, 
-ysize
-, *
-tôÀ
-, 
-a˘
-)
-
-299 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_C6C6C6
-, 0, 0, xsize - 1, 0 );
-
-300 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_FFFFFF
-, 1, 1, xsize - 2, 1 );
-
-301 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_C6C6C6
-, 0, 0, 0, 
-ysize
- - 1);
-
-302 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_FFFFFF
-, 1, 1, 1, 
-ysize
- - 2);
-
-303 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_848484
-, xsizê- 2, 1, xsizê- 2, 
-ysize
- - 2);
-
-304 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_000000
-, xsizê- 1, 0, xsizê- 1, 
-ysize
- - 1);
-
-305 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_C6C6C6
-, 2, 2, xsizê- 3, 
-ysize
- - 3);
-
-306 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_848484
-, 1, 
-ysize
- - 2, xsize - 2, ysize - 2);
-
-307 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-COL8_000000
-, 0, 
-ysize
- - 1, xsize - 1, ysize - 1);
-
-308 
-	`make_wtôÀ8
-(
-buf
-, 
-xsize
-, 
-tôÀ
-, 
-a˘
-);
-
-310 
-	}
-}
-
-312 
-	$make_wtôÀ8
-(*
-buf
-, 
-xsize
-, *
-tôÀ
-, 
-a˘
-)
-
-314 
-˛o£bä
-[14][16] = {
-
-330 
-x
-, 
-y
-;
-
-331 
-c
-, 
-tc
-, 
-tbc
-;
-
-332 i‡(
-a˘
- != 0) {
-
-333 
-tc
- = 
-COL8_FFFFFF
-;
-
-334 
-tbc
- = 
-COL8_000084
-;
-
-336 
-tc
- = 
-COL8_C6C6C6
-;
-
-337 
-tbc
- = 
-COL8_848484
-;
-
-339 
-	`boxfûl8
-(
-buf
-, 
-xsize
-, 
-tbc
-, 3, 3, xsize - 4, 20);
-
-340 
-	`putf⁄ts8_asc
-(
-buf
-, 
-xsize
-, 24, 4, 
-tc
-, 
-tôÀ
-);
-
-341 
-y
- = 0; y < 14; y++) {
-
-342 
-x
- = 0; x < 16; x++) {
-
-343 
-c
- = 
-˛o£bä
-[
-y
-][
-x
-];
-
-344 i‡(
-c
- == '@') {
-
-345 
-c
- = 
-COL8_000000
-;
-
-346 } i‡(
-c
- == '$') {
-
-347 
-c
- = 
-COL8_848484
-;
-
-348 } i‡(
-c
- == 'Q') {
-
-349 
-c
- = 
-COL8_C6C6C6
-;
-
-351 
-c
- = 
-COL8_FFFFFF
-;
-
-353 
-buf
-[(5 + 
-y
-Ë* 
-xsize
- + (xsizê- 21 + 
-x
-)] = 
-c
-;
-
-357 
-	}
-}
-
-359 
-	$putf⁄ts8_asc_sht
-(
-SHEET
- *
-sht
-, 
-x
-, 
-y
-, 
-c
-, 
-b
-, *
-s
-, 
-l
-)
-
-361 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-b
-, 
-x
-, 
-y
-, x + 
-l
- * 8 - 1, y + 15);
-
-362 
-	`putf⁄ts8_asc
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-x
-, 
-y
-, 
-c
-, 
-s
-);
-
-363 
-	`shìt_ª‰esh
-(
-sht
-, 
-x
-, 
-y
-, x + 
-l
- * 8, y + 16);
-
-365 
-	}
-}
-
-367 
-	$make_ãxtbox8
-(
-SHEET
- *
-sht
-, 
-x0
-, 
-y0
-, 
-sx
-, 
-sy
-, 
-c
-)
-
-369 
-x1
- = 
-x0
- + 
-sx
-, 
-y1
- = 
-y0
- + 
-sy
-;
-
-370 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_848484
-, 
-x0
- - 2, 
-y0
- - 3, 
-x1
- + 1, y0 - 3);
-
-371 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_848484
-, 
-x0
- - 3, 
-y0
- - 3, x0 - 3, 
-y1
- + 1);
-
-372 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_FFFFFF
-, 
-x0
- - 3, 
-y1
- + 2, 
-x1
- + 1, y1 + 2);
-
-373 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_FFFFFF
-, 
-x1
- + 2, 
-y0
- - 3, x1 + 2, 
-y1
- + 2);
-
-374 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_000000
-, 
-x0
- - 1, 
-y0
- - 2, 
-x1
- + 0, y0 - 2);
-
-375 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_000000
-, 
-x0
- - 2, 
-y0
- - 2, x0 - 2, 
-y1
- + 0);
-
-376 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_C6C6C6
-, 
-x0
- - 2, 
-y1
- + 1, 
-x1
- + 0, y1 + 1);
-
-377 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-COL8_C6C6C6
-, 
-x1
- + 1, 
-y0
- - 2, x1 + 1, 
-y1
- + 1);
-
-378 
-	`boxfûl8
-(
-sht
-->
-buf
-, sht->
-bxsize
-, 
-c
-, 
-x0
- - 1, 
-y0
- - 1, 
-x1
- + 0, 
-y1
- + 0);
-
-380 
-	}
-}
-
-382 
-	$c⁄sﬁe_èsk
-(
-SHEET
- *
-shìt
-, 
-memtŸÆ
-)
-
-384 
-TIMER
- *
-timî
-;
-
-385 
-TASK
- *
-èsk
- = 
-	`èsk_now
-();
-
-386 
-i
-, 
-fifobuf
-[128], 
-curs‹_x
- = 16, 
-curs‹_y
- = 28, 
-curs‹_c
- = -1;
-
-387 
-s
-[30], 
-cmdlöe
-[30];
-
-388 
-MEMMAN
- *
-memm™
- = (MEMMAN *Ë
-MEMMAN_ADDR
-;
-
-389 
-x
-, 
-y
-;
-
-390 
-FILEINFO
- *
-föfo
- = (FILEINFO *Ë(
-ADR_DISKIMG
- + 0x002600);
-
-392 
-	`fifo32_öô
-(&
-èsk
-->
-fifo
-, 128, 
-fifobuf
-,Åask);
-
-393 
-timî
- = 
-	`timî_Æloc
-();
-
-394 
-	`timî_öô
-(
-timî
-, &
-èsk
-->
-fifo
-, 1);
-
-395 
-	`timî_£âime
-(
-timî
-, 50);
-
-398 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 8, 28, 
-COL8_FFFFFF
-, 
-COL8_000000
-, ">", 1);
-
-401 
-	`io_˛i
-();
-
-402 i‡(
-	`fifo32_°©us
-(&
-èsk
-->
-fifo
-) == 0) {
-
-403 
-	`èsk_¶ìp
-(
-èsk
-);
-
-404 
-	`io_°i
-();
-
-406 
-i
- = 
-	`fifo32_gë
-(&
-èsk
-->
-fifo
-);
-
-407 
-	`io_°i
-();
-
-408 i‡(
-i
- <= 1) {
-
-409 i‡(
-i
- != 0) {
-
-410 
-	`timî_öô
-(
-timî
-, &
-èsk
-->
-fifo
-, 0);
-
-411 i‡(
-curs‹_c
- >= 0) {
-
-412 
-curs‹_c
- = 
-COL8_FFFFFF
-;
-
-415 
-	`timî_öô
-(
-timî
-, &
-èsk
-->
-fifo
-, 1);
-
-416 i‡(
-curs‹_c
- >= 0) {
-
-417 
-curs‹_c
- = 
-COL8_000000
-;
-
-420 
-	`timî_£âime
-(
-timî
-, 50);
-
-422 i‡(
-i
- == 2) {
-
-423 
-curs‹_c
- = 
-COL8_FFFFFF
-;
-
-425 i‡(
-i
- == 3) {
-
-426 
-	`boxfûl8
-(
-shìt
-->
-buf
-, shìt->
-bxsize
-, 
-COL8_000000
-, 
-curs‹_x
-, 
-curs‹_y
-, cursor_x + 7, cursor_y + 15);
-
-427 
-curs‹_c
- = -1;
-
-429 i‡(256 <
-i
- && i <= 511) {
-
-430 i‡(
-i
- == 8 + 256) {
-
-432 i‡(
-curs‹_x
- > 16) {
-
-434 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 
-curs‹_x
-, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, " ", 1);
-
-435 
-curs‹_x
- -= 8;
-
-437 } i‡(
-i
- == 10 + 256) {
-
-440 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 
-curs‹_x
-, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, " ", 1);
-
-441 
-cmdlöe
-[
-curs‹_x
- / 8 - 2] = 0;
-
-442 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-444 i‡(
-	`°rcmp
-(
-cmdlöe
-, "mem") == 0) {
-
-446 
-	`•rötf
-(
-s
-, "tŸÆ %dMB", 
-memtŸÆ
- / (1024 * 1024));
-
-447 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 8, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, 
-s
-, 30);
-
-448 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-449 
-	`•rötf
-(
-s
-, "‰ì %dKB", 
-	`memm™_tŸÆ
-(
-memm™
-) / 1024);
-
-450 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 8, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, 
-s
-, 30);
-
-451 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-452 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-453 } i‡(
-	`°rcmp
-(
-cmdlöe
-, "cls") == 0) {
-
-455 
-y
- = 28; y < 28 + 128; y++) {
-
-456 
-x
- = 8; x < 8 + 240; x++) {
-
-457 
-shìt
-->
-buf
-[
-x
- + 
-y
- * shìt->
-bxsize
-] = 
-COL8_000000
-;
-
-460 
-	`shìt_ª‰esh
-(
-shìt
-, 8, 28, 8 + 240, 28 + 128);
-
-461 
-curs‹_y
- = 28;
-
-462 } i‡(
-	`°rcmp
-(
-cmdlöe
-, "dir") == 0 || strcmp(cmdline, "ls") == 0) {
-
-464 
-x
- = 0; x < 224; x++) {
-
-465 i‡(
-föfo
-[
-x
-].
-«me
-[0] == 0x00) {
-
-468 i‡(
-föfo
-[
-x
-].
-«me
-[0] != 0xe5) {
-
-469 i‡((
-föfo
-[
-x
-].
-ty≥
- & 0x18) == 0) {
-
-470 
-	`•rötf
-(
-s
-, "fûíame.exà%7d", 
-föfo
-[
-x
-].
-size
-);
-
-471 
-y
- = 0; y < 8; y++) {
-
-472 
-s
-[
-y
-] = 
-föfo
-[
-x
-].
-«me
-[y];
-
-474 
-s
-[ 9] = 
-föfo
-[
-x
-].
-ext
-[0];
-
-475 
-s
-[10] = 
-föfo
-[
-x
-].
-ext
-[1];
-
-476 
-s
-[11] = 
-föfo
-[
-x
-].
-ext
-[2];
-
-477 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 8, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, 
-s
-, 30);
-
-478 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-482 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-483 } i‡(
-cmdlöe
-[0] != 0) {
-
-485 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 8, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, "Bad command.", 12);
-
-486 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-487 
-curs‹_y
- = 
-	`c⁄s_√wlöe
-(curs‹_y, 
-shìt
-);
-
-490 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 8, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, ">", 1);
-
-491 
-curs‹_x
- = 16;
-
-494 i‡(
-curs‹_x
- < 240) {
-
-496 
-s
-[0] = 
-i
- - 256;
-
-497 
-s
-[1] = 0;
-
-498 
-cmdlöe
-[
-curs‹_x
- / 8 - 2] = 
-i
- - 256;
-
-499 
-	`putf⁄ts8_asc_sht
-(
-shìt
-, 
-curs‹_x
-, 
-curs‹_y
-, 
-COL8_FFFFFF
-, 
-COL8_000000
-, 
-s
-, 1);
-
-500 
-curs‹_x
- += 8;
-
-505 i‡(
-curs‹_c
- >= 0) {
-
-506 
-	`boxfûl8
-(
-shìt
-->
-buf
-, shìt->
-bxsize
-, 
-curs‹_c
-, 
-curs‹_x
-, 
-curs‹_y
-, cursor_x + 7, cursor_y + 15);
-
-508 
-	`shìt_ª‰esh
-(
-shìt
-, 
-curs‹_x
-, 
-curs‹_y
-, cursor_x + 8, cursor_y + 16);
-
-511 
-	}
-}
-
-513 
-	$c⁄s_√wlöe
-(
-curs‹_y
-, 
-SHEET
- *
-shìt
-)
-
-515 
-x
-, 
-y
-;
-
-516 i‡(
-curs‹_y
- < 28 + 112) {
-
-517 
-curs‹_y
- += 16;
-
-520 
-y
- = 28; y < 28 + 112; y++) {
-
-521 
-x
- = 8; x < 8 + 240; x++) {
-
-522 
-shìt
-->
-buf
-[
-x
- + 
-y
- * shìt->
-bxsize
-] = sheet->buf[x + (y + 16) * sheet->bxsize];
-
-525 
-y
- = 28 + 112; y < 28 + 128; y++) {
-
-526 
-x
- = 8; x < 8 + 240; x++) {
-
-527 
-shìt
-->
-buf
-[
-x
- + 
-y
- * shìt->
-bxsize
-] = 
-COL8_000000
-;
-
-530 
-	`shìt_ª‰esh
-(
-shìt
-, 8, 28, 8 + 240, 28 + 128);
-
-532  
-curs‹_y
-;
-
-533 
+280 
 	}
 }
 
@@ -2829,15 +1425,27 @@ eù
 cs
 );
 
-35 
+33 
+ÁrˇŒ
+(
+eù
+, 
+cs
+);
+
+34 
+asm_hrb_≠i
+();
+
+37 
 	sFIFO32
  {
 
-36 *
+38 *
 	mbuf
 ;
 
-37 
+39 
 	mp
 , 
 	mq
@@ -2849,13 +1457,13 @@ cs
 	mÊags
 ;
 
-38 
+40 
 TASK
  *
 	mèsk
 ;
 
-40 
+42 
 fifo32_öô
 (
 FIFO32
@@ -2871,7 +1479,7 @@ TASK
 èsk
 );
 
-41 
+43 
 fifo32_put
 (
 FIFO32
@@ -2881,7 +1489,7 @@ fifo
 d©a
 );
 
-42 
+44 
 fifo32_gë
 (
 FIFO32
@@ -2889,7 +1497,7 @@ FIFO32
 fifo
 );
 
-43 
+45 
 fifo32_°©us
 (
 FIFO32
@@ -2897,11 +1505,11 @@ FIFO32
 fifo
 );
 
-46 
+48 
 öô_∑Àâe
 ();
 
-47 
+49 
 £t_∑Àâe
 (
 °¨t
@@ -2911,7 +1519,7 @@ fifo
 rgb
 );
 
-48 
+50 
 boxfûl8
 (*
 vøm
@@ -2929,7 +1537,7 @@ x1
 y1
 );
 
-49 
+51 
 öô_s¸ìn8
 (*
 vøm
@@ -2939,7 +1547,7 @@ x
 y
 );
 
-50 
+52 
 putf⁄t8
 (*
 vøm
@@ -2955,7 +1563,7 @@ c
 f⁄t
 );
 
-51 
+53 
 putf⁄ts8_asc
 (*
 vøm
@@ -2971,7 +1579,7 @@ c
 s
 );
 
-52 
+54 
 öô_mou£_curs‹8
 (*
 mou£
@@ -2979,7 +1587,7 @@ mou£
 bc
 );
 
-53 
+55 
 putblock8_8
 (*
 vøm
@@ -2989,7 +1597,7 @@ vxsize
 pxsize
 ,
 
-54 
+56 
 pysize
 , 
 px0
@@ -3001,149 +1609,149 @@ buf
 bxsize
 );
 
-55 
+57 
 	#COL8_000000
  0
 
 	)
 
-56 
+58 
 	#COL8_FF0000
  1
 
 	)
 
-57 
+59 
 	#COL8_00FF00
  2
 
 	)
 
-58 
+60 
 	#COL8_FFFF00
  3
 
 	)
 
-59 
+61 
 	#COL8_0000FF
  4
 
 	)
 
-60 
+62 
 	#COL8_FF00FF
  5
 
 	)
 
-61 
+63 
 	#COL8_00FFFF
  6
 
 	)
 
-62 
+64 
 	#COL8_FFFFFF
  7
 
 	)
 
-63 
+65 
 	#COL8_C6C6C6
  8
 
 	)
 
-64 
+66 
 	#COL8_840000
  9
 
 	)
 
-65 
+67 
 	#COL8_008400
  10
 
 	)
 
-66 
+68 
 	#COL8_848400
  11
 
 	)
 
-67 
+69 
 	#COL8_000084
  12
 
 	)
 
-68 
+70 
 	#COL8_840084
  13
 
 	)
 
-69 
+71 
 	#COL8_008484
  14
 
 	)
 
-70 
+72 
 	#COL8_848484
  15
 
 	)
 
-73 
+75 
 	sSEGMENT_DESCRIPTOR
  {
 
-74 
+76 
 	mlimô_low
 , 
 	mba£_low
 ;
 
-75 
+77 
 	mba£_mid
 , 
 	mac˚ss_right
 ;
 
-76 
+78 
 	mlimô_high
 , 
 	mba£_high
 ;
 
-78 
+80 
 	sGATE_DESCRIPTOR
  {
 
-79 
+81 
 	moff£t_low
 , 
 	m£À˘‹
 ;
 
-80 
+82 
 	mdw_cou¡
 , 
 	mac˚ss_right
 ;
 
-81 
+83 
 	moff£t_high
 ;
 
-83 
+85 
 öô_gdtidt
 ();
 
-84 
+86 
 £t_£gmdesc
 (
 SEGMENT_DESCRIPTOR
@@ -3157,7 +1765,7 @@ ba£
 ¨
 );
 
-85 
+87 
 £t_g©edesc
 (
 GATE_DESCRIPTOR
@@ -3171,159 +1779,159 @@ off£t
 ¨
 );
 
-86 
+88 
 	#ADR_IDT
  0x0026f800
 
 	)
 
-87 
+89 
 	#LIMIT_IDT
  0x000007ff
 
 	)
 
-88 
+90 
 	#ADR_GDT
  0x00270000
 
 	)
 
-89 
+91 
 	#LIMIT_GDT
  0x0000ffff
 
 	)
 
-90 
+92 
 	#ADR_BOTPAK
  0x00280000
 
 	)
 
-91 
+93 
 	#LIMIT_BOTPAK
  0x0007ffff
 
 	)
 
-92 
+94 
 	#AR_DATA32_RW
  0x4092
 
 	)
 
-93 
+95 
 	#AR_CODE32_ER
  0x409a
 
 	)
 
-94 
+96 
 	#AR_TSS32
  0x0089
 
 	)
 
-95 
+97 
 	#AR_INTGATE32
  0x008e
 
 	)
 
-98 
+100 
 öô_pic
 ();
 
-99 
+101 
 öth™dÀr27
 (*
 e•
 );
 
-100 
+102 
 	#PIC0_ICW1
  0x0020
 
 	)
 
-101 
+103 
 	#PIC0_OCW2
  0x0020
 
 	)
 
-102 
+104 
 	#PIC0_IMR
  0x0021
 
 	)
 
-103 
+105 
 	#PIC0_ICW2
  0x0021
 
 	)
 
-104 
+106 
 	#PIC0_ICW3
  0x0021
 
 	)
 
-105 
+107 
 	#PIC0_ICW4
  0x0021
 
 	)
 
-106 
+108 
 	#PIC1_ICW1
  0x00a0
 
 	)
 
-107 
+109 
 	#PIC1_OCW2
  0x00a0
 
 	)
 
-108 
+110 
 	#PIC1_IMR
  0x00a1
 
 	)
 
-109 
+111 
 	#PIC1_ICW2
  0x00a1
 
 	)
 
-110 
+112 
 	#PIC1_ICW3
  0x00a1
 
 	)
 
-111 
+113 
 	#PIC1_ICW4
  0x00a1
 
 	)
 
-114 
+116 
 öth™dÀr21
 (*
 e•
 );
 
-115 
+117 
 waô_KBC_£ndªady
 ();
 
-116 
+118 
 öô_keybﬂrd
 (
 FIFO32
@@ -3333,29 +1941,29 @@ fifo
 d©a0
 );
 
-117 
+119 
 	#PORT_KEYDAT
  0x0060
 
 	)
 
-118 
+120 
 	#PORT_KEYCMD
  0x0064
 
 	)
 
-121 
+123 
 	sMOUSE_DEC
  {
 
-122 
+124 
 	mbuf
 [3], 
 	mpha£
 ;
 
-123 
+125 
 	mx
 , 
 	my
@@ -3363,13 +1971,13 @@ d©a0
 	mbä
 ;
 
-125 
+127 
 öth™dÀr2c
 (*
 e•
 );
 
-126 
+128 
 íabÀ_mou£
 (
 FIFO32
@@ -3383,7 +1991,7 @@ MOUSE_DEC
 mdec
 );
 
-127 
+129 
 mou£_decode
 (
 MOUSE_DEC
@@ -3393,33 +2001,33 @@ mdec
 d©
 );
 
-130 
+132 
 	#MEMMAN_FREES
  4090
 
 	)
 
-131 
+133 
 	#MEMMAN_ADDR
  0x003c0000
 
 	)
 
-132 
+134 
 	sFREEINFO
  {
 
-133 
+135 
 	maddr
 , 
 	msize
 ;
 
-135 
+137 
 	sMEMMAN
  {
 
-136 
+138 
 	m‰ìs
 , 
 	mmax‰ìs
@@ -3429,7 +2037,7 @@ d©
 	mlo°s
 ;
 
-137 
+139 
 FREEINFO
  
 	m‰ì
@@ -3437,7 +2045,7 @@ FREEINFO
 MEMMAN_FREES
 ];
 
-139 
+141 
 memã°
 (
 °¨t
@@ -3445,7 +2053,7 @@ memã°
 íd
 );
 
-140 
+142 
 memm™_öô
 (
 MEMMAN
@@ -3453,7 +2061,7 @@ MEMMAN
 m™
 );
 
-141 
+143 
 memm™_tŸÆ
 (
 MEMMAN
@@ -3461,7 +2069,7 @@ MEMMAN
 m™
 );
 
-142 
+144 
 memm™_Æloc
 (
 MEMMAN
@@ -3471,7 +2079,7 @@ m™
 size
 );
 
-143 
+145 
 memm™_‰ì
 (
 MEMMAN
@@ -3483,7 +2091,7 @@ addr
 size
 );
 
-144 
+146 
 memm™_Æloc_4k
 (
 MEMMAN
@@ -3493,7 +2101,7 @@ m™
 size
 );
 
-145 
+147 
 memm™_‰ì_4k
 (
 MEMMAN
@@ -3505,21 +2113,21 @@ addr
 size
 );
 
-148 
+150 
 	#MAX_SHEETS
  256
 
 	)
 
-149 
+151 
 	sSHEET
  {
 
-150 *
+152 *
 	mbuf
 ;
 
-151 
+153 
 	mbxsize
 , 
 	mbysize
@@ -3535,23 +2143,23 @@ size
 	mÊags
 ;
 
-152 
+154 
 SHTCTL
  *
 	m˘l
 ;
 
-154 
+156 
 	sSHTCTL
  {
 
-155 *
+157 *
 	mvøm
 , *
 	mm≠
 ;
 
-156 
+158 
 	mxsize
 , 
 	mysize
@@ -3559,7 +2167,7 @@ SHTCTL
 	mt›
 ;
 
-157 
+159 
 SHEET
  *
 	mshìts
@@ -3567,7 +2175,7 @@ SHEET
 MAX_SHEETS
 ];
 
-158 
+160 
 SHEET
  
 	mshìts0
@@ -3575,7 +2183,7 @@ SHEET
 MAX_SHEETS
 ];
 
-160 
+162 
 SHTCTL
  *
 sht˘l_öô
@@ -3591,7 +2199,7 @@ xsize
 ysize
 );
 
-161 
+163 
 SHEET
  *
 shìt_Æloc
@@ -3601,7 +2209,7 @@ SHTCTL
 ˘l
 );
 
-162 
+164 
 shìt_£tbuf
 (
 SHEET
@@ -3617,7 +2225,7 @@ ysize
 cﬁ_öv
 );
 
-163 
+165 
 shìt_updown
 (
 SHEET
@@ -3627,7 +2235,7 @@ sht
 height
 );
 
-164 
+166 
 shìt_ª‰esh
 (
 SHEET
@@ -3643,7 +2251,7 @@ bx1
 by1
 );
 
-165 
+167 
 shìt_¶ide
 (
 SHEET
@@ -3655,7 +2263,7 @@ vx0
 vy0
 );
 
-166 
+168 
 shìt_‰ì
 (
 SHEET
@@ -3663,55 +2271,55 @@ SHEET
 sht
 );
 
-169 
+171 
 	#MAX_TIMER
  500
 
 	)
 
-170 
+172 
 	sTIMER
  {
 
-171 
+173 
 TIMER
  *
 	m√xt
 ;
 
-172 
+174 
 	mtimeout
 , 
 	mÊags
 ;
 
-173 
+175 
 FIFO32
  *
 	mfifo
 ;
 
-174 
+176 
 	md©a
 ;
 
-176 
+178 
 	sTIMERCTL
  {
 
-177 
+179 
 	mcou¡
 , 
 	m√xt
 ;
 
-178 
+180 
 TIMER
  *
 	mt0
 ;
 
-179 
+181 
 TIMER
  
 	mtimîs0
@@ -3719,23 +2327,23 @@ TIMER
 MAX_TIMER
 ];
 
-181 
+183 
 TIMERCTL
  
 timî˘l
 ;
 
-182 
+184 
 öô_pô
 ();
 
-183 
+185 
 TIMER
  *
 timî_Æloc
 ();
 
-184 
+186 
 timî_‰ì
 (
 TIMER
@@ -3743,7 +2351,7 @@ TIMER
 timî
 );
 
-185 
+187 
 timî_öô
 (
 TIMER
@@ -3757,7 +2365,7 @@ fifo
 d©a
 );
 
-186 
+188 
 timî_£âime
 (
 TIMER
@@ -3767,41 +2375,41 @@ timî
 timeout
 );
 
-187 
+189 
 öth™dÀr20
 (*
 e•
 );
 
-190 
+192 
 	#MAX_TASKS
  1000
 
 	)
 
-191 
+193 
 	#TASK_GDT0
  3
 
 	)
 
-192 
+194 
 	#MAX_TASKS_LV
  100
 
 	)
 
-193 
+195 
 	#MAX_TASKLEVELS
  10
 
 	)
 
-194 
+196 
 	sTSS32
  {
 
-195 
+197 
 	mbacklök
 , 
 	me•0
@@ -3819,7 +2427,7 @@ e•
 	m¸3
 ;
 
-196 
+198 
 	meù
 , 
 	meÊags
@@ -3841,7 +2449,7 @@ e•
 	medi
 ;
 
-197 
+199 
 	mes
 , 
 	mcs
@@ -3855,53 +2463,53 @@ e•
 	mgs
 ;
 
-198 
+200 
 	mldå
 , 
 	miom≠
 ;
 
-200 
+202 
 	sTASK
  {
 
-201 
+203 
 	m£l
 , 
 	mÊags
 ;
 
-202 
+204 
 	mÀvñ
 , 
 	m¥i‹ôy
 ;
 
-203 
+205 
 FIFO32
  
 	mfifo
 ;
 
-204 
+206 
 TSS32
  
 	mtss
 ;
 
-206 
+208 
 	sTASKLEVEL
  {
 
-207 
+209 
 	mru¬ög
 ;
 
-208 
+210 
 	mnow
 ;
 
-209 
+211 
 TASK
  *
 	mèsks
@@ -3909,19 +2517,19 @@ TASK
 MAX_TASKS_LV
 ];
 
-211 
+213 
 	sTASKCTL
  {
 
-212 
+214 
 	mnow_lv
 ;
 
-213 
+215 
 	mlv_ch™ge
 ;
 
-214 
+216 
 TASKLEVEL
  
 	mÀvñ
@@ -3929,7 +2537,7 @@ TASKLEVEL
 MAX_TASKLEVELS
 ];
 
-215 
+217 
 TASK
  
 	mèsks0
@@ -3937,13 +2545,13 @@ TASK
 MAX_TASKS
 ];
 
-217 
+219 
 TIMER
  *
 èsk_timî
 ;
 
-218 
+220 
 TASK
  *
 èsk_öô
@@ -3953,13 +2561,13 @@ MEMMAN
 memm™
 );
 
-219 
+221 
 TASK
  *
 èsk_Æloc
 ();
 
-220 
+222 
 èsk_run
 (
 TASK
@@ -3971,17 +2579,1707 @@ TASK
 ¥i‹ôy
 );
 
-221 
+223 
 èsk_swôch
 ();
 
-222 
+224 
 èsk_¶ìp
 (
 TASK
  *
 èsk
 );
+
+227 
+make_wödow8
+(*
+buf
+, 
+xsize
+, 
+ysize
+, *
+tôÀ
+, 
+a˘
+);
+
+228 
+putf⁄ts8_asc_sht
+(
+SHEET
+ *
+sht
+, 
+x
+, 
+y
+, 
+c
+, 
+b
+, *
+s
+, 
+l
+);
+
+229 
+make_ãxtbox8
+(
+SHEET
+ *
+sht
+, 
+x0
+, 
+y0
+, 
+sx
+, 
+sy
+, 
+c
+);
+
+230 
+make_wtôÀ8
+(*
+buf
+, 
+xsize
+, *
+tôÀ
+, 
+a˘
+);
+
+233 
+	sCONSOLE
+ {
+
+234 
+SHEET
+ *
+	msht
+;
+
+235 
+	mcur_x
+, 
+	mcur_y
+, 
+	mcur_c
+;
+
+237 
+c⁄sﬁe_èsk
+(
+SHEET
+ *
+shìt
+, 
+memtŸÆ
+);
+
+238 
+c⁄s_putch¨
+(
+CONSOLE
+ *
+c⁄s
+, 
+chr
+, 
+move
+);
+
+239 
+c⁄s_√wlöe
+(
+CONSOLE
+ *
+c⁄s
+);
+
+240 
+c⁄s_put°r0
+(
+CONSOLE
+ *
+c⁄s
+, *
+s
+);
+
+241 
+c⁄s_put°r1
+(
+CONSOLE
+ *
+c⁄s
+, *
+s
+, 
+l
+);
+
+242 
+c⁄s_runcmd
+(*
+cmdlöe
+, 
+CONSOLE
+ *
+c⁄s
+, *
+Át
+, 
+memtŸÆ
+);
+
+243 
+cmd_mem
+(
+CONSOLE
+ *
+c⁄s
+, 
+memtŸÆ
+);
+
+244 
+cmd_˛s
+(
+CONSOLE
+ *
+c⁄s
+);
+
+245 
+cmd_dú
+(
+CONSOLE
+ *
+c⁄s
+);
+
+246 
+cmd_ty≥
+(
+CONSOLE
+ *
+c⁄s
+, *
+Át
+, *
+cmdlöe
+);
+
+247 
+cmd_≠p
+(
+CONSOLE
+ *
+c⁄s
+, *
+Át
+, *
+cmdlöe
+);
+
+248 
+hrb_≠i
+(
+edi
+, 
+esi
+, 
+ebp
+, 
+e•
+, 
+ebx
+, 
+edx
+, 
+ecx
+, 
+óx
+);
+
+251 
+	sFILEINFO
+ {
+
+252 
+	m«me
+[8], 
+	mext
+[3], 
+	mty≥
+;
+
+253 
+	mª£rve
+[10];
+
+254 
+	mtime
+, 
+	md©e
+, 
+	m˛u°no
+;
+
+255 
+	msize
+;
+
+257 
+fûe_ªadÁt
+(*
+Át
+, *
+img
+);
+
+258 
+fûe_lﬂdfûe
+(
+˛u°no
+, 
+size
+, *
+buf
+, *
+Át
+, *
+img
+);
+
+259 
+FILEINFO
+ *
+fûe_£¨ch
+(*
+«me
+, FILEINFO *
+föfo
+, 
+max
+);
+
+	@console.c
+
+3 
+	~"boŸ∑ck.h
+"
+
+4 
+	~<°dio.h
+>
+
+5 
+	~<°rög.h
+>
+
+7 
+	$c⁄sﬁe_èsk
+(
+SHEET
+ *
+shìt
+, 
+memtŸÆ
+)
+
+9 
+TIMER
+ *
+timî
+;
+
+10 
+TASK
+ *
+èsk
+ = 
+	`èsk_now
+();
+
+11 
+MEMMAN
+ *
+memm™
+ = (MEMMAN *Ë
+MEMMAN_ADDR
+;
+
+12 
+i
+, 
+fifobuf
+[128], *
+Át
+ = (*Ë
+	`memm™_Æloc_4k
+(
+memm™
+, 4 * 2880);
+
+13 
+CONSOLE
+ 
+c⁄s
+;
+
+14 
+cmdlöe
+[30];
+
+15 
+c⁄s
+.
+sht
+ = 
+shìt
+;
+
+16 
+c⁄s
+.
+cur_x
+ = 8;
+
+17 
+c⁄s
+.
+cur_y
+ = 28;
+
+18 
+c⁄s
+.
+cur_c
+ = -1;
+
+19 *((*Ë0x0„cË(Ë&
+c⁄s
+;
+
+21 
+	`fifo32_öô
+(&
+èsk
+->
+fifo
+, 128, 
+fifobuf
+,Åask);
+
+22 
+timî
+ = 
+	`timî_Æloc
+();
+
+23 
+	`timî_öô
+(
+timî
+, &
+èsk
+->
+fifo
+, 1);
+
+24 
+	`timî_£âime
+(
+timî
+, 50);
+
+25 
+	`fûe_ªadÁt
+(
+Át
+, (*Ë(
+ADR_DISKIMG
+ + 0x000200));
+
+28 
+	`c⁄s_putch¨
+(&
+c⁄s
+, '>', 1);
+
+30 
+	`io_˛i
+();
+
+31 i‡(
+	`fifo32_°©us
+(&
+èsk
+->
+fifo
+) == 0) {
+
+32 
+	`èsk_¶ìp
+(
+èsk
+);
+
+33 
+	`io_°i
+();
+
+35 
+i
+ = 
+	`fifo32_gë
+(&
+èsk
+->
+fifo
+);
+
+36 
+	`io_°i
+();
+
+37 i‡(
+i
+ <= 1) {
+
+38 i‡(
+i
+ != 0) {
+
+39 
+	`timî_öô
+(
+timî
+, &
+èsk
+->
+fifo
+, 0);
+
+40 i‡(
+c⁄s
+.
+cur_c
+ >= 0) {
+
+41 
+c⁄s
+.
+cur_c
+ = 
+COL8_FFFFFF
+;
+
+44 
+	`timî_öô
+(
+timî
+, &
+èsk
+->
+fifo
+, 1);
+
+45 i‡(
+c⁄s
+.
+cur_c
+ >= 0) {
+
+46 
+c⁄s
+.
+cur_c
+ = 
+COL8_000000
+;
+
+49 
+	`timî_£âime
+(
+timî
+, 50);
+
+51 i‡(
+i
+ == 2) {
+
+52 
+c⁄s
+.
+cur_c
+ = 
+COL8_FFFFFF
+;
+
+54 i‡(
+i
+ == 3) {
+
+55 
+	`boxfûl8
+(
+shìt
+->
+buf
+, shìt->
+bxsize
+, 
+COL8_000000
+, 
+c⁄s
+.
+cur_x
+, c⁄s.
+cur_y
+, cons.cur_x + 7, cons.cur_y + 15);
+
+56 
+c⁄s
+.
+cur_c
+ = -1;
+
+58 i‡(256 <
+i
+ && i <= 511) {
+
+59 i‡(
+i
+ == 8 + 256) {
+
+61 i‡(
+c⁄s
+.
+cur_x
+ > 16) {
+
+63 
+	`c⁄s_putch¨
+(&
+c⁄s
+, ' ', 0);
+
+64 
+c⁄s
+.
+cur_x
+ -= 8;
+
+66 } i‡(
+i
+ == 10 + 256) {
+
+69 
+	`c⁄s_putch¨
+(&
+c⁄s
+, ' ', 0);
+
+70 
+cmdlöe
+[
+c⁄s
+.
+cur_x
+ / 8 - 2] = 0;
+
+71 
+	`c⁄s_√wlöe
+(&
+c⁄s
+);
+
+72 
+	`c⁄s_runcmd
+(
+cmdlöe
+, &
+c⁄s
+, 
+Át
+, 
+memtŸÆ
+);
+
+74 
+	`c⁄s_putch¨
+(&
+c⁄s
+, '>', 1);
+
+77 i‡(
+c⁄s
+.
+cur_x
+ < 240) {
+
+79 
+cmdlöe
+[
+c⁄s
+.
+cur_x
+ / 8 - 2] = 
+i
+ - 256;
+
+80 
+	`c⁄s_putch¨
+(&
+c⁄s
+, 
+i
+ - 256, 1);
+
+85 i‡(
+c⁄s
+.
+cur_c
+ >= 0) {
+
+86 
+	`boxfûl8
+(
+shìt
+->
+buf
+, shìt->
+bxsize
+, 
+c⁄s
+.
+cur_c
+, c⁄s.
+cur_x
+, c⁄s.
+cur_y
+, cons.cur_x + 7, cons.cur_y + 15);
+
+88 
+	`shìt_ª‰esh
+(
+shìt
+, 
+c⁄s
+.
+cur_x
+, c⁄s.
+cur_y
+, cons.cur_x + 8, cons.cur_y + 16);
+
+91 
+	}
+}
+
+93 
+	$c⁄s_putch¨
+(
+CONSOLE
+ *
+c⁄s
+, 
+chr
+, 
+move
+)
+
+95 
+s
+[2];
+
+96 
+s
+[0] = 
+chr
+;
+
+97 
+s
+[1] = 0;
+
+98 i‡(
+s
+[0] == 0x09) {
+
+100 
+	`putf⁄ts8_asc_sht
+(
+c⁄s
+->
+sht
+, c⁄s->
+cur_x
+, c⁄s->
+cur_y
+, 
+COL8_FFFFFF
+, 
+COL8_000000
+, " ", 1);
+
+101 
+c⁄s
+->
+cur_x
+ += 8;
+
+102 i‡(
+c⁄s
+->
+cur_x
+ == 8 + 240) {
+
+103 
+	`c⁄s_√wlöe
+(
+c⁄s
+);
+
+105 i‡(((
+c⁄s
+->
+cur_x
+ - 8) & 0x1f) == 0) {
+
+109 } i‡(
+s
+[0] == 0x0a) {
+
+110 
+	`c⁄s_√wlöe
+(
+c⁄s
+);
+
+111 } i‡(
+s
+[0] == 0x0d) {
+
+114 
+	`putf⁄ts8_asc_sht
+(
+c⁄s
+->
+sht
+, c⁄s->
+cur_x
+, c⁄s->
+cur_y
+, 
+COL8_FFFFFF
+, 
+COL8_000000
+, 
+s
+, 1);
+
+115 i‡(
+move
+ != 0) {
+
+117 
+c⁄s
+->
+cur_x
+ += 8;
+
+118 i‡(
+c⁄s
+->
+cur_x
+ == 8 + 240) {
+
+119 
+	`c⁄s_√wlöe
+(
+c⁄s
+);
+
+124 
+	}
+}
+
+126 
+	$c⁄s_√wlöe
+(
+CONSOLE
+ *
+c⁄s
+)
+
+128 
+x
+, 
+y
+;
+
+129 
+SHEET
+ *
+shìt
+ = 
+c⁄s
+->
+sht
+;
+
+130 i‡(
+c⁄s
+->
+cur_y
+ < 28 + 112) {
+
+131 
+c⁄s
+->
+cur_y
+ += 16;
+
+134 
+y
+ = 28; y < 28 + 112; y++) {
+
+135 
+x
+ = 8; x < 8 + 240; x++) {
+
+136 
+shìt
+->
+buf
+[
+x
+ + 
+y
+ * shìt->
+bxsize
+] = sheet->buf[x + (y + 16) * sheet->bxsize];
+
+139 
+y
+ = 28 + 112; y < 28 + 128; y++) {
+
+140 
+x
+ = 8; x < 8 + 240; x++) {
+
+141 
+shìt
+->
+buf
+[
+x
+ + 
+y
+ * shìt->
+bxsize
+] = 
+COL8_000000
+;
+
+144 
+	`shìt_ª‰esh
+(
+shìt
+, 8, 28, 8 + 240, 28 + 128);
+
+146 
+c⁄s
+->
+cur_x
+ = 8;
+
+148 
+	}
+}
+
+150 
+	$c⁄s_put°r0
+(
+CONSOLE
+ *
+c⁄s
+, *
+s
+)
+
+152 ; *
+s
+ != 0; s++) {
+
+153 
+	`c⁄s_putch¨
+(
+c⁄s
+, *
+s
+, 1);
+
+156 
+	}
+}
+
+158 
+	$c⁄s_put°r1
+(
+CONSOLE
+ *
+c⁄s
+, *
+s
+, 
+l
+)
+
+160 
+i
+;
+
+161 
+i
+ = 0; i < 
+l
+; i++) {
+
+162 
+	`c⁄s_putch¨
+(
+c⁄s
+, 
+s
+[
+i
+], 1);
+
+165 
+	}
+}
+
+167 
+	$c⁄s_runcmd
+(*
+cmdlöe
+, 
+CONSOLE
+ *
+c⁄s
+, *
+Át
+, 
+memtŸÆ
+)
+
+169 i‡(
+	`°rcmp
+(
+cmdlöe
+, "mem") == 0) {
+
+170 
+	`cmd_mem
+(
+c⁄s
+, 
+memtŸÆ
+);
+
+171 } i‡(
+	`°rcmp
+(
+cmdlöe
+, "cls") == 0) {
+
+172 
+	`cmd_˛s
+(
+c⁄s
+);
+
+173 } i‡(
+	`°rcmp
+(
+cmdlöe
+, "dir") == 0 || strcmp(cmdline, "ls") == 0) {
+
+174 
+	`cmd_dú
+(
+c⁄s
+);
+
+175 } i‡(
+	`°∫cmp
+(
+cmdlöe
+, "type ", 5) == 0) {
+
+176 
+	`cmd_ty≥
+(
+c⁄s
+, 
+Át
+, 
+cmdlöe
+);
+
+177 } i‡(
+cmdlöe
+[0] != 0) {
+
+178 i‡(
+	`cmd_≠p
+(
+c⁄s
+, 
+Át
+, 
+cmdlöe
+) == 0) {
+
+180 
+	`c⁄s_put°r0
+(
+c⁄s
+, "Bad command.\n\n");
+
+184 
+	}
+}
+
+186 
+	$cmd_mem
+(
+CONSOLE
+ *
+c⁄s
+, 
+memtŸÆ
+)
+
+188 
+MEMMAN
+ *
+memm™
+ = (MEMMAN *Ë
+MEMMAN_ADDR
+;
+
+189 
+s
+[60];
+
+190 
+	`•rötf
+(
+s
+, "tŸÆ %dMB\n‰ì %dKB\n\n", 
+memtŸÆ
+ / (1024 * 1024), 
+	`memm™_tŸÆ
+(
+memm™
+) / 1024);
+
+191 
+	`c⁄s_put°r0
+(
+c⁄s
+, 
+s
+);
+
+193 
+	}
+}
+
+195 
+	$cmd_˛s
+(
+CONSOLE
+ *
+c⁄s
+)
+
+197 
+x
+, 
+y
+;
+
+198 
+SHEET
+ *
+shìt
+ = 
+c⁄s
+->
+sht
+;
+
+199 
+y
+ = 28; y < 28 + 128; y++) {
+
+200 
+x
+ = 8; x < 8 + 240; x++) {
+
+201 
+shìt
+->
+buf
+[
+x
+ + 
+y
+ * shìt->
+bxsize
+] = 
+COL8_000000
+;
+
+204 
+	`shìt_ª‰esh
+(
+shìt
+, 8, 28, 8 + 240, 28 + 128);
+
+205 
+c⁄s
+->
+cur_y
+ = 28;
+
+207 
+	}
+}
+
+209 
+	$cmd_dú
+(
+CONSOLE
+ *
+c⁄s
+)
+
+211 
+FILEINFO
+ *
+föfo
+ = (FILEINFO *Ë(
+ADR_DISKIMG
+ + 0x002600);
+
+212 
+i
+, 
+j
+;
+
+213 
+s
+[30];
+
+214 
+i
+ = 0; i < 224; i++) {
+
+215 i‡(
+föfo
+[
+i
+].
+«me
+[0] == 0x00) {
+
+218 i‡(
+föfo
+[
+i
+].
+«me
+[0] != 0xe5) {
+
+219 i‡((
+föfo
+[
+i
+].
+ty≥
+ & 0x18) == 0) {
+
+220 
+	`•rötf
+(
+s
+, "fûíame.exà%7d\n", 
+föfo
+[
+i
+].
+size
+);
+
+221 
+j
+ = 0; j < 8; j++) {
+
+222 
+s
+[
+j
+] = 
+föfo
+[
+i
+].
+«me
+[j];
+
+224 
+s
+[ 9] = 
+föfo
+[
+i
+].
+ext
+[0];
+
+225 
+s
+[10] = 
+föfo
+[
+i
+].
+ext
+[1];
+
+226 
+s
+[11] = 
+föfo
+[
+i
+].
+ext
+[2];
+
+227 
+	`c⁄s_put°r0
+(
+c⁄s
+, 
+s
+);
+
+231 
+	`c⁄s_√wlöe
+(
+c⁄s
+);
+
+233 
+	}
+}
+
+235 
+	$cmd_ty≥
+(
+CONSOLE
+ *
+c⁄s
+, *
+Át
+, *
+cmdlöe
+)
+
+237 
+MEMMAN
+ *
+memm™
+ = (MEMMAN *Ë
+MEMMAN_ADDR
+;
+
+238 
+FILEINFO
+ *
+föfo
+ = 
+	`fûe_£¨ch
+(
+cmdlöe
+ + 5, (FILEINFO *Ë(
+ADR_DISKIMG
+ + 0x002600), 224);
+
+239 *
+p
+;
+
+240 
+i
+;
+
+241 i‡(
+föfo
+ != 0) {
+
+243 
+p
+ = (*Ë
+	`memm™_Æloc_4k
+(
+memm™
+, 
+föfo
+->
+size
+);
+
+244 
+	`fûe_lﬂdfûe
+(
+föfo
+->
+˛u°no
+, föfo->
+size
+, 
+p
+, 
+Át
+, (*Ë(
+ADR_DISKIMG
+ + 0x003e00));
+
+245 
+	`c⁄s_put°r1
+(
+c⁄s
+, 
+p
+, 
+föfo
+->
+size
+);
+
+246 
+	`memm™_‰ì_4k
+(
+memm™
+, (Ë
+p
+, 
+föfo
+->
+size
+);
+
+249 
+	`c⁄s_put°r0
+(
+c⁄s
+, "FileÇot found.\n");
+
+251 
+	`c⁄s_√wlöe
+(
+c⁄s
+);
+
+253 
+	}
+}
+
+255 
+	$cmd_≠p
+(
+CONSOLE
+ *
+c⁄s
+, *
+Át
+, *
+cmdlöe
+)
+
+257 
+MEMMAN
+ *
+memm™
+ = (MEMMAN *Ë
+MEMMAN_ADDR
+;
+
+258 
+FILEINFO
+ *
+föfo
+;
+
+259 
+SEGMENT_DESCRIPTOR
+ *
+gdt
+ = (SEGMENT_DESCRIPTOR *Ë
+ADR_GDT
+;
+
+260 
+«me
+[18], *
+p
+;
+
+261 
+i
+;
+
+264 
+i
+ = 0; i < 13; i++) {
+
+265 i‡(
+cmdlöe
+[
+i
+] <= ' ') {
+
+268 
+«me
+[
+i
+] = 
+cmdlöe
+[i];
+
+270 
+«me
+[
+i
+] = 0;
+
+273 
+föfo
+ = 
+	`fûe_£¨ch
+(
+«me
+, (
+FILEINFO
+ *Ë(
+ADR_DISKIMG
+ + 0x002600), 224);
+
+274 i‡(
+föfo
+ =0 && 
+«me
+[
+i
+ -1]!= '.') {
+
+276 
+«me
+[
+i
+ ] = '.';
+
+277 
+«me
+[
+i
+ + 1] = 'H';
+
+278 
+«me
+[
+i
+ + 2] = 'R';
+
+279 
+«me
+[
+i
+ + 3] = 'B';
+
+280 
+«me
+[
+i
+ + 4] = 0;
+
+281 
+föfo
+ = 
+	`fûe_£¨ch
+(
+«me
+, (
+FILEINFO
+ *Ë(
+ADR_DISKIMG
+ + 0x002600), 224);
+
+284 i‡(
+föfo
+ != 0) {
+
+286 
+p
+ = (*Ë
+	`memm™_Æloc_4k
+(
+memm™
+, 
+föfo
+->
+size
+);
+
+287 
+	`fûe_lﬂdfûe
+(
+föfo
+->
+˛u°no
+, föfo->
+size
+, 
+p
+, 
+Át
+, (*Ë(
+ADR_DISKIMG
+ + 0x003e00));
+
+288 
+	`£t_£gmdesc
+(
+gdt
+ + 1003, 
+föfo
+->
+size
+ - 1, (Ë
+p
+, 
+AR_CODE32_ER
+);
+
+289 
+	`ÁrˇŒ
+(0, 1003 * 8);
+
+290 
+	`memm™_‰ì_4k
+(
+memm™
+, (Ë
+p
+, 
+föfo
+->
+size
+);
+
+291 
+	`c⁄s_√wlöe
+(
+c⁄s
+);
+
+296 
+	}
+}
+
+298 
+	$hrb_≠i
+(
+edi
+, 
+esi
+, 
+ebp
+, 
+e•
+, 
+ebx
+, 
+edx
+, 
+ecx
+, 
+óx
+)
+
+300 
+CONSOLE
+ *
+c⁄s
+ = (CONSOLE *) *((*) 0x0fec);
+
+301 i‡(
+edx
+ == 1) {
+
+302 
+	`c⁄s_putch¨
+(
+c⁄s
+, 
+óx
+ & 0xff, 1);
+
+303 } i‡(
+edx
+ == 2) {
+
+304 
+	`c⁄s_put°r0
+(
+c⁄s
+, (*Ë
+ebx
+);
+
+305 } i‡(
+edx
+ == 3) {
+
+306 
+	`c⁄s_put°r1
+(
+c⁄s
+, (*Ë
+ebx
+, 
+ecx
+);
+
+309 
+	}
+}
 
 	@dsctbl.c
 
@@ -4117,11 +4415,21 @@ asm_öth™dÀr2c
 AR_INTGATE32
 );
 
-32 
+30 
+	`£t_g©edesc
+(
+idt
+ + 0x40, (Ë
+asm_hrb_≠i
+, 2 * 8, 
+AR_INTGATE32
+);
+
+33 
 	}
 }
 
-34 
+35 
 	$£t_£gmdesc
 (
 SEGMENT_DESCRIPTOR
@@ -4135,19 +4443,19 @@ ba£
 ¨
 )
 
-36 i‡(
+37 i‡(
 limô
  > 0xfffff) {
 
-37 
+38 
 ¨
  |= 0x8000;
 
-38 
+39 
 limô
  /= 0x1000;
 
-40 
+41 
 sd
 ->
 limô_low
@@ -4155,7 +4463,7 @@ limô_low
 limô
  & 0xffff;
 
-41 
+42 
 sd
 ->
 ba£_low
@@ -4163,7 +4471,7 @@ ba£_low
 ba£
  & 0xffff;
 
-42 
+43 
 sd
 ->
 ba£_mid
@@ -4171,7 +4479,7 @@ ba£_mid
 ba£
  >> 16) & 0xff;
 
-43 
+44 
 sd
 ->
 ac˚ss_right
@@ -4179,7 +4487,7 @@ ac˚ss_right
 ¨
  & 0xff;
 
-44 
+45 
 sd
 ->
 limô_high
@@ -4189,7 +4497,7 @@ limô
 ¨
  >> 8) & 0xf0);
 
-45 
+46 
 sd
 ->
 ba£_high
@@ -4197,11 +4505,11 @@ ba£_high
 ba£
  >> 24) & 0xff;
 
-47 
+48 
 	}
 }
 
-49 
+50 
 	$£t_g©edesc
 (
 GATE_DESCRIPTOR
@@ -4215,7 +4523,7 @@ off£t
 ¨
 )
 
-51 
+52 
 gd
 ->
 off£t_low
@@ -4223,13 +4531,13 @@ off£t_low
 off£t
  & 0xffff;
 
-52 
+53 
 gd
 ->
 £À˘‹
  = selector;
 
-53 
+54 
 gd
 ->
 dw_cou¡
@@ -4237,7 +4545,7 @@ dw_cou¡
 ¨
  >> 8) & 0xff;
 
-54 
+55 
 gd
 ->
 ac˚ss_right
@@ -4245,7 +4553,7 @@ ac˚ss_right
 ¨
  & 0xff;
 
-55 
+56 
 gd
 ->
 off£t_high
@@ -4253,7 +4561,7 @@ off£t_high
 off£t
  >> 16) & 0xffff;
 
-57 
+58 
 	}
 }
 
@@ -4500,6 +4808,274 @@ size
 ;
 
 63 
+	}
+}
+
+	@file.c
+
+3 
+	~"boŸ∑ck.h
+"
+
+5 
+	$fûe_ªadÁt
+(*
+Át
+, *
+img
+)
+
+8 
+i
+, 
+j
+ = 0;
+
+9 
+i
+ = 0; i < 2880; i += 2) {
+
+10 
+Át
+[
+i
+ + 0] = (
+img
+[
+j
+ + 0] | img[j + 1] << 8) & 0xfff;
+
+11 
+Át
+[
+i
+ + 1] = (
+img
+[
+j
+ + 1] >> 4 | img[j + 2] << 4) & 0xfff;
+
+12 
+j
+ += 3;
+
+15 
+	}
+}
+
+17 
+	$fûe_lﬂdfûe
+(
+˛u°no
+, 
+size
+, *
+buf
+, *
+Át
+, *
+img
+)
+
+19 
+i
+;
+
+21 i‡(
+size
+ <= 512) {
+
+22 
+i
+ = 0; i < 
+size
+; i++) {
+
+23 
+buf
+[
+i
+] = 
+img
+[
+˛u°no
+ * 512 + i];
+
+27 
+i
+ = 0; i < 512; i++) {
+
+28 
+buf
+[
+i
+] = 
+img
+[
+˛u°no
+ * 512 + i];
+
+30 
+size
+ -= 512;
+
+31 
+buf
+ += 512;
+
+32 
+˛u°no
+ = 
+Át
+[clustno];
+
+35 
+	}
+}
+
+37 
+FILEINFO
+ *
+	$fûe_£¨ch
+(*
+«me
+, 
+FILEINFO
+ *
+föfo
+, 
+max
+)
+
+39 
+i
+, 
+j
+;
+
+40 
+s
+[12];
+
+41 
+j
+ = 0; j < 11; j++) {
+
+42 
+s
+[
+j
+] = ' ';
+
+44 
+j
+ = 0;
+
+45 
+i
+ = 0; 
+«me
+[i] != 0; i++) {
+
+46 i‡(
+j
+ >= 11) {  0; }
+
+47 i‡(
+«me
+[
+i
+] ='.' && 
+j
+ <= 8) {
+
+48 
+j
+ = 8;
+
+50 
+s
+[
+j
+] = 
+«me
+[
+i
+];
+
+51 i‡('a' <
+s
+[
+j
+] && s[j] <= 'z') {
+
+53 
+s
+[
+j
+] -= 0x20;
+
+55 
+j
+++;
+
+58 
+i
+ = 0; i < 
+max
+; ) {
+
+59 i‡(
+föfo
+[
+i
+].
+«me
+[0] == 0x00) {
+
+62 i‡((
+föfo
+[
+i
+].
+ty≥
+ & 0x18) == 0) {
+
+63 
+j
+ = 0; j < 11; j++) {
+
+64 i‡(
+föfo
+[
+i
+].
+«me
+[
+j
+] !
+s
+[j]) {
+
+65 
+√xt
+;
+
+68  
+föfo
+ + 
+i
+;
+
+70 
+√xt
+:
+
+71 
+i
+++;
+
+74 
 	}
 }
 
@@ -9050,6 +9626,568 @@ ts
 ();
 
 118 
+	}
+}
+
+	@window.c
+
+3 
+	~"boŸ∑ck.h
+"
+
+5 
+	$make_wödow8
+(*
+buf
+, 
+xsize
+, 
+ysize
+, *
+tôÀ
+, 
+a˘
+)
+
+7 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_C6C6C6
+, 0, 0, xsize - 1, 0 );
+
+8 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_FFFFFF
+, 1, 1, xsize - 2, 1 );
+
+9 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_C6C6C6
+, 0, 0, 0, 
+ysize
+ - 1);
+
+10 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_FFFFFF
+, 1, 1, 1, 
+ysize
+ - 2);
+
+11 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_848484
+, xsizê- 2, 1, xsizê- 2, 
+ysize
+ - 2);
+
+12 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_000000
+, xsizê- 1, 0, xsizê- 1, 
+ysize
+ - 1);
+
+13 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_C6C6C6
+, 2, 2, xsizê- 3, 
+ysize
+ - 3);
+
+14 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_848484
+, 1, 
+ysize
+ - 2, xsize - 2, ysize - 2);
+
+15 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+COL8_000000
+, 0, 
+ysize
+ - 1, xsize - 1, ysize - 1);
+
+16 
+	`make_wtôÀ8
+(
+buf
+, 
+xsize
+, 
+tôÀ
+, 
+a˘
+);
+
+18 
+	}
+}
+
+20 
+	$make_wtôÀ8
+(*
+buf
+, 
+xsize
+, *
+tôÀ
+, 
+a˘
+)
+
+22 
+˛o£bä
+[14][16] = {
+
+38 
+x
+, 
+y
+;
+
+39 
+c
+, 
+tc
+, 
+tbc
+;
+
+40 i‡(
+a˘
+ != 0) {
+
+41 
+tc
+ = 
+COL8_FFFFFF
+;
+
+42 
+tbc
+ = 
+COL8_000084
+;
+
+44 
+tc
+ = 
+COL8_C6C6C6
+;
+
+45 
+tbc
+ = 
+COL8_848484
+;
+
+47 
+	`boxfûl8
+(
+buf
+, 
+xsize
+, 
+tbc
+, 3, 3, xsize - 4, 20);
+
+48 
+	`putf⁄ts8_asc
+(
+buf
+, 
+xsize
+, 24, 4, 
+tc
+, 
+tôÀ
+);
+
+49 
+y
+ = 0; y < 14; y++) {
+
+50 
+x
+ = 0; x < 16; x++) {
+
+51 
+c
+ = 
+˛o£bä
+[
+y
+][
+x
+];
+
+52 i‡(
+c
+ == '@') {
+
+53 
+c
+ = 
+COL8_000000
+;
+
+54 } i‡(
+c
+ == '$') {
+
+55 
+c
+ = 
+COL8_848484
+;
+
+56 } i‡(
+c
+ == 'Q') {
+
+57 
+c
+ = 
+COL8_C6C6C6
+;
+
+59 
+c
+ = 
+COL8_FFFFFF
+;
+
+61 
+buf
+[(5 + 
+y
+Ë* 
+xsize
+ + (xsizê- 21 + 
+x
+)] = 
+c
+;
+
+65 
+	}
+}
+
+67 
+	$putf⁄ts8_asc_sht
+(
+SHEET
+ *
+sht
+, 
+x
+, 
+y
+, 
+c
+, 
+b
+, *
+s
+, 
+l
+)
+
+69 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+b
+, 
+x
+, 
+y
+, x + 
+l
+ * 8 - 1, y + 15);
+
+70 
+	`putf⁄ts8_asc
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+x
+, 
+y
+, 
+c
+, 
+s
+);
+
+71 
+	`shìt_ª‰esh
+(
+sht
+, 
+x
+, 
+y
+, x + 
+l
+ * 8, y + 16);
+
+73 
+	}
+}
+
+75 
+	$make_ãxtbox8
+(
+SHEET
+ *
+sht
+, 
+x0
+, 
+y0
+, 
+sx
+, 
+sy
+, 
+c
+)
+
+77 
+x1
+ = 
+x0
+ + 
+sx
+, 
+y1
+ = 
+y0
+ + 
+sy
+;
+
+78 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_848484
+, 
+x0
+ - 2, 
+y0
+ - 3, 
+x1
+ + 1, y0 - 3);
+
+79 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_848484
+, 
+x0
+ - 3, 
+y0
+ - 3, x0 - 3, 
+y1
+ + 1);
+
+80 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_FFFFFF
+, 
+x0
+ - 3, 
+y1
+ + 2, 
+x1
+ + 1, y1 + 2);
+
+81 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_FFFFFF
+, 
+x1
+ + 2, 
+y0
+ - 3, x1 + 2, 
+y1
+ + 2);
+
+82 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_000000
+, 
+x0
+ - 1, 
+y0
+ - 2, 
+x1
+ + 0, y0 - 2);
+
+83 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_000000
+, 
+x0
+ - 2, 
+y0
+ - 2, x0 - 2, 
+y1
+ + 0);
+
+84 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_C6C6C6
+, 
+x0
+ - 2, 
+y1
+ + 1, 
+x1
+ + 0, y1 + 1);
+
+85 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+COL8_C6C6C6
+, 
+x1
+ + 1, 
+y0
+ - 2, x1 + 1, 
+y1
+ + 1);
+
+86 
+	`boxfûl8
+(
+sht
+->
+buf
+, sht->
+bxsize
+, 
+c
+, 
+x0
+ - 1, 
+y0
+ - 1, 
+x1
+ + 0, 
+y1
+ + 0);
+
+88 
 	}
 }
 
@@ -229348,12 +230486,14 @@ __uöt32_t
 .
 1
 /usr/include
-38
-898
+41
+924
 bootpack.c
 bootpack.h
+console.c
 dsctbl.c
 fifo.c
+file.c
 graphic.c
 int.c
 keyboard.c
@@ -229362,6 +230502,7 @@ mouse.c
 mtask.c
 sheet.c
 timer.c
+window.c
 /usr/include/stdio.h
 /usr/include/string.h
 /usr/include/Availability.h

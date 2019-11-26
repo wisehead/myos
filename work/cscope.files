@@ -1,7 +1,9 @@
 ./bootpack.c
 ./bootpack.h
+./console.c
 ./dsctbl.c
 ./fifo.c
+./file.c
 ./graphic.c
 ./int.c
 ./keyboard.c
@@ -10,3 +12,4 @@
 ./mtask.c
 ./sheet.c
 ./timer.c
+./window.c
