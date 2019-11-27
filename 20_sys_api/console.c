@@ -294,7 +294,7 @@ int cmd_app(struct CONSOLE *cons, int *fat, char *cmdline)
 	/*没有找到文件的情况*/
 	return 0;
 }
-
+//--
 void hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)
 {
 	struct CONSOLE *cons = (struct CONSOLE *) *((int *) 0x0fec);
