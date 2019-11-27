@@ -3,7 +3,7 @@
 #include "bootpack.h"
 #include <stdio.h>
 #include <string.h>
-
+//--
 void console_task(struct SHEET *sheet, unsigned int memtotal)
 {
 	struct TIMER *timer;
@@ -163,7 +163,7 @@ void cons_putstr1(struct CONSOLE *cons, char *s, int l)
 	}
 	return;
 }
-
+//--
 void cons_runcmd(char *cmdline, struct CONSOLE *cons, int *fat, unsigned int memtotal)
 {
 	if (strcmp(cmdline, "mem") == 0) {
@@ -251,7 +251,7 @@ void cmd_type(struct CONSOLE *cons, int *fat, char *cmdline)
 	cons_newline(cons);
 	return;
 }
-
+//--
 int cmd_app(struct CONSOLE *cons, int *fat, char *cmdline)
 {
 	struct MEMMAN *memman = (struct MEMMAN *) MEMMAN_ADDR;

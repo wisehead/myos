@@ -45,10 +45,7 @@ FLAGS_OVERRUN	fifo.c	/^#define FLAGS_OVERRUN	/;"	d	file:
 FREEINFO	bootpack.h	/^struct FREEINFO { \/* 可用信息 *\/$/;"	s
 GAS2NASK	Makefile	/^GAS2NASK = $(TOOLPATH)gas2nask.exe -a$/;"	m
 GATE_DESCRIPTOR	bootpack.h	/^struct GATE_DESCRIPTOR {$/;"	s
-HariMain	a.c	/^void HariMain(void)$/;"	f
 HariMain	bootpack.c	/^void HariMain(void)$/;"	f
-HariMain	crack1.c	/^void HariMain(void)$/;"	f
-HariMain	hello3.c	/^void HariMain(void)$/;"	f
 IMGTOL	Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
 INCPATH	Makefile	/^INCPATH  = ..\/z_tools\/haribote\/$/;"	m
 KBC_MODE	keyboard.c	/^#define KBC_MODE	/;"	d	file:
@@ -180,7 +177,7 @@ frees	bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
 fs	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
 gs	bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
 height	bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
-hrb_api	console.c	/^int *hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)$/;"	f
+hrb_api	console.c	/^void hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)$/;"	f
 init_gdtidt	dsctbl.c	/^void init_gdtidt(void)$/;"	f
 init_keyboard	keyboard.c	/^void init_keyboard(struct FIFO32 *fifo, int data0)$/;"	f
 init_mouse_cursor8	graphic.c	/^void init_mouse_cursor8(char *mouse, char bc)$/;"	f
@@ -188,7 +185,6 @@ init_palette	graphic.c	/^void init_palette(void)$/;"	f
 init_pic	int.c	/^void init_pic(void)$/;"	f
 init_pit	timer.c	/^void init_pit(void)$/;"	f
 init_screen8	graphic.c	/^void init_screen8(char *vram, int x, int y)$/;"	f
-inthandler0d	console.c	/^int *inthandler0d(int *esp)$/;"	f
 inthandler20	timer.c	/^void inthandler20(int *esp)$/;"	f
 inthandler21	keyboard.c	/^void inthandler21(int *esp)$/;"	f
 inthandler27	int.c	/^void inthandler27(int *esp)$/;"	f

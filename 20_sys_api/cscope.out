@@ -1,32 +1,4 @@
-cscope 15 $HOME/github/myos/work -q 0000002819 0002514064
-	@a.c
-
-1 
-­i_putch¬
-(
-c
-);
-
-2 
-­i_’d
-();
-
-4 
-	$H¬iMaš
-()
-
-6 
-	`­i_putch¬
-('A');
-
-7 
-	`­i_’d
-();
-
-8 
-	}
-}
-
+cscope 15 $HOME/github/myos/20_sys_api -q 0000002812 0002512615
 	@bootpack.c
 
 3 
@@ -1422,26 +1394,22 @@ lßd_Œ
 );
 
 27 
-asm_šthªdËr0d
-();
-
-28 
 asm_šthªdËr20
 ();
 
-29 
+28 
 asm_šthªdËr21
 ();
 
-30 
+29 
 asm_šthªdËr27
 ();
 
-31 
+30 
 asm_šthªdËr2c
 ();
 
-32 
+31 
 mem‹¡_sub
 (
 ¡¬t
@@ -1449,7 +1417,7 @@ mem‹¡_sub
 ’d
 );
 
-33 
+32 
 çrjmp
 (
 e
@@ -1457,7 +1425,7 @@ e
 cs
 );
 
-34 
+33 
 çrÿÎ
 (
 e
@@ -1465,33 +1433,19 @@ e
 cs
 );
 
-35 
+34 
 asm_hrb_­i
 ();
 
-36 
-¡¬t_­p
-(
-e
-, 
-cs
-, 
-e¥
-, 
-ds
-, *
-tss_e¥0
-);
-
-39 
+37 
 	sFIFO32
  {
 
-40 *
+38 *
 	mbuf
 ;
 
-41 
+39 
 	mp
 , 
 	mq
@@ -1503,13 +1457,13 @@ tss_e¥0
 	mæags
 ;
 
-42 
+40 
 TASK
  *
 	msk
 ;
 
-44 
+42 
 fifo32_š™
 (
 FIFO32
@@ -1525,7 +1479,7 @@ TASK
 sk
 );
 
-45 
+43 
 fifo32_put
 (
 FIFO32
@@ -1535,7 +1489,7 @@ fifo
 d©a
 );
 
-46 
+44 
 fifo32_g‘
 (
 FIFO32
@@ -1543,7 +1497,7 @@ FIFO32
 fifo
 );
 
-47 
+45 
 fifo32_¡©us
 (
 FIFO32
@@ -1551,11 +1505,11 @@ FIFO32
 fifo
 );
 
-50 
+48 
 š™_·Ë‰e
 ();
 
-51 
+49 
 £t_·Ë‰e
 (
 ¡¬t
@@ -1565,7 +1519,7 @@ fifo
 rgb
 );
 
-52 
+50 
 boxfžl8
 (*
 v¿m
@@ -1583,7 +1537,7 @@ x1
 y1
 );
 
-53 
+51 
 š™_sü“n8
 (*
 v¿m
@@ -1593,7 +1547,7 @@ x
 y
 );
 
-54 
+52 
 putfÚt8
 (*
 v¿m
@@ -1609,7 +1563,7 @@ c
 fÚt
 );
 
-55 
+53 
 putfÚts8_asc
 (*
 v¿m
@@ -1625,7 +1579,7 @@ c
 s
 );
 
-56 
+54 
 š™_mou£_cursÜ8
 (*
 mou£
@@ -1633,7 +1587,7 @@ mou£
 bc
 );
 
-57 
+55 
 putblock8_8
 (*
 v¿m
@@ -1643,7 +1597,7 @@ vxsize
 pxsize
 ,
 
-58 
+56 
 pysize
 , 
 px0
@@ -1655,149 +1609,149 @@ buf
 bxsize
 );
 
-59 
+57 
 	#COL8_000000
  0
 
 	)
 
-60 
+58 
 	#COL8_FF0000
  1
 
 	)
 
-61 
+59 
 	#COL8_00FF00
  2
 
 	)
 
-62 
+60 
 	#COL8_FFFF00
  3
 
 	)
 
-63 
+61 
 	#COL8_0000FF
  4
 
 	)
 
-64 
+62 
 	#COL8_FF00FF
  5
 
 	)
 
-65 
+63 
 	#COL8_00FFFF
  6
 
 	)
 
-66 
+64 
 	#COL8_FFFFFF
  7
 
 	)
 
-67 
+65 
 	#COL8_C6C6C6
  8
 
 	)
 
-68 
+66 
 	#COL8_840000
  9
 
 	)
 
-69 
+67 
 	#COL8_008400
  10
 
 	)
 
-70 
+68 
 	#COL8_848400
  11
 
 	)
 
-71 
+69 
 	#COL8_000084
  12
 
 	)
 
-72 
+70 
 	#COL8_840084
  13
 
 	)
 
-73 
+71 
 	#COL8_008484
  14
 
 	)
 
-74 
+72 
 	#COL8_848484
  15
 
 	)
 
-77 
+75 
 	sSEGMENT_DESCRIPTOR
  {
 
-78 
+76 
 	mlim™_low
 , 
 	mba£_low
 ;
 
-79 
+77 
 	mba£_mid
 , 
 	macûss_right
 ;
 
-80 
+78 
 	mlim™_high
 , 
 	mba£_high
 ;
 
-82 
+80 
 	sGATE_DESCRIPTOR
  {
 
-83 
+81 
 	moff£t_low
 , 
 	m£ËùÜ
 ;
 
-84 
+82 
 	mdw_couÁ
 , 
 	macûss_right
 ;
 
-85 
+83 
 	moff£t_high
 ;
 
-87 
+85 
 š™_gdtidt
 ();
 
-88 
+86 
 £t_£gmdesc
 (
 SEGMENT_DESCRIPTOR
@@ -1811,7 +1765,7 @@ ba£
 ¬
 );
 
-89 
+87 
 £t_g©edesc
 (
 GATE_DESCRIPTOR
@@ -1825,159 +1779,159 @@ off£t
 ¬
 );
 
-90 
+88 
 	#ADR_IDT
  0x0026f800
 
 	)
 
-91 
+89 
 	#LIMIT_IDT
  0x000007ff
 
 	)
 
-92 
+90 
 	#ADR_GDT
  0x00270000
 
 	)
 
-93 
+91 
 	#LIMIT_GDT
  0x0000ffff
 
 	)
 
-94 
+92 
 	#ADR_BOTPAK
  0x00280000
 
 	)
 
-95 
+93 
 	#LIMIT_BOTPAK
  0x0007ffff
 
 	)
 
-96 
+94 
 	#AR_DATA32_RW
  0x4092
 
 	)
 
-97 
+95 
 	#AR_CODE32_ER
  0x409a
 
 	)
 
-98 
+96 
 	#AR_TSS32
  0x0089
 
 	)
 
-99 
+97 
 	#AR_INTGATE32
  0x008e
 
 	)
 
-102 
+100 
 š™_pic
 ();
 
-103 
+101 
 šthªdËr27
 (*
 e¥
 );
 
-104 
+102 
 	#PIC0_ICW1
  0x0020
 
 	)
 
-105 
+103 
 	#PIC0_OCW2
  0x0020
 
 	)
 
-106 
+104 
 	#PIC0_IMR
  0x0021
 
 	)
 
-107 
+105 
 	#PIC0_ICW2
  0x0021
 
 	)
 
-108 
+106 
 	#PIC0_ICW3
  0x0021
 
 	)
 
-109 
+107 
 	#PIC0_ICW4
  0x0021
 
 	)
 
-110 
+108 
 	#PIC1_ICW1
  0x00a0
 
 	)
 
-111 
+109 
 	#PIC1_OCW2
  0x00a0
 
 	)
 
-112 
+110 
 	#PIC1_IMR
  0x00a1
 
 	)
 
-113 
+111 
 	#PIC1_ICW2
  0x00a1
 
 	)
 
-114 
+112 
 	#PIC1_ICW3
  0x00a1
 
 	)
 
-115 
+113 
 	#PIC1_ICW4
  0x00a1
 
 	)
 
-118 
+116 
 šthªdËr21
 (*
 e¥
 );
 
-119 
+117 
 wa™_KBC_£nd»ady
 ();
 
-120 
+118 
 š™_keybßrd
 (
 FIFO32
@@ -1987,29 +1941,29 @@ fifo
 d©a0
 );
 
-121 
+119 
 	#PORT_KEYDAT
  0x0060
 
 	)
 
-122 
+120 
 	#PORT_KEYCMD
  0x0064
 
 	)
 
-125 
+123 
 	sMOUSE_DEC
  {
 
-126 
+124 
 	mbuf
 [3], 
 	mpha£
 ;
 
-127 
+125 
 	mx
 , 
 	my
@@ -2017,13 +1971,13 @@ d©a0
 	mbŠ
 ;
 
-129 
+127 
 šthªdËr2c
 (*
 e¥
 );
 
-130 
+128 
 ’abË_mou£
 (
 FIFO32
@@ -2037,7 +1991,7 @@ MOUSE_DEC
 mdec
 );
 
-131 
+129 
 mou£_decode
 (
 MOUSE_DEC
@@ -2047,33 +2001,33 @@ mdec
 d©
 );
 
-134 
+132 
 	#MEMMAN_FREES
  4090
 
 	)
 
-135 
+133 
 	#MEMMAN_ADDR
  0x003c0000
 
 	)
 
-136 
+134 
 	sFREEINFO
  {
 
-137 
+135 
 	maddr
 , 
 	msize
 ;
 
-139 
+137 
 	sMEMMAN
  {
 
-140 
+138 
 	mä“s
 , 
 	mmaxä“s
@@ -2083,7 +2037,7 @@ d©
 	mlo¡s
 ;
 
-141 
+139 
 FREEINFO
  
 	mä“
@@ -2091,7 +2045,7 @@ FREEINFO
 MEMMAN_FREES
 ];
 
-143 
+141 
 mem‹¡
 (
 ¡¬t
@@ -2099,7 +2053,7 @@ mem‹¡
 ’d
 );
 
-144 
+142 
 memmª_š™
 (
 MEMMAN
@@ -2107,7 +2061,7 @@ MEMMAN
 mª
 );
 
-145 
+143 
 memmª_tÙ®
 (
 MEMMAN
@@ -2115,7 +2069,7 @@ MEMMAN
 mª
 );
 
-146 
+144 
 memmª_®loc
 (
 MEMMAN
@@ -2125,7 +2079,7 @@ mª
 size
 );
 
-147 
+145 
 memmª_ä“
 (
 MEMMAN
@@ -2137,7 +2091,7 @@ addr
 size
 );
 
-148 
+146 
 memmª_®loc_4k
 (
 MEMMAN
@@ -2147,7 +2101,7 @@ mª
 size
 );
 
-149 
+147 
 memmª_ä“_4k
 (
 MEMMAN
@@ -2159,21 +2113,21 @@ addr
 size
 );
 
-152 
+150 
 	#MAX_SHEETS
  256
 
 	)
 
-153 
+151 
 	sSHEET
  {
 
-154 *
+152 *
 	mbuf
 ;
 
-155 
+153 
 	mbxsize
 , 
 	mbysize
@@ -2189,23 +2143,23 @@ size
 	mæags
 ;
 
-156 
+154 
 SHTCTL
  *
 	mùl
 ;
 
-158 
+156 
 	sSHTCTL
  {
 
-159 *
+157 *
 	mv¿m
 , *
 	mm­
 ;
 
-160 
+158 
 	mxsize
 , 
 	mysize
@@ -2213,7 +2167,7 @@ SHTCTL
 	mtÝ
 ;
 
-161 
+159 
 SHEET
  *
 	msh“ts
@@ -2221,7 +2175,7 @@ SHEET
 MAX_SHEETS
 ];
 
-162 
+160 
 SHEET
  
 	msh“ts0
@@ -2229,7 +2183,7 @@ SHEET
 MAX_SHEETS
 ];
 
-164 
+162 
 SHTCTL
  *
 shtùl_š™
@@ -2245,7 +2199,7 @@ xsize
 ysize
 );
 
-165 
+163 
 SHEET
  *
 sh“t_®loc
@@ -2255,7 +2209,7 @@ SHTCTL
 ùl
 );
 
-166 
+164 
 sh“t_£tbuf
 (
 SHEET
@@ -2271,7 +2225,7 @@ ysize
 cÞ_šv
 );
 
-167 
+165 
 sh“t_updown
 (
 SHEET
@@ -2281,7 +2235,7 @@ sht
 height
 );
 
-168 
+166 
 sh“t_»äesh
 (
 SHEET
@@ -2297,7 +2251,7 @@ bx1
 by1
 );
 
-169 
+167 
 sh“t_¦ide
 (
 SHEET
@@ -2309,7 +2263,7 @@ vx0
 vy0
 );
 
-170 
+168 
 sh“t_ä“
 (
 SHEET
@@ -2317,55 +2271,55 @@ SHEET
 sht
 );
 
-173 
+171 
 	#MAX_TIMER
  500
 
 	)
 
-174 
+172 
 	sTIMER
  {
 
-175 
+173 
 TIMER
  *
 	mÃxt
 ;
 
-176 
+174 
 	mtimeout
 , 
 	mæags
 ;
 
-177 
+175 
 FIFO32
  *
 	mfifo
 ;
 
-178 
+176 
 	md©a
 ;
 
-180 
+178 
 	sTIMERCTL
  {
 
-181 
+179 
 	mcouÁ
 , 
 	mÃxt
 ;
 
-182 
+180 
 TIMER
  *
 	mt0
 ;
 
-183 
+181 
 TIMER
  
 	mtim”s0
@@ -2373,23 +2327,23 @@ TIMER
 MAX_TIMER
 ];
 
-185 
+183 
 TIMERCTL
  
 tim”ùl
 ;
 
-186 
+184 
 š™_p™
 ();
 
-187 
+185 
 TIMER
  *
 tim”_®loc
 ();
 
-188 
+186 
 tim”_ä“
 (
 TIMER
@@ -2397,7 +2351,7 @@ TIMER
 tim”
 );
 
-189 
+187 
 tim”_š™
 (
 TIMER
@@ -2411,7 +2365,7 @@ fifo
 d©a
 );
 
-190 
+188 
 tim”_£‰ime
 (
 TIMER
@@ -2421,41 +2375,41 @@ tim”
 timeout
 );
 
-191 
+189 
 šthªdËr20
 (*
 e¥
 );
 
-194 
+192 
 	#MAX_TASKS
  1000
 
 	)
 
-195 
+193 
 	#TASK_GDT0
  3
 
 	)
 
-196 
+194 
 	#MAX_TASKS_LV
  100
 
 	)
 
-197 
+195 
 	#MAX_TASKLEVELS
  10
 
 	)
 
-198 
+196 
 	sTSS32
  {
 
-199 
+197 
 	mbacklšk
 , 
 	me¥0
@@ -2473,7 +2427,7 @@ e¥
 	mü3
 ;
 
-200 
+198 
 	me
 , 
 	meæags
@@ -2495,7 +2449,7 @@ e¥
 	medi
 ;
 
-201 
+199 
 	mes
 , 
 	mcs
@@ -2509,53 +2463,53 @@ e¥
 	mgs
 ;
 
-202 
+200 
 	mldŒ
 , 
 	miom­
 ;
 
-204 
+202 
 	sTASK
  {
 
-205 
+203 
 	m£l
 , 
 	mæags
 ;
 
-206 
+204 
 	mËv–
 , 
 	m´iÜ™y
 ;
 
-207 
+205 
 FIFO32
  
 	mfifo
 ;
 
-208 
+206 
 TSS32
  
 	mtss
 ;
 
-210 
+208 
 	sTASKLEVEL
  {
 
-211 
+209 
 	mruÂšg
 ;
 
-212 
+210 
 	mnow
 ;
 
-213 
+211 
 TASK
  *
 	msks
@@ -2563,19 +2517,19 @@ TASK
 MAX_TASKS_LV
 ];
 
-215 
+213 
 	sTASKCTL
  {
 
-216 
+214 
 	mnow_lv
 ;
 
-217 
+215 
 	mlv_chªge
 ;
 
-218 
+216 
 TASKLEVEL
  
 	mËv–
@@ -2583,7 +2537,7 @@ TASKLEVEL
 MAX_TASKLEVELS
 ];
 
-219 
+217 
 TASK
  
 	msks0
@@ -2591,13 +2545,13 @@ TASK
 MAX_TASKS
 ];
 
-221 
+219 
 TIMER
  *
 sk_tim”
 ;
 
-222 
+220 
 TASK
  *
 sk_š™
@@ -2607,13 +2561,13 @@ MEMMAN
 memmª
 );
 
-223 
+221 
 TASK
  *
 sk_®loc
 ();
 
-224 
+222 
 sk_run
 (
 TASK
@@ -2625,11 +2579,11 @@ TASK
 ´iÜ™y
 );
 
-225 
+223 
 sk_sw™ch
 ();
 
-226 
+224 
 sk_¦“p
 (
 TASK
@@ -2637,7 +2591,7 @@ TASK
 sk
 );
 
-229 
+227 
 make_wšdow8
 (*
 buf
@@ -2651,7 +2605,7 @@ t™Ë
 aù
 );
 
-230 
+228 
 putfÚts8_asc_sht
 (
 SHEET
@@ -2671,7 +2625,7 @@ s
 l
 );
 
-231 
+229 
 make_‹xtbox8
 (
 SHEET
@@ -2689,7 +2643,7 @@ sy
 c
 );
 
-232 
+230 
 make_wt™Ë8
 (*
 buf
@@ -2701,17 +2655,17 @@ t™Ë
 aù
 );
 
-235 
+233 
 	sCONSOLE
  {
 
-236 
+234 
 SHEET
  *
 	msht
 ;
 
-237 
+235 
 	mcur_x
 , 
 	mcur_y
@@ -2719,7 +2673,7 @@ SHEET
 	mcur_c
 ;
 
-239 
+237 
 cÚsÞe_sk
 (
 SHEET
@@ -2729,7 +2683,7 @@ sh“t
 memtÙ®
 );
 
-240 
+238 
 cÚs_putch¬
 (
 CONSOLE
@@ -2741,7 +2695,7 @@ chr
 move
 );
 
-241 
+239 
 cÚs_Ãwlše
 (
 CONSOLE
@@ -2749,7 +2703,7 @@ CONSOLE
 cÚs
 );
 
-242 
+240 
 cÚs_put¡r0
 (
 CONSOLE
@@ -2759,7 +2713,7 @@ cÚs
 s
 );
 
-243 
+241 
 cÚs_put¡r1
 (
 CONSOLE
@@ -2771,7 +2725,7 @@ s
 l
 );
 
-244 
+242 
 cÚs_runcmd
 (*
 cmdlše
@@ -2785,7 +2739,7 @@ cÚs
 memtÙ®
 );
 
-245 
+243 
 cmd_mem
 (
 CONSOLE
@@ -2795,7 +2749,7 @@ cÚs
 memtÙ®
 );
 
-246 
+244 
 cmd_þs
 (
 CONSOLE
@@ -2803,7 +2757,7 @@ CONSOLE
 cÚs
 );
 
-247 
+245 
 cmd_dœ
 (
 CONSOLE
@@ -2811,7 +2765,7 @@ CONSOLE
 cÚs
 );
 
-248 
+246 
 cmd_ty³
 (
 CONSOLE
@@ -2823,7 +2777,7 @@ cÚs
 cmdlše
 );
 
-249 
+247 
 cmd_­p
 (
 CONSOLE
@@ -2835,7 +2789,7 @@ cÚs
 cmdlše
 );
 
-250 *
+248 
 hrb_­i
 (
 edi
@@ -2855,17 +2809,11 @@ ecx
 —x
 );
 
-251 *
-šthªdËr0d
-(*
-e¥
-);
-
-254 
+251 
 	sFILEINFO
  {
 
-255 
+252 
 	mÇme
 [8], 
 	mext
@@ -2873,11 +2821,11 @@ e¥
 	mty³
 ;
 
-256 
+253 
 	m»£rve
 [10];
 
-257 
+254 
 	mtime
 , 
 	md©e
@@ -2885,11 +2833,11 @@ e¥
 	mþu¡no
 ;
 
-258 
+255 
 	msize
 ;
 
-260 
+257 
 fže_»adçt
 (*
 çt
@@ -2897,7 +2845,7 @@ fže_»adçt
 img
 );
 
-261 
+258 
 fže_lßdfže
 (
 þu¡no
@@ -2911,7 +2859,7 @@ buf
 img
 );
 
-262 
+259 
 FILEINFO
  *
 fže_£¬ch
@@ -3987,11 +3935,15 @@ ADR_DISKIMG
 p
 ;
 
-240 ià(
+240 
+i
+;
+
+241 ià(
 fšfo
  != 0) {
 
-242 
+243 
 p
  = (*è
 	`memmª_®loc_4k
@@ -4003,7 +3955,7 @@ fšfo
 size
 );
 
-243 
+244 
 	`fže_lßdfže
 (
 fšfo
@@ -4019,7 +3971,7 @@ p
 ADR_DISKIMG
  + 0x003e00));
 
-244 
+245 
 	`cÚs_put¡r1
 (
 cÚs
@@ -4031,7 +3983,7 @@ fšfo
 size
 );
 
-245 
+246 
 	`memmª_ä“_4k
 (
 memmª
@@ -4043,23 +3995,23 @@ fšfo
 size
 );
 
-248 
+249 
 	`cÚs_put¡r0
 (
 cÚs
 , "File‚ot found.\n");
 
-250 
+251 
 	`cÚs_Ãwlše
 (
 cÚs
 );
 
-252 
+253 
 	}
 }
 
-254 
+255 
 	$cmd_­p
 (
 CONSOLE
@@ -4071,7 +4023,7 @@ cÚs
 cmdlše
 )
 
-256 
+257 
 MEMMAN
  *
 memmª
@@ -4079,13 +4031,13 @@ memmª
 MEMMAN_ADDR
 ;
 
-257 
+258 
 FILEINFO
  *
 fšfo
 ;
 
-258 
+259 
 SEGMENT_DESCRIPTOR
  *
 gdt
@@ -4093,21 +4045,11 @@ gdt
 ADR_GDT
 ;
 
-259 
+260 
 Çme
 [18], *
 p
-, *
-q
 ;
-
-260 
-TASK
- *
-sk
- = 
-	`sk_now
-();
 
 261 
 i
@@ -4216,18 +4158,6 @@ size
 );
 
 287 
-q
- = (*è
-	`memmª_®loc_4k
-(
-memmª
-, 64 * 1024);
-
-288 *((*è0xã8èð(è
-p
-;
-
-289 
 	`fže_lßdfže
 (
 fšfo
@@ -4243,7 +4173,7 @@ p
 ADR_DISKIMG
  + 0x003e00));
 
-290 
+288 
 	`£t_£gmdesc
 (
 gdt
@@ -4255,63 +4185,13 @@ size
 p
 , 
 AR_CODE32_ER
- + 0x60);
+);
 
-291 
-	`£t_£gmdesc
-(
-gdt
- + 1004, 64 * 1024 - 1, (è
-q
-, 
-AR_DATA32_RW
- + 0x60);
+289 
+	`çrÿÎ
+(0, 1003 * 8);
 
-292 ià(
-fšfo
-->
-size
- >ð8 && 
-	`¡ºcmp
-(
-p
- + 4, "Hari", 4) == 0) {
-
-293 
-p
-[0] = 0xe8;
-
-294 
-p
-[1] = 0x16;
-
-295 
-p
-[2] = 0x00;
-
-296 
-p
-[3] = 0x00;
-
-297 
-p
-[4] = 0x00;
-
-298 
-p
-[5] = 0xcb;
-
-300 
-	`¡¬t_­p
-(0, 1003 * 8, 64 * 1024, 1004 * 8, &(
-sk
-->
-tss
-.
-e¥0
-));
-
-301 
+290 
 	`memmª_ä“_4k
 (
 memmª
@@ -4323,25 +4203,17 @@ fšfo
 size
 );
 
-302 
-	`memmª_ä“_4k
-(
-memmª
-, (è
-q
-, 64 * 1024);
-
-303 
+291 
 	`cÚs_Ãwlše
 (
 cÚs
 );
 
-308 
+296 
 	}
 }
 
-310 *
+298 
 	$hrb_­i
 (
 edi
@@ -4361,29 +4233,17 @@ ecx
 —x
 )
 
-312 
-cs_ba£
- = *((*) 0xfe8);
-
-313 
-TASK
- *
-sk
- = 
-	`sk_now
-();
-
-314 
+300 
 CONSOLE
  *
 cÚs
  = (CONSOLE *) *((*) 0x0fec);
 
-315 ià(
+301 ià(
 edx
  == 1) {
 
-316 
+302 
 	`cÚs_putch¬
 (
 cÚs
@@ -4391,105 +4251,33 @@ cÚs
 —x
  & 0xff, 1);
 
-317 } ià(
+303 } ià(
 edx
  == 2) {
 
-318 
+304 
 	`cÚs_put¡r0
 (
 cÚs
 , (*è
 ebx
- + 
-cs_ba£
 );
 
-319 } ià(
+305 } ià(
 edx
  == 3) {
 
-320 
+306 
 	`cÚs_put¡r1
 (
 cÚs
 , (*è
 ebx
- + 
-cs_ba£
 , 
 ecx
 );
 
-321 } ià(
-edx
- == 4) {
-
-322  &(
-sk
-->
-tss
-.
-e¥0
-);
-
-325 
-	}
-}
-
-327 *
-	$šthªdËr0d
-(*
-e¥
-)
-
-329 
-CONSOLE
- *
-cÚs
- = (CONSOLE *) *((*) 0x0fec);
-
-330 
-TASK
- *
-sk
- = 
-	`sk_now
-();
-
-331 
-	`cÚs_put¡r0
-(
-cÚs
-, "\nINT 0D :\n General Protected Exception.\n");
-
-332  &(
-sk
-->
-tss
-.
-e¥0
-);
-
-333 
-	}
-}
-
-	@crack1.c
-
-1 
-­i_’d
-();
-
-3 
-	$H¬iMaš
-()
-
-6 
-	`­i_’d
-();
-
-7 
+309 
 	}
 }
 
@@ -4591,23 +4379,13 @@ ADR_IDT
 	`£t_g©edesc
 (
 idt
- + 0x0d, (è
-asm_šthªdËr0d
-, 2 * 8, 
-AR_INTGATE32
-);
-
-27 
-	`£t_g©edesc
-(
-idt
  + 0x20, (è
 asm_šthªdËr20
 , 2 * 8, 
 AR_INTGATE32
 );
 
-28 
+27 
 	`£t_g©edesc
 (
 idt
@@ -4617,7 +4395,7 @@ asm_šthªdËr21
 AR_INTGATE32
 );
 
-29 
+28 
 	`£t_g©edesc
 (
 idt
@@ -4627,7 +4405,7 @@ asm_šthªdËr27
 AR_INTGATE32
 );
 
-30 
+29 
 	`£t_g©edesc
 (
 idt
@@ -4637,7 +4415,7 @@ asm_šthªdËr2c
 AR_INTGATE32
 );
 
-31 
+30 
 	`£t_g©edesc
 (
 idt
@@ -4645,13 +4423,13 @@ idt
 asm_hrb_­i
 , 2 * 8, 
 AR_INTGATE32
- + 0x60);
+);
 
-34 
+33 
 	}
 }
 
-36 
+35 
 	$£t_£gmdesc
 (
 SEGMENT_DESCRIPTOR
@@ -4665,19 +4443,19 @@ ba£
 ¬
 )
 
-38 ià(
+37 ià(
 lim™
  > 0xfffff) {
 
-39 
+38 
 ¬
  |= 0x8000;
 
-40 
+39 
 lim™
  /= 0x1000;
 
-42 
+41 
 sd
 ->
 lim™_low
@@ -4685,7 +4463,7 @@ lim™_low
 lim™
  & 0xffff;
 
-43 
+42 
 sd
 ->
 ba£_low
@@ -4693,7 +4471,7 @@ ba£_low
 ba£
  & 0xffff;
 
-44 
+43 
 sd
 ->
 ba£_mid
@@ -4701,7 +4479,7 @@ ba£_mid
 ba£
  >> 16) & 0xff;
 
-45 
+44 
 sd
 ->
 acûss_right
@@ -4709,7 +4487,7 @@ acûss_right
 ¬
  & 0xff;
 
-46 
+45 
 sd
 ->
 lim™_high
@@ -4719,7 +4497,7 @@ lim™
 ¬
  >> 8) & 0xf0);
 
-47 
+46 
 sd
 ->
 ba£_high
@@ -4727,11 +4505,11 @@ ba£_high
 ba£
  >> 24) & 0xff;
 
-49 
+48 
 	}
 }
 
-51 
+50 
 	$£t_g©edesc
 (
 GATE_DESCRIPTOR
@@ -4745,7 +4523,7 @@ off£t
 ¬
 )
 
-53 
+52 
 gd
 ->
 off£t_low
@@ -4753,13 +4531,13 @@ off£t_low
 off£t
  & 0xffff;
 
-54 
+53 
 gd
 ->
 £ËùÜ
  = selector;
 
-55 
+54 
 gd
 ->
 dw_couÁ
@@ -4767,7 +4545,7 @@ dw_couÁ
 ¬
  >> 8) & 0xff;
 
-56 
+55 
 gd
 ->
 acûss_right
@@ -4775,7 +4553,7 @@ acûss_right
 ¬
  & 0xff;
 
-57 
+56 
 gd
 ->
 off£t_high
@@ -4783,7 +4561,7 @@ off£t_high
 off£t
  >> 16) & 0xffff;
 
-59 
+58 
 	}
 }
 
@@ -5948,50 +5726,6 @@ bxsize
  + x];
 
 157 
-	}
-}
-
-	@hello3.c
-
-1 
-­i_putch¬
-(
-c
-);
-
-2 
-­i_’d
-();
-
-4 
-	$H¬iMaš
-()
-
-6 
-	`­i_putch¬
-('h');
-
-7 
-	`­i_putch¬
-('e');
-
-8 
-	`­i_putch¬
-('l');
-
-9 
-	`­i_putch¬
-('l');
-
-10 
-	`­i_putch¬
-('o');
-
-11 
-	`­i_’d
-();
-
-12 
 	}
 }
 
@@ -230752,18 +230486,15 @@ __ušt32_t
 .
 1
 /usr/include
-44
-946
-a.c
+41
+924
 bootpack.c
 bootpack.h
 console.c
-crack1.c
 dsctbl.c
 fifo.c
 file.c
 graphic.c
-hello3.c
 int.c
 keyboard.c
 memory.c
