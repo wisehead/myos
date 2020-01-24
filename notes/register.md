@@ -1,33 +1,36 @@
 #1.各种寄存器
-AX--accumulator, 累加寄存器
-CS--counter，计数寄存器
-DX--data，数据寄存器
-BX--base，基址寄存器
-SP--stack pointer，栈指针寄存器
-BP——base pointer，基址指针寄存器
-SI--source index，源变址寄存器
-DI——destination index，目的变址寄存器
+* AX--accumulator, 累加寄存器
+* CS--counter，计数寄存器
+* DX--data，数据寄存器
+* BX--base，基址寄存器
+* SP--stack pointer，栈指针寄存器
+* BP——base pointer，基址指针寄存器
+* SI--source index，源变址寄存器
+* DI——destination index，目的变址寄存器
 
 
-ES——附加段寄存器(extra segment)
-CS——代码段寄存器(code segment)
-SS——栈段寄存器(stack segment)
-DS——数据段寄存器(data segment)
-FS——没有名称（segment part 2）
-GS——没有名称（segment part 3）
+* ES——附加段寄存器(extra segment)
+* CS——代码段寄存器(code segment)
+* SS——栈段寄存器(stack segment)
+* DS——数据段寄存器(data segment)
+* FS——没有名称（segment part 2）
+* GS——没有名称（segment part 3）
+*
 
-CR0——特殊的32位寄存器，也就是control register 0，是一个非常重要的寄存器，只有操作系统才能使用。
-EFLAGS——存储CPU运算的一些标志位
-GDT0——保存GDT的地址。
-IMR: interrupt mask register, 中断屏蔽寄存器
-ICW: initial control word. 初始化控制数据
 
-EIP——extended instruction pointer。扩展指令指针寄存器。
+
+* CR0——特殊的32位寄存器，也就是control register 0，是一个非常重要的寄存器，只有操作系统才能使用。
+* EFLAGS——存储CPU运算的一些标志位
+* GDT0——保存GDT的地址。
+* IMR: interrupt mask register, 中断屏蔽寄存器
+* ICW: initial control word. 初始化控制数据
+
+* EIP——extended instruction pointer。扩展指令指针寄存器。
         EIP是CPU用来记录下一条需要执行的指令，位于内存中的哪个地址的寄存器。每执行一条指令，EIP中的值就自动累加，从而一直保证指向下一条指令的地址。
-TR——task register。作用是让CPU记住当前正在运行哪一个任务。当进行任务切换的时候，TR寄存器的值也会自动变化。我们给TR寄存器赋值的时候，必须把GDT的编号乘以8，Intel这样规定。
+* TR——task register。作用是让CPU记住当前正在运行哪一个任务。当进行任务切换的时候，TR寄存器的值也会自动变化。我们给TR寄存器赋值的时候，必须把GDT的编号乘以8，Intel这样规定。
 
 
 #2.寄存器限制
-只有BX、BP、SI、DI几个寄存器，可以用寄存器指定内存地址，剩下的AX、CX、DX、SP不可以。（SP也可以吧？？？？只能读不能写？？？？）
-C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随便使用，其它寄存器只能读，不能写。因为其它寄存器在编译C语言时，用来存重要的值。
+* 只有BX、BP、SI、DI几个寄存器，可以用寄存器指定内存地址，剩下的AX、CX、DX、SP不可以。（SP也可以吧？？？？只能读不能写？？？？）
+* C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随便使用，其它寄存器只能读，不能写。因为其它寄存器在编译C语言时，用来存重要的值。
 
