@@ -252,13 +252,6 @@ wait_KBC_sendready();
 CLI：将中断标志（interrupt flag）置为0的指令（clear interrupt flag）。
 STI：是要将这个终端标志置为1的指令（set interrupt flag）。
 
-16.EFLAGS
-它是一个叫做EFLAGS的特殊寄存器。这是由名为FLAGS的16位寄存器扩展而来的32位寄存器。FLAGS是存储进位标志和中断标志等标志的寄存器。
-进位标志可以通过JC货JNC等跳转指令来简单地判断到底是0还是1.但对于中断标志，没有类似的JI或JNI命令，所以只能读入EFLAGS，再检查第九位是0还是1.顺便说一下，进位标志是EFLAGS的第0位。
-
-能够用来读写EFLAGS的，只有PUSHFD和POPFD指令。
-PUSHFD： push flags double-word，意思是将标志位的值按双字节长压入栈。其实它所做的，就是“PUSH EFLAGS”。
-POPFD： pop flags double-word, 意思是按双字节长将标志位从栈弹出。它所做的，就是“POP EFLAGS”
 
 18.IDT
 IDT是interrupt descriptor table的缩写，意思是中断记录表。当CPU遇到外部状况变化，或者是内部偶然发生某些错误时，会淋湿切换过去处理这种突发事件。这就是中断功能。

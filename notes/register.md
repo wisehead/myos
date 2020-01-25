@@ -34,3 +34,11 @@
 * 只有BX、BP、SI、DI几个寄存器，可以用寄存器指定内存地址，剩下的AX、CX、DX、SP不可以。（SP也可以吧？？？？只能读不能写？？？？）
 * C语言和汇编联合使用的时候，EAX, ECX, EDX这几个寄存器可以随便使用，其它寄存器只能读，不能写。因为其它寄存器在编译C语言时，用来存重要的值。
 
+#3.EFLAGS
+它是一个叫做EFLAGS的特殊寄存器。这是由名为FLAGS的16位寄存器扩展而来的32位寄存器。FLAGS是存储进位标志和中断标志等标志的寄存器。
+* 进位标志可以通过JC货JNC等跳转指令来简单地判断到底是0还是1.
+* 但对于中断标志，没有类似的JI或JNI命令，所以只能读入EFLAGS，再检查第九位是0还是1.顺便说一下，进位标志是EFLAGS的第0位。
+
+* 能够用来读写EFLAGS的，只有PUSHFD和POPFD指令。
+PUSHFD： push flags double-word，意思是将标志位的值按双字节长压入栈。其实它所做的，就是“PUSH EFLAGS”。
+POPFD： pop flags double-word, 意思是按双字节长将标志位从栈弹出。它所做的，就是“POP EFLAGS”
