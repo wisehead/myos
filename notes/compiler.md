@@ -35,3 +35,26 @@ img文件：真正的镜像文件，可执行文件。sys文件+ipl.bin。（har
 
     ../z_tools/make.exe img
     ../z_tools/imgtol.com w a: helloos.img
+    
+    
+#3.推导过程
+* 首先，使用cc1.exe从bootpack.c生成bootpack.gas
+* 第二步：使用gas2nask.exe 从bootpack.gas生成bootpack.nas。
+* 第三步：使用nask.exe从bootpack.nas生成bootpack.obj
+* 第四步：使用obj2bim.exe从bootpack.obj生成 bootpack.bim
+* 第五步：使用bim2hrb.exe从bootpack.bim生成bootpack.hrb。
+* 这样就生成了机器语言，再使用copy指令将asmhead.bin与bootpack.hrb单纯结合起来，就成了haribote.sys。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
