@@ -185,18 +185,6 @@ wait_KBC_sendready();
 
 
 
-
-18.IDT
-IDT是interrupt descriptor table的缩写，意思是中断记录表。当CPU遇到外部状况变化，或者是内部偶然发生某些错误时，会淋湿切换过去处理这种突发事件。这就是中断功能。
-
-中断本质上将是为了解决CPU和外部慢设备之间的问题。避免了CPU轮询的低效。
-
-各个设备有变化时，就产生中断，中断发生后，CPU暂时停止正在处理的任务，并做好接下来继续处理的准备，转而执行中断程序。中断程序执行完后，再调用事先设定好的函数，返回处理中的任务。
-正是得益于中断机制，CPU可以不用一直查询键盘、鼠标、网卡等设备的状态，将精力集中在处理任务上。
-
-要使用鼠标，就不许使用中断。所以，我们必须设定IDT，IDT记录了0~255的中断号码于调用函数的对应关系，比如说发生了123号中断，就调用handler123()函数，其设定方法于GDT很类似。
-
-
 19.CPU关闭缓存
 unsigned int memtest(unsigned int start, unsigned int end)
 {
@@ -240,24 +228,6 @@ unsigned int memtest(unsigned int start, unsigned int end)
 C语言：eflag &= ~EFLAGS_AC_BIT;
 ASM： XOR DWORD [EBX], 0xffffffff
 
-
-
-24.操作系统端对齐
-esp     -> 0xff
-esp+1   -> 0xff
-esp+2   -> 0x00
-esp+3   -> 0x00
-esp+4   ->
-
-一个int 4字节变量 var = 【esp+4】 = 0x0000ffff
-注意存储顺序。
-读数据从后往前读取。
-
-
-栈的内存，从高到低放入数据，取数据从低到高。
-
-
-函数的第一个参数是ESP+4
 
 
 
@@ -345,15 +315,9 @@ struct TSS32 {
 任务设置相关。ldtr = 0，iomap = 0x400000000
 
 
-32.段的概念
-所有的段，都在GDT注册
-每个段的大小不一定是64KB
 
-33.我们使用寄存器时候，以ES：BX这种方式来表示地址，写成"Mov AL,[ES:BX]"，它代表ES*16+BX的内存地址。
 
-ES带入0xffff，BX带入oxffff，就是114095字节，也就是1MB以内地址。
 
-一般默认的段寄存器是DS，默认是0.
 
 
 
