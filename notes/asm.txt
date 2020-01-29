@@ -7,16 +7,6 @@ ASM： XOR DWORD [EBX], 0xffffffff
 
 
 
-
-27.画面模式中的重要信息
-WORD    【ES: DI + 0x00】：模式属性    bit7不是1就不好办（能加上0x4000）
-WORD    【ES: DI + 0x12】：X的分辨率
-WORD    【ES: DI + 0x14】：Y的分辨率
-BYTE    【ES: DI + 0x19】：颜色数，必须为8
-BYTE    【ES: DI + 0x1b】：颜色的指定方法。必须为4（4是调色板模式）
-DWORD   【ES: DI + 0x28】：VRAM的地址。
-
-
 29.任务切换一些背景
 一般操作系统每个切换间隔是0.01~0.03秒
 切换动作本身需要消耗0.0001秒。
