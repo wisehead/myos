@@ -8,27 +8,6 @@ ASM： XOR DWORD [EBX], 0xffffffff
 
 
 
-
-26.切换到高分屏
-        MOV     BX,0x4101; VBE的640*480*8bi彩色
-        MOV     AX,0x4f02
-        INT     0x10
-        MOV     BYTE [VMODE],8
-        MOV     WORD [SCRNX],640
-        MOV     WORD [SCRNY],480
-        MOV     DWORD [VRAM], 0xe00000000
-
-以前画面是320*200的时候，AH=0，AL=画面模式号码。
-切换到VBE的画面模式：AX=0x4f02，BX=画面模式号码。
-
-0x101      640*480* 8bit彩色
-0x103       800*600
-0x105       1024*768
-0x107       1280*1024
-
-在QEMU中不能指定最下面的0x107，实际指定的时候，要像在asmhead.nas中所做的那样，将以上的画面模式号码加上0x4000，再赋值到BX中去，不这样做就不能顺利运行。
-
-
 27.画面模式中的重要信息
 WORD    【ES: DI + 0x00】：模式属性    bit7不是1就不好办（能加上0x4000）
 WORD    【ES: DI + 0x12】：X的分辨率
@@ -37,8 +16,6 @@ BYTE    【ES: DI + 0x19】：颜色数，必须为8
 BYTE    【ES: DI + 0x1b】：颜色的指定方法。必须为4（4是调色板模式）
 DWORD   【ES: DI + 0x28】：VRAM的地址。
 
-28.VBE
- VESA BIOS extension， VESA-BIOS扩展，简称VBE。利用它，就可以提高显卡分辨率了。
 
 29.任务切换一些背景
 一般操作系统每个切换间隔是0.01~0.03秒
