@@ -1,0 +1,801 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADR_BOOTINFO	haribote/bootpack.h	/^#define ADR_BOOTINFO	/;"	d
+ADR_BOTPAK	haribote/bootpack.h	/^#define ADR_BOTPAK	/;"	d
+ADR_DISKIMG	haribote/bootpack.h	/^#define ADR_DISKIMG	/;"	d
+ADR_GDT	haribote/bootpack.h	/^#define ADR_GDT	/;"	d
+ADR_IDT	haribote/bootpack.h	/^#define ADR_IDT	/;"	d
+APILIBPATH	gview/Makefile	/^APILIBPATH   = ..\/apilib\/$/;"	m
+APP	a/Makefile	/^APP      = a$/;"	m
+APP	bball/Makefile	/^APP      = bball$/;"	m
+APP	beepdown/Makefile	/^APP      = beepdown$/;"	m
+APP	calc/Makefile	/^APP      = calc$/;"	m
+APP	chklang/Makefile	/^APP      = chklang$/;"	m
+APP	color/Makefile	/^APP      = color$/;"	m
+APP	color2/Makefile	/^APP      = color2$/;"	m
+APP	gview/Makefile	/^APP      = gview$/;"	m
+APP	hello3/Makefile	/^APP      = hello3$/;"	m
+APP	hello4/Makefile	/^APP      = hello4$/;"	m
+APP	hello5/Makefile	/^APP      = hello5$/;"	m
+APP	invader/Makefile	/^APP      = invader$/;"	m
+APP	iroha/Makefile	/^APP      = iroha$/;"	m
+APP	lines/Makefile	/^APP      = lines$/;"	m
+APP	mmlplay/Makefile	/^APP      = mmlplay$/;"	m
+APP	noodle/Makefile	/^APP      = noodle$/;"	m
+APP	notrec/Makefile	/^APP      = notrec$/;"	m
+APP	sosu/Makefile	/^APP      = sosu$/;"	m
+APP	sosu2/Makefile	/^APP      = sosu2$/;"	m
+APP	sosu3/Makefile	/^APP      = sosu3$/;"	m
+APP	star1/Makefile	/^APP      = star1$/;"	m
+APP	stars/Makefile	/^APP      = stars$/;"	m
+APP	stars2/Makefile	/^APP      = stars2$/;"	m
+APP	tview/Makefile	/^APP      = tview$/;"	m
+APP	type/Makefile	/^APP      = type$/;"	m
+APP	walk/Makefile	/^APP      = walk$/;"	m
+APP	winhelo/Makefile	/^APP      = winhelo$/;"	m
+APP	winhelo2/Makefile	/^APP      = winhelo2$/;"	m
+APP	winhelo3/Makefile	/^APP      = winhelo3$/;"	m
+AR_CODE32_ER	haribote/bootpack.h	/^#define AR_CODE32_ER	/;"	d
+AR_DATA32_RW	haribote/bootpack.h	/^#define AR_DATA32_RW	/;"	d
+AR_INTGATE32	haribote/bootpack.h	/^#define AR_INTGATE32	/;"	d
+AR_LDT	haribote/bootpack.h	/^#define AR_LDT	/;"	d
+AR_TSS32	haribote/bootpack.h	/^#define AR_TSS32	/;"	d
+BIM2BIN	gview/Makefile	/^BIM2BIN  = $(TOOLPATH)bim2bin.exe$/;"	m
+BIM2HRB	apilib/Makefile	/^BIM2HRB  = $(TOOLPATH)bim2hrb.exe$/;"	m
+BIM2HRB	gview/Makefile	/^BIM2HRB  = $(TOOLPATH)bim2hrb.exe$/;"	m
+BIM2HRB	haribote/Makefile	/^BIM2HRB  = $(TOOLPATH)bim2hrb.exe$/;"	m
+BIM2HRB	stdlib/Makefile	/^BIM2HRB  = $(TOOLPATH)bim2hrb.exe$/;"	m
+BIN2OBJ	apilib/Makefile	/^BIN2OBJ  = $(TOOLPATH)bin2obj.exe$/;"	m
+BIN2OBJ	gview/Makefile	/^BIN2OBJ  = $(TOOLPATH)bin2obj.exe$/;"	m
+BIN2OBJ	haribote/Makefile	/^BIN2OBJ  = $(TOOLPATH)bin2obj.exe$/;"	m
+BIN2OBJ	stdlib/Makefile	/^BIN2OBJ  = $(TOOLPATH)bin2obj.exe$/;"	m
+BOOTINFO	haribote/bootpack.h	/^struct BOOTINFO { \/* 0x0ff0-0x0fff *\/$/;"	s
+CC1	apilib/Makefile	/^CC1      = $(TOOLPATH)cc1.exe -I$(INCPATH) -Os -Wall -quiet$/;"	m
+CC1	gview/Makefile	/^CC1      = $(TOOLPATH)cc1.exe -I$(INCPATH) -I..\/ -Os -Wall -quiet$/;"	m
+CC1	haribote/Makefile	/^CC1      = $(TOOLPATH)cc1.exe -I$(INCPATH) -Os -Wall -quiet$/;"	m
+CC1	stdlib/Makefile	/^CC1      = $(TOOLPATH)cc1.exe -I$(INCPATH) -Os -Wall -quiet$/;"	m
+COL8_000000	haribote/bootpack.h	/^#define COL8_000000	/;"	d
+COL8_000084	haribote/bootpack.h	/^#define COL8_000084	/;"	d
+COL8_0000FF	haribote/bootpack.h	/^#define COL8_0000FF	/;"	d
+COL8_008400	haribote/bootpack.h	/^#define COL8_008400	/;"	d
+COL8_008484	haribote/bootpack.h	/^#define COL8_008484	/;"	d
+COL8_00FF00	haribote/bootpack.h	/^#define COL8_00FF00	/;"	d
+COL8_00FFFF	haribote/bootpack.h	/^#define COL8_00FFFF	/;"	d
+COL8_840000	haribote/bootpack.h	/^#define COL8_840000	/;"	d
+COL8_840084	haribote/bootpack.h	/^#define COL8_840084	/;"	d
+COL8_848400	haribote/bootpack.h	/^#define COL8_848400	/;"	d
+COL8_848484	haribote/bootpack.h	/^#define COL8_848484	/;"	d
+COL8_C6C6C6	haribote/bootpack.h	/^#define COL8_C6C6C6	/;"	d
+COL8_FF0000	haribote/bootpack.h	/^#define COL8_FF0000	/;"	d
+COL8_FF00FF	haribote/bootpack.h	/^#define COL8_FF00FF	/;"	d
+COL8_FFFF00	haribote/bootpack.h	/^#define COL8_FFFF00	/;"	d
+COL8_FFFFFF	haribote/bootpack.h	/^#define COL8_FFFFFF	/;"	d
+CONSOLE	haribote/bootpack.h	/^struct CONSOLE {$/;"	s
+COPY	Makefile	/^COPY     = copy$/;"	m
+COPY	apilib/Makefile	/^COPY     = copy$/;"	m
+COPY	gview/Makefile	/^COPY     = copy$/;"	m
+COPY	haribote/Makefile	/^COPY     = copy$/;"	m
+COPY	stdlib/Makefile	/^COPY     = copy$/;"	m
+CR0_CACHE_DISABLE	haribote/memory.c	/^#define CR0_CACHE_DISABLE	/;"	d	file:
+DEL	Makefile	/^DEL      = del$/;"	m
+DEL	apilib/Makefile	/^DEL      = del$/;"	m
+DEL	gview/Makefile	/^DEL      = del$/;"	m
+DEL	haribote/Makefile	/^DEL      = del$/;"	m
+DEL	stdlib/Makefile	/^DEL      = del$/;"	m
+DLL_STRPICENV	gview/gview.c	/^struct DLL_STRPICENV {	\/* 64KB *\/$/;"	s	file:
+DLL_STRPICENV	gview/jpeg.c	/^struct DLL_STRPICENV { int work[16384]; };$/;"	s	file:
+EDIMG	Makefile	/^EDIMG    = $(TOOLPATH)edimg.exe$/;"	m
+EDIMG	apilib/Makefile	/^EDIMG    = $(TOOLPATH)edimg.exe$/;"	m
+EDIMG	gview/Makefile	/^EDIMG    = $(TOOLPATH)edimg.exe$/;"	m
+EDIMG	haribote/Makefile	/^EDIMG    = $(TOOLPATH)edimg.exe$/;"	m
+EDIMG	stdlib/Makefile	/^EDIMG    = $(TOOLPATH)edimg.exe$/;"	m
+EFLAGS_AC_BIT	haribote/memory.c	/^#define EFLAGS_AC_BIT	/;"	d	file:
+FIFO32	haribote/bootpack.h	/^struct FIFO32 {$/;"	s
+FILEHANDLE	haribote/bootpack.h	/^struct FILEHANDLE {$/;"	s
+FILEINFO	haribote/bootpack.h	/^struct FILEINFO {$/;"	s
+FLAGS_OVERRUN	haribote/fifo.c	/^#define FLAGS_OVERRUN	/;"	d	file:
+FREEINFO	haribote/bootpack.h	/^struct FREEINFO {	\/* ������� *\/$/;"	s
+GAS2NASK	apilib/Makefile	/^GAS2NASK = $(TOOLPATH)gas2nask.exe -a$/;"	m
+GAS2NASK	gview/Makefile	/^GAS2NASK = $(TOOLPATH)gas2nask.exe -a$/;"	m
+GAS2NASK	haribote/Makefile	/^GAS2NASK = $(TOOLPATH)gas2nask.exe -a$/;"	m
+GAS2NASK	stdlib/Makefile	/^GAS2NASK = $(TOOLPATH)gas2nask.exe -a$/;"	m
+GATE_DESCRIPTOR	haribote/bootpack.h	/^struct GATE_DESCRIPTOR {$/;"	s
+GOLIB	apilib/Makefile	/^GOLIB    = $(TOOLPATH)golib00.exe $/;"	m
+GOLIB	gview/Makefile	/^GOLIB    = $(TOOLPATH)golib00.exe $/;"	m
+GOLIB	haribote/Makefile	/^GOLIB    = $(TOOLPATH)golib00.exe $/;"	m
+GOLIB	stdlib/Makefile	/^GOLIB    = $(TOOLPATH)golib00.exe $/;"	m
+HARIBOTEPATH	gview/Makefile	/^HARIBOTEPATH = ..\/haribote\/$/;"	m
+HUFF	gview/jpeg.c	/^}HUFF;$/;"	t	typeref:struct:__anon1	file:
+HariMain	a/a.c	/^void HariMain(void)$/;"	f
+HariMain	bball/bball.c	/^void HariMain(void)$/;"	f
+HariMain	beepdown/beepdown.c	/^void HariMain(void)$/;"	f
+HariMain	calc/calc.c	/^void HariMain(void)$/;"	f
+HariMain	chklang/chklang.c	/^void HariMain(void)$/;"	f
+HariMain	color/color.c	/^void HariMain(void)$/;"	f
+HariMain	color2/color2.c	/^void HariMain(void)$/;"	f
+HariMain	gview/gview.c	/^void HariMain(void)$/;"	f
+HariMain	haribote/bootpack.c	/^void HariMain(void)$/;"	f
+HariMain	hello3/hello3.c	/^void HariMain(void)$/;"	f
+HariMain	hello4/hello4.c	/^void HariMain(void)$/;"	f
+HariMain	invader/invader.c	/^void HariMain(void)$/;"	f
+HariMain	iroha/iroha.c	/^void HariMain(void)$/;"	f
+HariMain	lines/lines.c	/^void HariMain(void)$/;"	f
+HariMain	mmlplay/mmlplay.c	/^void HariMain(void)$/;"	f
+HariMain	noodle/noodle.c	/^void HariMain(void)$/;"	f
+HariMain	notrec/notrec.c	/^void HariMain(void)$/;"	f
+HariMain	sosu/sosu.c	/^void HariMain(void)$/;"	f
+HariMain	sosu2/sosu2.c	/^void HariMain(void)$/;"	f
+HariMain	sosu3/sosu3.c	/^void HariMain(void)$/;"	f
+HariMain	star1/star1.c	/^void HariMain(void)$/;"	f
+HariMain	stars/stars.c	/^void HariMain(void)$/;"	f
+HariMain	stars2/stars2.c	/^void HariMain(void)$/;"	f
+HariMain	tview/tview.c	/^void HariMain(void)$/;"	f
+HariMain	type/type.c	/^void HariMain(void)$/;"	f
+HariMain	walk/walk.c	/^void HariMain(void)$/;"	f
+HariMain	winhelo/winhelo.c	/^void HariMain(void)$/;"	f
+HariMain	winhelo2/winhelo2.c	/^void HariMain(void)$/;"	f
+HariMain	winhelo3/winhelo3.c	/^void HariMain(void)$/;"	f
+IMGTOL	Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
+IMGTOL	apilib/Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
+IMGTOL	gview/Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
+IMGTOL	haribote/Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
+IMGTOL	stdlib/Makefile	/^IMGTOL   = $(TOOLPATH)imgtol.com$/;"	m
+INCPATH	Makefile	/^INCPATH  = ..\/z_tools\/haribote\/$/;"	m
+INCPATH	apilib/Makefile	/^INCPATH  = ..\/..\/z_tools\/haribote\/$/;"	m
+INCPATH	gview/Makefile	/^INCPATH  = ..\/..\/z_tools\/haribote\/$/;"	m
+INCPATH	haribote/Makefile	/^INCPATH  = ..\/..\/z_tools\/haribote\/$/;"	m
+INCPATH	stdlib/Makefile	/^INCPATH  = ..\/..\/z_tools\/haribote\/$/;"	m
+INIT_ZTABLE	gview/jpeg.c	/^#define INIT_ZTABLE(/;"	d	file:
+INVALID	calc/calc.c	/^#define INVALID	/;"	d	file:
+JPEG	gview/jpeg.c	/^}JPEG;$/;"	t	typeref:struct:__anon2	file:
+KBC_MODE	haribote/keyboard.c	/^#define KBC_MODE	/;"	d	file:
+KEYCMD_LED	haribote/bootpack.c	/^#define KEYCMD_LED	/;"	d	file:
+KEYCMD_SENDTO_MOUSE	haribote/mouse.c	/^#define KEYCMD_SENDTO_MOUSE	/;"	d	file:
+KEYCMD_WRITE_MODE	haribote/keyboard.c	/^#define KEYCMD_WRITE_MODE	/;"	d	file:
+KEYSTA_SEND_NOTREADY	haribote/keyboard.c	/^#define KEYSTA_SEND_NOTREADY	/;"	d	file:
+LIMIT_BOTPAK	haribote/bootpack.h	/^#define LIMIT_BOTPAK	/;"	d
+LIMIT_GDT	haribote/bootpack.h	/^#define LIMIT_GDT	/;"	d
+LIMIT_IDT	haribote/bootpack.h	/^#define LIMIT_IDT	/;"	d
+MAKE	Makefile	/^MAKE     = $(TOOLPATH)make.exe -r$/;"	m
+MAKE	apilib/Makefile	/^MAKE     = $(TOOLPATH)make.exe -r$/;"	m
+MAKE	gview/Makefile	/^MAKE     = $(TOOLPATH)make.exe -r$/;"	m
+MAKE	haribote/Makefile	/^MAKE     = $(TOOLPATH)make.exe -r$/;"	m
+MAKE	stdlib/Makefile	/^MAKE     = $(TOOLPATH)make.exe -r$/;"	m
+MAKEFONT	apilib/Makefile	/^MAKEFONT = $(TOOLPATH)makefont.exe$/;"	m
+MAKEFONT	gview/Makefile	/^MAKEFONT = $(TOOLPATH)makefont.exe$/;"	m
+MAKEFONT	haribote/Makefile	/^MAKEFONT = $(TOOLPATH)makefont.exe$/;"	m
+MAKEFONT	stdlib/Makefile	/^MAKEFONT = $(TOOLPATH)makefont.exe$/;"	m
+MALLOC	a/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	bball/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	beepdown/Makefile	/^MALLOC   = 40k$/;"	m
+MALLOC	calc/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	chklang/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	color/Makefile	/^MALLOC   = 56k$/;"	m
+MALLOC	color2/Makefile	/^MALLOC   = 56k$/;"	m
+MALLOC	gview/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	hello3/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	hello4/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	hello5/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	invader/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	iroha/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	lines/Makefile	/^MALLOC   = 48k$/;"	m
+MALLOC	mmlplay/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	noodle/Makefile	/^MALLOC   = 40k$/;"	m
+MALLOC	notrec/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	sosu/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	sosu2/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	sosu3/Makefile	/^MALLOC   = 42k$/;"	m
+MALLOC	star1/Makefile	/^MALLOC   = 47k$/;"	m
+MALLOC	stars/Makefile	/^MALLOC   = 47k$/;"	m
+MALLOC	stars2/Makefile	/^MALLOC   = 47k$/;"	m
+MALLOC	tview/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	type/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	walk/Makefile	/^MALLOC   = 48k$/;"	m
+MALLOC	winhelo/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	winhelo2/Makefile	/^MALLOC   = 0k$/;"	m
+MALLOC	winhelo3/Makefile	/^MALLOC   = 40k$/;"	m
+MAX	sosu/sosu.c	/^#define MAX	/;"	d	file:
+MAX	sosu2/sosu2.c	/^#define MAX	/;"	d	file:
+MAX	sosu3/sosu3.c	/^#define MAX	/;"	d	file:
+MAX_SHEETS	haribote/bootpack.h	/^#define MAX_SHEETS	/;"	d
+MAX_TASKLEVELS	haribote/bootpack.h	/^#define MAX_TASKLEVELS	/;"	d
+MAX_TASKS	haribote/bootpack.h	/^#define MAX_TASKS /;"	d
+MAX_TASKS_LV	haribote/bootpack.h	/^#define MAX_TASKS_LV	/;"	d
+MAX_TIMER	haribote/bootpack.h	/^#define MAX_TIMER	/;"	d
+MEMMAN	haribote/bootpack.h	/^struct MEMMAN {		\/* �������Ǘ� *\/$/;"	s
+MEMMAN_ADDR	haribote/bootpack.h	/^#define MEMMAN_ADDR	/;"	d
+MEMMAN_FREES	haribote/bootpack.h	/^#define MEMMAN_FREES	/;"	d
+MOUSECMD_ENABLE	haribote/mouse.c	/^#define MOUSECMD_ENABLE	/;"	d	file:
+MOUSE_DEC	haribote/bootpack.h	/^struct MOUSE_DEC {$/;"	s
+NASK	apilib/Makefile	/^NASK     = $(TOOLPATH)nask.exe$/;"	m
+NASK	gview/Makefile	/^NASK     = $(TOOLPATH)nask.exe$/;"	m
+NASK	haribote/Makefile	/^NASK     = $(TOOLPATH)nask.exe$/;"	m
+NASK	stdlib/Makefile	/^NASK     = $(TOOLPATH)nask.exe$/;"	m
+NULL	haribote/tek.c	/^#define NULL	/;"	d	file:
+NULL	tek/tek.c	/^#define NULL	/;"	d	file:
+OBJ2BIM	apilib/Makefile	/^OBJ2BIM  = $(TOOLPATH)obj2bim.exe$/;"	m
+OBJ2BIM	gview/Makefile	/^OBJ2BIM  = $(TOOLPATH)obj2bim.exe$/;"	m
+OBJ2BIM	haribote/Makefile	/^OBJ2BIM  = $(TOOLPATH)obj2bim.exe$/;"	m
+OBJ2BIM	stdlib/Makefile	/^OBJ2BIM  = $(TOOLPATH)obj2bim.exe$/;"	m
+OBJS_API	apilib/Makefile	/^OBJS_API =	api001.obj api002.obj api003.obj api004.obj api005.obj api006.obj \\$/;"	m
+OBJS_API	stdlib/Makefile	/^OBJS_API =	stdlib.obj$/;"	m
+OBJS_BOOTPACK	haribote/Makefile	/^OBJS_BOOTPACK = bootpack.obj naskfunc.obj hankaku.obj graphic.obj dsctbl.obj \\$/;"	m
+PIC0_ICW1	haribote/bootpack.h	/^#define PIC0_ICW1	/;"	d
+PIC0_ICW2	haribote/bootpack.h	/^#define PIC0_ICW2	/;"	d
+PIC0_ICW3	haribote/bootpack.h	/^#define PIC0_ICW3	/;"	d
+PIC0_ICW4	haribote/bootpack.h	/^#define PIC0_ICW4	/;"	d
+PIC0_IMR	haribote/bootpack.h	/^#define PIC0_IMR	/;"	d
+PIC0_OCW2	haribote/bootpack.h	/^#define PIC0_OCW2	/;"	d
+PIC1_ICW1	haribote/bootpack.h	/^#define PIC1_ICW1	/;"	d
+PIC1_ICW2	haribote/bootpack.h	/^#define PIC1_ICW2	/;"	d
+PIC1_ICW3	haribote/bootpack.h	/^#define PIC1_ICW3	/;"	d
+PIC1_ICW4	haribote/bootpack.h	/^#define PIC1_ICW4	/;"	d
+PIC1_IMR	haribote/bootpack.h	/^#define PIC1_IMR	/;"	d
+PIC1_OCW2	haribote/bootpack.h	/^#define PIC1_OCW2	/;"	d
+PIT_CNT0	haribote/timer.c	/^#define PIT_CNT0	/;"	d	file:
+PIT_CTRL	haribote/timer.c	/^#define PIT_CTRL	/;"	d	file:
+PIXEL16	gview/jpeg.c	/^#define PIXEL16(/;"	d	file:
+PORT_KEYCMD	haribote/bootpack.h	/^#define PORT_KEYCMD	/;"	d
+PORT_KEYDAT	haribote/bootpack.h	/^#define PORT_KEYDAT	/;"	d
+PORT_KEYSTA	haribote/keyboard.c	/^#define PORT_KEYSTA	/;"	d	file:
+RGB	gview/gview.c	/^struct RGB {$/;"	s	file:
+RULEFILE	apilib/Makefile	/^RULEFILE = ..\/haribote.rul$/;"	m
+RULEFILE	gview/Makefile	/^RULEFILE = ..\/haribote.rul$/;"	m
+RULEFILE	haribote/Makefile	/^RULEFILE = ..\/haribote.rul$/;"	m
+RULEFILE	stdlib/Makefile	/^RULEFILE = ..\/haribote.rul$/;"	m
+SEGMENT_DESCRIPTOR	haribote/bootpack.h	/^struct SEGMENT_DESCRIPTOR {$/;"	s
+SHEET	haribote/bootpack.h	/^struct SHEET {$/;"	s
+SHEET_USE	haribote/sheet.c	/^#define SHEET_USE	/;"	d	file:
+SHTCTL	haribote/bootpack.h	/^struct SHTCTL {$/;"	s
+STACK	a/Makefile	/^STACK    = 1k$/;"	m
+STACK	bball/Makefile	/^STACK    = 52k$/;"	m
+STACK	beepdown/Makefile	/^STACK    = 1k$/;"	m
+STACK	calc/Makefile	/^STACK    = 4k$/;"	m
+STACK	chklang/Makefile	/^STACK    = 1k$/;"	m
+STACK	color/Makefile	/^STACK    = 1k$/;"	m
+STACK	color2/Makefile	/^STACK    = 1k$/;"	m
+STACK	gview/Makefile	/^STACK    = 4480k$/;"	m
+STACK	hello3/Makefile	/^STACK    = 1k$/;"	m
+STACK	hello4/Makefile	/^STACK    = 1k$/;"	m
+STACK	hello5/Makefile	/^STACK    = 1k$/;"	m
+STACK	invader/Makefile	/^STACK    = 90k$/;"	m
+STACK	iroha/Makefile	/^STACK    = 1k$/;"	m
+STACK	lines/Makefile	/^STACK    = 1k$/;"	m
+STACK	mmlplay/Makefile	/^STACK    = 132k$/;"	m
+STACK	noodle/Makefile	/^STACK    = 1k$/;"	m
+STACK	notrec/Makefile	/^STACK    = 11k$/;"	m
+STACK	sosu/Makefile	/^STACK    = 2k$/;"	m
+STACK	sosu2/Makefile	/^STACK    = 11k$/;"	m
+STACK	sosu3/Makefile	/^STACK    = 1k$/;"	m
+STACK	star1/Makefile	/^STACK    = 1k$/;"	m
+STACK	stars/Makefile	/^STACK    = 1k$/;"	m
+STACK	stars2/Makefile	/^STACK    = 1k$/;"	m
+STACK	tview/Makefile	/^STACK    = 1024k$/;"	m
+STACK	type/Makefile	/^STACK    = 1k$/;"	m
+STACK	walk/Makefile	/^STACK    = 1k$/;"	m
+STACK	winhelo/Makefile	/^STACK    = 8k$/;"	m
+STACK	winhelo2/Makefile	/^STACK    = 8k$/;"	m
+STACK	winhelo3/Makefile	/^STACK    = 1k$/;"	m
+TASK	haribote/bootpack.h	/^struct TASK {$/;"	s
+TASKCTL	haribote/bootpack.h	/^struct TASKCTL {$/;"	s
+TASKLEVEL	haribote/bootpack.h	/^struct TASKLEVEL {$/;"	s
+TASK_GDT0	haribote/bootpack.h	/^#define TASK_GDT0 /;"	d
+TIMER	haribote/bootpack.h	/^struct TIMER {$/;"	s
+TIMERCTL	haribote/bootpack.h	/^struct TIMERCTL {$/;"	s
+TIMER_FLAGS_ALLOC	haribote/timer.c	/^#define TIMER_FLAGS_ALLOC /;"	d	file:
+TIMER_FLAGS_USING	haribote/timer.c	/^#define TIMER_FLAGS_USING /;"	d	file:
+TOOLPATH	Makefile	/^TOOLPATH = ..\/z_tools\/$/;"	m
+TOOLPATH	apilib/Makefile	/^TOOLPATH = ..\/..\/z_tools\/$/;"	m
+TOOLPATH	gview/Makefile	/^TOOLPATH = ..\/..\/z_tools\/$/;"	m
+TOOLPATH	haribote/Makefile	/^TOOLPATH = ..\/..\/z_tools\/$/;"	m
+TOOLPATH	stdlib/Makefile	/^TOOLPATH = ..\/..\/z_tools\/$/;"	m
+TSS32	haribote/bootpack.h	/^struct TSS32 {$/;"	s
+UCHAR	gview/jpeg.c	/^typedef unsigned char UCHAR;$/;"	t	file:
+UCHAR	haribote/tek.c	/^typedef unsigned char UCHAR;$/;"	t	file:
+UCHAR	tek/autodec_.c	/^typedef unsigned char UCHAR;$/;"	t	file:
+UCHAR	tek/tek.c	/^typedef unsigned char UCHAR;$/;"	t	file:
+UINT32	haribote/tek.c	/^typedef unsigned int UINT32;$/;"	t	file:
+UINT32	tek/autodec_.c	/^typedef unsigned int UINT32;$/;"	t	file:
+UINT32	tek/tek.c	/^typedef unsigned int UINT32;$/;"	t	file:
+access_right	haribote/bootpack.h	/^	char base_mid, access_right;$/;"	m	struct:SEGMENT_DESCRIPTOR
+access_right	haribote/bootpack.h	/^	char dw_count, access_right;$/;"	m	struct:GATE_DESCRIPTOR
+addr	haribote/bootpack.h	/^	unsigned int addr, size;$/;"	m	struct:FREEINFO
+algn	haribote/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+algn	tek/autodec_.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+algn	tek/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+autodecomp	tek/autodec_.c	/^int autodecomp(int siz0, UCHAR *p0, int siz)$/;"	f
+b	gview/gview.c	/^	unsigned char b, g, r, t;$/;"	m	struct:RGB	file:
+backlink	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+base_high	haribote/bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRIPTOR
+base_img	gview/jpeg.c	/^	int base_img[64][64]; $/;"	m	struct:__anon2	file:
+base_low	haribote/bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
+base_mid	haribote/bootpack.h	/^	char base_mid, access_right;$/;"	m	struct:SEGMENT_DESCRIPTOR
+bit_buff	gview/jpeg.c	/^    unsigned long bit_buff;$/;"	m	struct:__anon2	file:
+bit_remain	gview/jpeg.c	/^    int bit_remain;$/;"	m	struct:__anon2	file:
+bm	haribote/tek.c	/^	struct tek_STR_BITMODEL bm[32], *ptbm[16];$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::tek_STR_BITMODEL	file:
+bm	tek/autodec_.c	/^	struct tek_STR_BITMODEL bm[32], *ptbm[16];$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::tek_STR_BITMODEL	file:
+bm	tek/tek.c	/^	struct tek_STR_BITMODEL bm[32], *ptbm[16];$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::tek_STR_BITMODEL	file:
+boxfill8	haribote/graphic.c	/^void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, int x1, int y1)$/;"	f
+btn	haribote/bootpack.h	/^	int x, y, btn;$/;"	m	struct:MOUSE_DEC
+buf	haribote/bootpack.h	/^	char *buf;$/;"	m	struct:FILEHANDLE
+buf	haribote/bootpack.h	/^	int *buf;$/;"	m	struct:FIFO32
+buf	haribote/bootpack.h	/^	unsigned char *buf;$/;"	m	struct:SHEET
+buf	haribote/bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
+bxsize	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+bysize	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+change_wtitle8	haribote/window.c	/^void change_wtitle8(struct SHEET *sht, char act)$/;"	f
+charset	invader/invader.c	/^static unsigned char charset[16 * 8] = {$/;"	v	file:
+close_console	haribote/bootpack.c	/^void close_console(struct SHEET *sht)$/;"	f
+close_constask	haribote/bootpack.c	/^void close_constask(struct TASK *task)$/;"	f
+clustno	haribote/bootpack.h	/^	unsigned short time, date, clustno;$/;"	m	struct:FILEINFO
+cmd_app	haribote/console.c	/^int cmd_app(struct CONSOLE *cons, int *fat, char *cmdline)$/;"	f
+cmd_cls	haribote/console.c	/^void cmd_cls(struct CONSOLE *cons)$/;"	f
+cmd_dir	haribote/console.c	/^void cmd_dir(struct CONSOLE *cons)$/;"	f
+cmd_exit	haribote/console.c	/^void cmd_exit(struct CONSOLE *cons, int *fat)$/;"	f
+cmd_langmode	haribote/console.c	/^void cmd_langmode(struct CONSOLE *cons, char *cmdline)$/;"	f
+cmd_mem	haribote/console.c	/^void cmd_mem(struct CONSOLE *cons, int memtotal)$/;"	f
+cmd_ncst	haribote/console.c	/^void cmd_ncst(struct CONSOLE *cons, char *cmdline, int memtotal)$/;"	f
+cmd_start	haribote/console.c	/^void cmd_start(struct CONSOLE *cons, char *cmdline, int memtotal)$/;"	f
+cmdline	haribote/bootpack.h	/^	char *cmdline;$/;"	m	struct:TASK
+code	gview/jpeg.c	/^    unsigned short code[256];$/;"	m	struct:__anon1	file:
+code	haribote/tek.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+code	tek/autodec_.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+code	tek/tek.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+col_inv	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+compo_count	gview/jpeg.c	/^    int compo_count;$/;"	m	struct:__anon2	file:
+compo_h	gview/jpeg.c	/^    int compo_h[3];$/;"	m	struct:__anon2	file:
+compo_id	gview/jpeg.c	/^    int compo_id[3];$/;"	m	struct:__anon2	file:
+compo_qt	gview/jpeg.c	/^    int compo_qt[3];$/;"	m	struct:__anon2	file:
+compo_sample	gview/jpeg.c	/^    int compo_sample[3];$/;"	m	struct:__anon2	file:
+compo_v	gview/jpeg.c	/^    int compo_v[3];$/;"	m	struct:__anon2	file:
+cons	haribote/bootpack.h	/^	struct CONSOLE *cons;$/;"	m	struct:TASK	typeref:struct:TASK::CONSOLE
+cons_newline	haribote/console.c	/^void cons_newline(struct CONSOLE *cons)$/;"	f
+cons_putchar	haribote/console.c	/^void cons_putchar(struct CONSOLE *cons, int chr, char move)$/;"	f
+cons_putstr0	haribote/console.c	/^void cons_putstr0(struct CONSOLE *cons, char *s)$/;"	f
+cons_putstr1	haribote/console.c	/^void cons_putstr1(struct CONSOLE *cons, char *s, int l)$/;"	f
+cons_runcmd	haribote/console.c	/^void cons_runcmd(char *cmdline, struct CONSOLE *cons, int *fat, int memtotal)$/;"	f
+cons_stack	haribote/bootpack.h	/^	int ds_base, cons_stack;$/;"	m	struct:TASK
+console_task	haribote/console.c	/^void console_task(struct SHEET *sheet, int memtotal)$/;"	f
+count	haribote/bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
+cr3	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+cs	haribote/bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+ctl	haribote/bootpack.h	/^	struct SHTCTL *ctl;$/;"	m	struct:SHEET	typeref:struct:SHEET::SHTCTL
+cur_c	haribote/bootpack.h	/^	int cur_x, cur_y, cur_c;$/;"	m	struct:CONSOLE
+cur_x	haribote/bootpack.h	/^	int cur_x, cur_y, cur_c;$/;"	m	struct:CONSOLE
+cur_y	haribote/bootpack.h	/^	int cur_x, cur_y, cur_c;$/;"	m	struct:CONSOLE
+cyls	haribote/bootpack.h	/^	char cyls; \/* 启动区读磁盘读到此为止 *\/$/;"	m	struct:BOOTINFO
+data	haribote/bootpack.h	/^	int data;$/;"	m	struct:TIMER
+date	haribote/bootpack.h	/^	unsigned short time, date, clustno;$/;"	m	struct:FILEINFO
+decode0_JPEG	gview/jpeg.c	/^int decode0_JPEG(struct DLL_STRPICENV *env,int size, UCHAR *fp0, int b_type, UCHAR *buf, int skip)$/;"	f
+dmy	haribote/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+dmy	tek/autodec_.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+dmy	tek/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+dmy4	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+dmy4	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+dmy4	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+dqt	gview/jpeg.c	/^    int dqt[3][64];$/;"	m	struct:__anon2	file:
+ds	haribote/bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+ds_base	haribote/bootpack.h	/^	int ds_base, cons_stack;$/;"	m	struct:TASK
+dummy	gview/jpeg.c	/^    int dummy[64];$/;"	m	struct:__anon2	file:
+dw_count	haribote/bootpack.h	/^	char dw_count, access_right;$/;"	m	struct:GATE_DESCRIPTOR
+eax	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+ebp	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+ebx	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+ecx	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+edi	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+edx	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+eflags	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+eip	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+elem	gview/jpeg.c	/^    int elem; $/;"	m	struct:__anon1	file:
+enable_mouse	haribote/mouse.c	/^void enable_mouse(struct FIFO32 *fifo, int data0, struct MOUSE_DEC *mdec)$/;"	f
+end	mmlplay/mmlplay.c	/^void end(char *s)$/;"	f
+errjmp	haribote/tek.c	/^	jmp_buf errjmp;$/;"	m	struct:tek_STR_RNGDEC	file:
+errjmp	tek/autodec_.c	/^	jmp_buf errjmp;$/;"	m	struct:tek_STR_RNGDEC	file:
+errjmp	tek/tek.c	/^	jmp_buf errjmp;$/;"	m	struct:tek_STR_RNGDEC	file:
+error	gview/gview.c	/^void error(char *s)$/;"	f
+es	haribote/bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+esi	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+esp	haribote/bootpack.h	/^	int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;$/;"	m	struct:TSS32
+esp0	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+esp1	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+esp2	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+exit	stdlib/stdlib.c	/^void exit(int status)$/;"	f
+ext	haribote/bootpack.h	/^	unsigned char name[8], ext[3], type;$/;"	m	struct:FILEINFO
+fat	haribote/bootpack.h	/^	int *fat;$/;"	m	struct:TASK
+fchglt	haribote/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+fchglt	tek/autodec_.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+fchglt	tek/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+fchgprm	haribote/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+fchgprm	tek/autodec_.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+fchgprm	tek/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+fhandle	haribote/bootpack.h	/^	struct FILEHANDLE *fhandle;$/;"	m	struct:TASK	typeref:struct:TASK::FILEHANDLE
+fifo	haribote/bootpack.h	/^	struct FIFO32 *fifo;$/;"	m	struct:TIMER	typeref:struct:TIMER::FIFO32
+fifo	haribote/bootpack.h	/^	struct FIFO32 fifo;$/;"	m	struct:TASK	typeref:struct:TASK::FIFO32
+fifo32_get	haribote/fifo.c	/^int fifo32_get(struct FIFO32 *fifo)$/;"	f
+fifo32_init	haribote/fifo.c	/^void fifo32_init(struct FIFO32 *fifo, int size, int *buf, struct TASK *task)$/;"	f
+fifo32_put	haribote/fifo.c	/^int fifo32_put(struct FIFO32 *fifo, int data)$/;"	f
+fifo32_status	haribote/fifo.c	/^int fifo32_status(struct FIFO32 *fifo)$/;"	f
+file_loadfile	haribote/file.c	/^void file_loadfile(int clustno, int size, char *buf, int *fat, char *img)$/;"	f
+file_loadfile2	haribote/file.c	/^char *file_loadfile2(int clustno, int *psize, int *fat)$/;"	f
+file_readfat	haribote/file.c	/^void file_readfat(int *fat, unsigned char *img)$/;"	f
+file_search	haribote/file.c	/^struct FILEINFO *file_search(char *name, struct FILEINFO *finfo, int max)$/;"	f
+flags	haribote/bootpack.h	/^	char flags, flags2;$/;"	m	struct:TIMER
+flags	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+flags	haribote/bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
+flags	haribote/bootpack.h	/^	int sel, flags;		\/* sel用来存放GDT的编号*\/$/;"	m	struct:TASK
+flags2	haribote/bootpack.h	/^	char flags, flags2;$/;"	m	struct:TIMER
+fp	gview/jpeg.c	/^	unsigned char *fp, *fp1;$/;"	m	struct:__anon2	file:
+fp1	gview/jpeg.c	/^	unsigned char *fp, *fp1;$/;"	m	struct:__anon2	file:
+free	haribote/bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
+free	haribote/bootpack.h	/^	struct FREEINFO free[MEMMAN_FREES];$/;"	m	struct:MEMMAN	typeref:struct:MEMMAN::FREEINFO
+free	stdlib/stdlib.c	/^void free(void *p)$/;"	f
+frees	haribote/bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+fs	haribote/bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+g	gview/gview.c	/^	unsigned char b, g, r, t;$/;"	m	struct:RGB	file:
+get_bits	gview/jpeg.c	/^unsigned short get_bits(JPEG *jpeg, int bit)$/;"	f
+getnum	calc/calc.c	/^int getnum(char **pp, int priority)$/;"	f
+gs	haribote/bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+height	gview/jpeg.c	/^    int height;$/;"	m	struct:__anon2	file:
+height	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+hrb_api	haribote/console.c	/^int *hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)$/;"	f
+hrb_api_linewin	haribote/console.c	/^void hrb_api_linewin(struct SHEET *sht, int x0, int y0, int x1, int y1, int col)$/;"	f
+huff	gview/jpeg.c	/^    HUFF huff[2][3];$/;"	m	struct:__anon2	file:
+info_JPEG	gview/jpeg.c	/^int info_JPEG(struct DLL_STRPICENV *env,int *info, int size, UCHAR *fp0)$/;"	f
+init_gdtidt	haribote/dsctbl.c	/^void init_gdtidt(void)$/;"	f
+init_keyboard	haribote/keyboard.c	/^void init_keyboard(struct FIFO32 *fifo, int data0)$/;"	f
+init_mouse_cursor8	haribote/graphic.c	/^void init_mouse_cursor8(char *mouse, char bc)$/;"	f
+init_palette	haribote/graphic.c	/^void init_palette(void)$/;"	f
+init_pic	haribote/int.c	/^void init_pic(void)$/;"	f
+init_pit	haribote/timer.c	/^void init_pit(void)$/;"	f
+init_screen8	haribote/graphic.c	/^void init_screen8(char *vram, int x, int y)$/;"	f
+interval	gview/jpeg.c	/^    int interval;$/;"	m	struct:__anon2	file:
+inthandler0c	haribote/console.c	/^int *inthandler0c(int *esp)$/;"	f
+inthandler0d	haribote/console.c	/^int *inthandler0d(int *esp)$/;"	f
+inthandler20	haribote/timer.c	/^void inthandler20(int *esp)$/;"	f
+inthandler21	haribote/keyboard.c	/^void inthandler21(int *esp)$/;"	f
+inthandler2c	haribote/mouse.c	/^void inthandler2c(int *esp)$/;"	f
+iomap	haribote/bootpack.h	/^	int ldtr, iomap;$/;"	m	struct:TSS32
+jpeg_decode	gview/jpeg.c	/^void jpeg_decode(JPEG *jpeg, UCHAR *rgb, int b_type)$/;"	f
+jpeg_decode_huff	gview/jpeg.c	/^int jpeg_decode_huff(JPEG *jpeg,int scan,int *block, UCHAR *zigzag_table)$/;"	f
+jpeg_decode_init	gview/jpeg.c	/^void jpeg_decode_init(JPEG *jpeg)$/;"	f
+jpeg_decode_mcu	gview/jpeg.c	/^int jpeg_decode_mcu(JPEG *jpeg, UCHAR *zigzag_table)$/;"	f
+jpeg_decode_yuv	gview/jpeg.c	/^int jpeg_decode_yuv(JPEG *jpeg, int h, int v, unsigned char *rgb, int b_type)$/;"	f
+jpeg_dht	gview/jpeg.c	/^int jpeg_dht(JPEG *jpeg)$/;"	f
+jpeg_dqt	gview/jpeg.c	/^int jpeg_dqt(JPEG *jpeg)$/;"	f
+jpeg_get_value	gview/jpeg.c	/^int jpeg_get_value(JPEG *jpeg,int size)$/;"	f
+jpeg_huff_decode	gview/jpeg.c	/^int jpeg_huff_decode(JPEG *jpeg,int tc,int th)$/;"	f
+jpeg_idct	gview/jpeg.c	/^void jpeg_idct(int *block, int *dest, int base_img[64][64])$/;"	f
+jpeg_idct_init	gview/jpeg.c	/^void jpeg_idct_init(int base_img[64][64])$/;"	f
+jpeg_init	gview/jpeg.c	/^int jpeg_init(JPEG *jpeg)$/;"	f
+jpeg_mcu_bitblt	gview/jpeg.c	/^void jpeg_mcu_bitblt(int *src, int *dest, int width,$/;"	f
+jpeg_sof	gview/jpeg.c	/^int jpeg_sof(JPEG *jpeg)$/;"	f
+keydata0	haribote/keyboard.c	/^int keydata0;$/;"	v
+keyfifo	haribote/keyboard.c	/^struct FIFO32 *keyfifo;$/;"	v	typeref:struct:FIFO32
+keywin_off	haribote/bootpack.c	/^void keywin_off(struct SHEET *key_win)$/;"	f
+keywin_on	haribote/bootpack.c	/^void keywin_on(struct SHEET *key_win)$/;"	f
+langbyte1	haribote/bootpack.h	/^	unsigned char langmode, langbyte1;$/;"	m	struct:TASK
+langmode	haribote/bootpack.h	/^	unsigned char langmode, langbyte1;$/;"	m	struct:TASK
+ldt	haribote/bootpack.h	/^	struct SEGMENT_DESCRIPTOR ldt[2];$/;"	m	struct:TASK	typeref:struct:TASK::SEGMENT_DESCRIPTOR
+ldtr	haribote/bootpack.h	/^	int ldtr, iomap;$/;"	m	struct:TSS32
+leds	haribote/bootpack.h	/^	char leds; \/* 启动时键盘的LED的状态 *\/$/;"	m	struct:BOOTINFO
+lenext	haribote/tek.c	/^	tek_TPRB spdis[2][2+4+8+16+32], lenext[2+4+8+16+32];$/;"	m	struct:tek_STR_PRB	file:
+lenext	tek/autodec_.c	/^	tek_TPRB spdis[2][2+4+8+16+32], lenext[2+4+8+16+32];$/;"	m	struct:tek_STR_PRB	file:
+lenext	tek/tek.c	/^	tek_TPRB spdis[2][2+4+8+16+32], lenext[2+4+8+16+32];$/;"	m	struct:tek_STR_PRB	file:
+lenhigh	haribote/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+lenhigh	tek/autodec_.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+lenhigh	tek/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+lenlow	haribote/tek.c	/^		tek_TPRB lenlow[2][8], lenmid[2][8];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+lenlow	tek/autodec_.c	/^		tek_TPRB lenlow[2][8], lenmid[2][8];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+lenlow	tek/tek.c	/^		tek_TPRB lenlow[2][8], lenmid[2][8];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+lenmid	haribote/tek.c	/^		tek_TPRB lenlow[2][8], lenmid[2][8];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+lenmid	tek/autodec_.c	/^		tek_TPRB lenlow[2][8], lenmid[2][8];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+lenmid	tek/tek.c	/^		tek_TPRB lenlow[2][8], lenmid[2][8];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+lensel	haribote/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+lensel	tek/autodec_.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+lensel	tek/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+level	haribote/bootpack.h	/^	int level, priority; \/* 优先级 *\/$/;"	m	struct:TASK
+level	haribote/bootpack.h	/^	struct TASKLEVEL level[MAX_TASKLEVELS];$/;"	m	struct:TASKCTL	typeref:struct:TASKCTL::TASKLEVEL
+limit_high	haribote/bootpack.h	/^	char limit_high, base_high;$/;"	m	struct:SEGMENT_DESCRIPTOR
+limit_low	haribote/bootpack.h	/^	short limit_low, base_low;$/;"	m	struct:SEGMENT_DESCRIPTOR
+lineview	tview/tview.c	/^char *lineview(int win, int w, int y, int xskip, unsigned char *p, int tab, int lang)$/;"	f
+lit	haribote/tek.c	/^	tek_TPRB lit[1];$/;"	m	struct:tek_STR_PRB	file:
+lit	tek/autodec_.c	/^	tek_TPRB lit[1];$/;"	m	struct:tek_STR_PRB	file:
+lit	tek/tek.c	/^	tek_TPRB lit[1];$/;"	m	struct:tek_STR_PRB	file:
+losts	haribote/bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+lostsize	haribote/bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+lt	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+lt	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+lt	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+lt0	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+lt0	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+lt0	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+lv_change	haribote/bootpack.h	/^	char lv_change; \/*在下次任务切换时是否需要改变LEVEL *\/$/;"	m	struct:TASKCTL
+m	haribote/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+m	tek/autodec_.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+m	tek/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+make_textbox8	haribote/window.c	/^void make_textbox8(struct SHEET *sht, int x0, int y0, int sx, int sy, int c)$/;"	f
+make_window8	haribote/window.c	/^void make_window8(unsigned char *buf, int xsize, int ysize, char *title, char act)$/;"	f
+make_wtitle8	haribote/window.c	/^void make_wtitle8(unsigned char *buf, int xsize, char *title, char act)$/;"	f
+malloc	stdlib/stdlib.c	/^void *malloc(int size)$/;"	f
+map	haribote/bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
+max_h	gview/jpeg.c	/^    int max_h,max_v;$/;"	m	struct:__anon2	file:
+max_v	gview/jpeg.c	/^    int max_h,max_v;$/;"	m	struct:__anon2	file:
+maxfrees	haribote/bootpack.h	/^	int frees, maxfrees, lostsize, losts;$/;"	m	struct:MEMMAN
+mch	haribote/tek.c	/^			tek_TPRB mch, rep0l1;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+mch	tek/autodec_.c	/^			tek_TPRB mch, rep0l1;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+mch	tek/tek.c	/^			tek_TPRB mch, rep0l1;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+mcu_buf	gview/jpeg.c	/^    int mcu_buf[32*32*4]; $/;"	m	struct:__anon2	file:
+mcu_height	gview/jpeg.c	/^    int mcu_height;$/;"	m	struct:__anon2	file:
+mcu_preDC	gview/jpeg.c	/^    int mcu_preDC[3];$/;"	m	struct:__anon2	file:
+mcu_width	gview/jpeg.c	/^    int mcu_width;$/;"	m	struct:__anon2	file:
+mcu_yuv	gview/jpeg.c	/^    int *mcu_yuv[4];$/;"	m	struct:__anon2	file:
+memman_alloc	haribote/memory.c	/^unsigned int memman_alloc(struct MEMMAN *man, unsigned int size)$/;"	f
+memman_alloc_4k	haribote/memory.c	/^unsigned int memman_alloc_4k(struct MEMMAN *man, unsigned int size)$/;"	f
+memman_free	haribote/memory.c	/^int memman_free(struct MEMMAN *man, unsigned int addr, unsigned int size)$/;"	f
+memman_free_4k	haribote/memory.c	/^int memman_free_4k(struct MEMMAN *man, unsigned int addr, unsigned int size)$/;"	f
+memman_init	haribote/memory.c	/^void memman_init(struct MEMMAN *man)$/;"	f
+memman_total	haribote/memory.c	/^unsigned int memman_total(struct MEMMAN *man)$/;"	f
+memtest	haribote/memory.c	/^unsigned int memtest(unsigned int start, unsigned int end)$/;"	f
+mouse_decode	haribote/mouse.c	/^int mouse_decode(struct MOUSE_DEC *mdec, unsigned char dat)$/;"	f
+mousedata0	haribote/mouse.c	/^int mousedata0;$/;"	v
+mousefifo	haribote/mouse.c	/^struct FIFO32 *mousefifo;$/;"	v	typeref:struct:FIFO32
+n_dqt	gview/jpeg.c	/^    int n_dqt;$/;"	m	struct:__anon2	file:
+name	haribote/bootpack.h	/^	unsigned char name[8], ext[3], type;$/;"	m	struct:FILEINFO
+next	haribote/bootpack.h	/^	struct TIMER *next;$/;"	m	struct:TIMER	typeref:struct:TIMER::TIMER
+next	haribote/bootpack.h	/^	unsigned int count, next;$/;"	m	struct:TIMERCTL
+now	haribote/bootpack.h	/^	int now; \/*这个变量用来记录当前正在运行的是哪个任务*\/$/;"	m	struct:TASKLEVEL
+now_lv	haribote/bootpack.h	/^	int now_lv; \/*现在活动中的LEVEL *\/$/;"	m	struct:TASKCTL
+ntm	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+ntm	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+ntm	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+offset_high	haribote/bootpack.h	/^	short offset_high;$/;"	m	struct:GATE_DESCRIPTOR
+offset_low	haribote/bootpack.h	/^	short offset_low, selector;$/;"	m	struct:GATE_DESCRIPTOR
+open_console	haribote/bootpack.c	/^struct SHEET *open_console(struct SHTCTL *shtctl, unsigned int memtotal)$/;"	f
+open_constask	haribote/bootpack.c	/^struct TASK *open_constask(struct SHEET *sht, unsigned int memtotal)$/;"	f
+p	haribote/bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
+p	haribote/tek.c	/^	UCHAR *p;$/;"	m	struct:tek_STR_RNGDEC	file:
+p	tek/autodec_.c	/^	UCHAR *p;$/;"	m	struct:tek_STR_RNGDEC	file:
+p	tek/tek.c	/^	UCHAR *p;$/;"	m	struct:tek_STR_RNGDEC	file:
+pb	haribote/tek.c	/^	} pb[16];$/;"	m	struct:tek_STR_PRB	typeref:struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+pb	tek/autodec_.c	/^	} pb[16];$/;"	m	struct:tek_STR_PRB	typeref:struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+pb	tek/tek.c	/^	} pb[16];$/;"	m	struct:tek_STR_PRB	typeref:struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+phase	haribote/bootpack.h	/^	unsigned char buf[3], phase;$/;"	m	struct:MOUSE_DEC
+pos	haribote/bootpack.h	/^	int pos;$/;"	m	struct:FILEHANDLE
+prb0	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+prb0	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+prb0	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+prb1	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+prb1	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+prb1	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+printf	stdlib/stdlib.c	/^int printf(char *format, ...)$/;"	f
+priority	haribote/bootpack.h	/^	int level, priority; \/* 优先级 *\/$/;"	m	struct:TASK
+probs	haribote/tek.c	/^	struct tek_STR_PRB probs;$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::tek_STR_PRB	file:
+probs	tek/autodec_.c	/^	struct tek_STR_PRB probs;$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::tek_STR_PRB	file:
+probs	tek/tek.c	/^	struct tek_STR_PRB probs;$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::tek_STR_PRB	file:
+pslot	haribote/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+pslot	tek/autodec_.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+pslot	tek/tek.c	/^	tek_TPRB lensel[2][2], lenhigh[2][256], pslot[4][64], algn[64];$/;"	m	struct:tek_STR_PRB	file:
+ptbm	haribote/tek.c	/^	struct tek_STR_BITMODEL bm[32], *ptbm[16];$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::	file:
+ptbm	tek/autodec_.c	/^	struct tek_STR_BITMODEL bm[32], *ptbm[16];$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::	file:
+ptbm	tek/tek.c	/^	struct tek_STR_BITMODEL bm[32], *ptbm[16];$/;"	m	struct:tek_STR_RNGDEC	typeref:struct:tek_STR_RNGDEC::	file:
+putblock8_8	haribote/graphic.c	/^void putblock8_8(char *vram, int vxsize, int pxsize,$/;"	f
+putchar	stdlib/stdlib.c	/^int putchar(int c)$/;"	f
+putfont8	haribote/graphic.c	/^void putfont8(char *vram, int xsize, int x, int y, char c, char *font)$/;"	f
+putfonts8_asc	haribote/graphic.c	/^void putfonts8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s)$/;"	f
+putfonts8_asc_sht	haribote/window.c	/^void putfonts8_asc_sht(struct SHEET *sht, int x, int y, int c, int b, char *s, int l)$/;"	f
+putstr	invader/invader.c	/^void putstr(int win, char *winbuf, int x, int y, int col, unsigned char *s)$/;"	f
+puttab	tview/tview.c	/^int puttab(int x, int w, int xskip, char *s, int tab)$/;"	f
+q	haribote/bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
+r	gview/gview.c	/^	unsigned char b, g, r, t;$/;"	m	struct:RGB	file:
+range	haribote/tek.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+range	tek/autodec_.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+range	tek/tek.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+rep	haribote/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+rep	tek/autodec_.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+rep	tek/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+rep0l1	haribote/tek.c	/^			tek_TPRB mch, rep0l1;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+rep0l1	tek/autodec_.c	/^			tek_TPRB mch, rep0l1;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+rep0l1	tek/tek.c	/^			tek_TPRB mch, rep0l1;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+repg0	haribote/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg0	tek/autodec_.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg0	tek/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg1	haribote/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg1	tek/autodec_.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg1	tek/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg2	haribote/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg2	tek/autodec_.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg2	tek/tek.c	/^		tek_TPRB rep, repg0, repg1, repg2;$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+repg3	haribote/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+repg3	tek/autodec_.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+repg3	tek/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+reserve	haribote/bootpack.h	/^	char reserve;$/;"	m	struct:BOOTINFO
+reserve	haribote/bootpack.h	/^	char reserve[10];$/;"	m	struct:FILEINFO
+rgb2pal	color2/color2.c	/^unsigned char rgb2pal(int r, int g, int b, int x, int y)$/;"	f
+rgb2pal	gview/gview.c	/^unsigned char rgb2pal(int r, int g, int b, int x, int y)$/;"	f
+rmsk	haribote/tek.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+rmsk	tek/autodec_.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+rmsk	tek/tek.c	/^	UINT32 range, code, rmsk;$/;"	m	struct:tek_STR_RNGDEC	file:
+running	haribote/bootpack.h	/^	int running; \/*正在运行的任务数量*\/$/;"	m	struct:TASKLEVEL
+s	haribote/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+s	tek/autodec_.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+s	tek/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+scan_ac	gview/jpeg.c	/^    int scan_ac[3];$/;"	m	struct:__anon2	file:
+scan_count	gview/jpeg.c	/^    int scan_count;$/;"	m	struct:__anon2	file:
+scan_dc	gview/jpeg.c	/^    int scan_dc[3];$/;"	m	struct:__anon2	file:
+scan_h	gview/jpeg.c	/^    int scan_h[3];  $/;"	m	struct:__anon2	file:
+scan_id	gview/jpeg.c	/^    int scan_id[3];$/;"	m	struct:__anon2	file:
+scan_qt	gview/jpeg.c	/^    int scan_qt[3]; $/;"	m	struct:__anon2	file:
+scan_v	gview/jpeg.c	/^    int scan_v[3];  $/;"	m	struct:__anon2	file:
+scrnx	haribote/bootpack.h	/^	short scrnx, scrny; \/* 画面分辨率 *\/$/;"	m	struct:BOOTINFO
+scrny	haribote/bootpack.h	/^	short scrnx, scrny; \/* 画面分辨率 *\/$/;"	m	struct:BOOTINFO
+sel	haribote/bootpack.h	/^	int sel, flags;		\/* sel用来存放GDT的编号*\/$/;"	m	struct:TASK
+selector	haribote/bootpack.h	/^	short offset_low, selector;$/;"	m	struct:GATE_DESCRIPTOR
+set_gatedesc	haribote/dsctbl.c	/^void set_gatedesc(struct GATE_DESCRIPTOR *gd, int offset, int selector, int ar)$/;"	f
+set_palette	haribote/graphic.c	/^void set_palette(int start, int end, unsigned char *rgb)$/;"	f
+set_segmdesc	haribote/dsctbl.c	/^void set_segmdesc(struct SEGMENT_DESCRIPTOR *sd, unsigned int limit, int base, int ar)$/;"	f
+setdec8	invader/invader.c	/^void setdec8(char *s, int i)$/;"	f
+sheet_alloc	haribote/sheet.c	/^struct SHEET *sheet_alloc(struct SHTCTL *ctl)$/;"	f
+sheet_free	haribote/sheet.c	/^void sheet_free(struct SHEET *sht)$/;"	f
+sheet_refresh	haribote/sheet.c	/^void sheet_refresh(struct SHEET *sht, int bx0, int by0, int bx1, int by1)$/;"	f
+sheet_refreshmap	haribote/sheet.c	/^void sheet_refreshmap(struct SHTCTL *ctl, int vx0, int vy0, int vx1, int vy1, int h0)$/;"	f
+sheet_refreshsub	haribote/sheet.c	/^void sheet_refreshsub(struct SHTCTL *ctl, int vx0, int vy0, int vx1, int vy1, int h0, int h1)$/;"	f
+sheet_setbuf	haribote/sheet.c	/^void sheet_setbuf(struct SHEET *sht, unsigned char *buf, int xsize, int ysize, int col_inv)$/;"	f
+sheet_slide	haribote/sheet.c	/^void sheet_slide(struct SHEET *sht, int vx0, int vy0)$/;"	f
+sheet_updown	haribote/sheet.c	/^void sheet_updown(struct SHEET *sht, int height)$/;"	f
+sheets	haribote/bootpack.h	/^	struct SHEET *sheets[MAX_SHEETS];$/;"	m	struct:SHTCTL	typeref:struct:SHTCTL::SHEET
+sheets0	haribote/bootpack.h	/^	struct SHEET sheets0[MAX_SHEETS];$/;"	m	struct:SHTCTL	typeref:struct:SHTCTL::SHEET
+sht	haribote/bootpack.h	/^	struct SHEET *sht;$/;"	m	struct:CONSOLE	typeref:struct:CONSOLE::SHEET
+shtctl_init	haribote/sheet.c	/^struct SHTCTL *shtctl_init(struct MEMMAN *memman, unsigned char *vram, int xsize, int ysize)$/;"	f
+size	gview/jpeg.c	/^    unsigned char  size[256];$/;"	m	struct:__anon1	file:
+size	haribote/bootpack.h	/^	int p, q, size, free, flags;$/;"	m	struct:FIFO32
+size	haribote/bootpack.h	/^	int size;$/;"	m	struct:FILEHANDLE
+size	haribote/bootpack.h	/^	unsigned int addr, size;$/;"	m	struct:FREEINFO
+size	haribote/bootpack.h	/^	unsigned int size;$/;"	m	struct:FILEINFO
+skipspace	calc/calc.c	/^char *skipspace(char *p)$/;"	f
+skipspace	tview/tview.c	/^char *skipspace(char *p)$/;"	f
+spdis	haribote/tek.c	/^	tek_TPRB spdis[2][2+4+8+16+32], lenext[2+4+8+16+32];$/;"	m	struct:tek_STR_PRB	file:
+spdis	tek/autodec_.c	/^	tek_TPRB spdis[2][2+4+8+16+32], lenext[2+4+8+16+32];$/;"	m	struct:tek_STR_PRB	file:
+spdis	tek/tek.c	/^	tek_TPRB spdis[2][2+4+8+16+32], lenext[2+4+8+16+32];$/;"	m	struct:tek_STR_PRB	file:
+ss	haribote/bootpack.h	/^	int es, cs, ss, ds, fs, gs;$/;"	m	struct:TSS32
+ss0	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+ss1	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+ss2	haribote/bootpack.h	/^	int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;$/;"	m	struct:TSS32
+st	haribote/tek.c	/^		} st[12];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	typeref:struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+st	haribote/tek.c	/^	} st[12];$/;"	m	struct:tek_STR_PRB	typeref:struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+st	tek/autodec_.c	/^		} st[12];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	typeref:struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+st	tek/autodec_.c	/^	} st[12];$/;"	m	struct:tek_STR_PRB	typeref:struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+st	tek/tek.c	/^		} st[12];$/;"	m	struct:tek_STR_PRB::tek_STR_PRB_PB	typeref:struct:tek_STR_PRB::tek_STR_PRB_PB::tek_STR_PRB_PBST	file:
+st	tek/tek.c	/^	} st[12];$/;"	m	struct:tek_STR_PRB	typeref:struct:tek_STR_PRB::tek_STR_PRB_ST	file:
+t	gview/gview.c	/^	unsigned char b, g, r, t;$/;"	m	struct:RGB	file:
+t	haribote/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+t	tek/autodec_.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+t	tek/tek.c	/^	UCHAR t, m, s, dmy;$/;"	m	struct:tek_STR_BITMODEL	file:
+t0	haribote/bootpack.h	/^	struct TIMER *t0;$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
+task	haribote/bootpack.h	/^	struct TASK *task;$/;"	m	struct:FIFO32	typeref:struct:FIFO32::TASK
+task	haribote/bootpack.h	/^	struct TASK *task;$/;"	m	struct:SHEET	typeref:struct:SHEET::TASK
+task_add	haribote/mtask.c	/^void task_add(struct TASK *task)$/;"	f
+task_alloc	haribote/mtask.c	/^struct TASK *task_alloc(void)$/;"	f
+task_idle	haribote/mtask.c	/^void task_idle(void)$/;"	f
+task_init	haribote/mtask.c	/^struct TASK *task_init(struct MEMMAN *memman)$/;"	f
+task_now	haribote/mtask.c	/^struct TASK *task_now(void)$/;"	f
+task_remove	haribote/mtask.c	/^void task_remove(struct TASK *task)$/;"	f
+task_run	haribote/mtask.c	/^void task_run(struct TASK *task, int level, int priority)$/;"	f
+task_sleep	haribote/mtask.c	/^void task_sleep(struct TASK *task)$/;"	f
+task_switch	haribote/mtask.c	/^void task_switch(void)$/;"	f
+task_switchsub	haribote/mtask.c	/^void task_switchsub(void)$/;"	f
+task_timer	haribote/mtask.c	/^struct TIMER *task_timer;$/;"	v	typeref:struct:TIMER
+taskctl	haribote/mtask.c	/^struct TASKCTL *taskctl;$/;"	v	typeref:struct:TASKCTL
+tasks	haribote/bootpack.h	/^	struct TASK *tasks[MAX_TASKS_LV];$/;"	m	struct:TASKLEVEL	typeref:struct:TASKLEVEL::TASK
+tasks0	haribote/bootpack.h	/^	struct TASK tasks0[MAX_TASKS];$/;"	m	struct:TASKCTL	typeref:struct:TASKCTL::TASK
+tbmm	haribote/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+tbmm	tek/autodec_.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+tbmm	tek/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+tbmt	haribote/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+tbmt	tek/autodec_.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+tbmt	tek/tek.c	/^	tek_TPRB repg3, fchgprm[2 * 32], tbmt[16], tbmm[16], fchglt;$/;"	m	struct:tek_STR_PRB	file:
+tek_STR_BITMODEL	haribote/tek.c	/^struct tek_STR_BITMODEL {$/;"	s	file:
+tek_STR_BITMODEL	tek/autodec_.c	/^struct tek_STR_BITMODEL {$/;"	s	file:
+tek_STR_BITMODEL	tek/tek.c	/^struct tek_STR_BITMODEL {$/;"	s	file:
+tek_STR_PRB	haribote/tek.c	/^struct tek_STR_PRB {$/;"	s	file:
+tek_STR_PRB	tek/autodec_.c	/^struct tek_STR_PRB {$/;"	s	file:
+tek_STR_PRB	tek/tek.c	/^struct tek_STR_PRB {$/;"	s	file:
+tek_STR_PRB_PB	haribote/tek.c	/^	struct tek_STR_PRB_PB {$/;"	s	struct:tek_STR_PRB	file:
+tek_STR_PRB_PB	tek/autodec_.c	/^	struct tek_STR_PRB_PB {$/;"	s	struct:tek_STR_PRB	file:
+tek_STR_PRB_PB	tek/tek.c	/^	struct tek_STR_PRB_PB {$/;"	s	struct:tek_STR_PRB	file:
+tek_STR_PRB_PBST	haribote/tek.c	/^		struct tek_STR_PRB_PBST {$/;"	s	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+tek_STR_PRB_PBST	tek/autodec_.c	/^		struct tek_STR_PRB_PBST {$/;"	s	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+tek_STR_PRB_PBST	tek/tek.c	/^		struct tek_STR_PRB_PBST {$/;"	s	struct:tek_STR_PRB::tek_STR_PRB_PB	file:
+tek_STR_PRB_ST	haribote/tek.c	/^	struct tek_STR_PRB_ST {$/;"	s	struct:tek_STR_PRB	file:
+tek_STR_PRB_ST	tek/autodec_.c	/^	struct tek_STR_PRB_ST {$/;"	s	struct:tek_STR_PRB	file:
+tek_STR_PRB_ST	tek/tek.c	/^	struct tek_STR_PRB_ST {$/;"	s	struct:tek_STR_PRB	file:
+tek_STR_RNGDEC	haribote/tek.c	/^struct tek_STR_RNGDEC {$/;"	s	file:
+tek_STR_RNGDEC	tek/autodec_.c	/^struct tek_STR_RNGDEC {$/;"	s	file:
+tek_STR_RNGDEC	tek/tek.c	/^struct tek_STR_RNGDEC {$/;"	s	file:
+tek_TPRB	haribote/tek.c	/^typedef UINT32 tek_TPRB;$/;"	t	file:
+tek_TPRB	tek/autodec_.c	/^typedef UINT32 tek_TPRB;$/;"	t	file:
+tek_TPRB	tek/tek.c	/^typedef UINT32 tek_TPRB;$/;"	t	file:
+tek_decmain5	haribote/tek.c	/^static int tek_decmain5(int *work, UCHAR *src, int osiz, UCHAR *q, int lc, int pb, int lp, int flags)$/;"	f	file:
+tek_decmain5	tek/autodec_.c	/^static int tek_decmain5(int *work, UCHAR *src, int osiz, UCHAR *q, int lc, int pb, int lp, int flags)$/;"	f	file:
+tek_decmain5	tek/tek.c	/^static int tek_decmain5(int *work, UCHAR *src, int osiz, UCHAR *q, int lc, int pb, int lp, int flags)$/;"	f	file:
+tek_decode1	haribote/tek.c	/^static int tek_decode1(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode1	tek/autodec_.c	/^static int tek_decode1(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode1	tek/tek.c	/^static int tek_decode1(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode2	haribote/tek.c	/^static int tek_decode2(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode2	tek/autodec_.c	/^static int tek_decode2(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode2	tek/tek.c	/^static int tek_decode2(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode5	haribote/tek.c	/^static int tek_decode5(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decode5	tek/autodec_.c	/^int tek_decode5(int siz, UCHAR *p, UCHAR *q)$/;"	f
+tek_decode5	tek/tek.c	/^static int tek_decode5(int siz, UCHAR *p, UCHAR *q)$/;"	f	file:
+tek_decomp	haribote/tek.c	/^int tek_decomp(unsigned char *p, char *q, int size)$/;"	f
+tek_decomp	tek/tek.c	/^int tek_decomp(unsigned char *p, char *q, int size)$/;"	f
+tek_getlen5	haribote/tek.c	/^static int tek_getlen5(struct tek_STR_RNGDEC *rd, int m, int s_pos, int stk)$/;"	f	file:
+tek_getlen5	tek/autodec_.c	/^static int tek_getlen5(struct tek_STR_RNGDEC *rd, int m, int s_pos, int stk)$/;"	f	file:
+tek_getlen5	tek/tek.c	/^static int tek_getlen5(struct tek_STR_RNGDEC *rd, int m, int s_pos, int stk)$/;"	f	file:
+tek_getnum_s7	haribote/tek.c	/^static unsigned int tek_getnum_s7(UCHAR **pp)$/;"	f	file:
+tek_getnum_s7	tek/autodec_.c	/^static unsigned int tek_getnum_s7(UCHAR **pp)$/;"	f	file:
+tek_getnum_s7	tek/tek.c	/^static unsigned int tek_getnum_s7(UCHAR **pp)$/;"	f	file:
+tek_getnum_s7s	haribote/tek.c	/^static unsigned int tek_getnum_s7s(UCHAR **pp)$/;"	f	file:
+tek_getnum_s7s	tek/autodec_.c	/^static unsigned int tek_getnum_s7s(UCHAR **pp)$/;"	f	file:
+tek_getnum_s7s	tek/tek.c	/^static unsigned int tek_getnum_s7s(UCHAR **pp)$/;"	f	file:
+tek_getsize	haribote/tek.c	/^int tek_getsize(unsigned char *p)$/;"	f
+tek_getsize	tek/tek.c	/^int tek_getsize(unsigned char *p)$/;"	f
+tek_lzrestore_stk1	haribote/tek.c	/^static int tek_lzrestore_stk1(int srcsiz, UCHAR *src, int outsiz, UCHAR *q)$/;"	f	file:
+tek_lzrestore_stk1	tek/autodec_.c	/^static int tek_lzrestore_stk1(int srcsiz, UCHAR *src, int outsiz, UCHAR *q)$/;"	f	file:
+tek_lzrestore_stk1	tek/tek.c	/^static int tek_lzrestore_stk1(int srcsiz, UCHAR *src, int outsiz, UCHAR *q)$/;"	f	file:
+tek_lzrestore_stk2	haribote/tek.c	/^static int tek_lzrestore_stk2(int srcsiz, UCHAR *src, int outsiz, UCHAR *q)$/;"	f	file:
+tek_lzrestore_stk2	tek/autodec_.c	/^static int tek_lzrestore_stk2(int srcsiz, UCHAR *src, int outsiz, UCHAR *q)$/;"	f	file:
+tek_lzrestore_stk2	tek/tek.c	/^static int tek_lzrestore_stk2(int srcsiz, UCHAR *src, int outsiz, UCHAR *q)$/;"	f	file:
+tek_lzrestore_tek5	haribote/tek.c	/^static int tek_lzrestore_tek5(int srcsiz, UCHAR *src, int outsiz, UCHAR *outbuf)$/;"	f	file:
+tek_lzrestore_tek5	tek/autodec_.c	/^static int tek_lzrestore_tek5(int srcsiz, UCHAR *src, int outsiz, UCHAR *outbuf)$/;"	f	file:
+tek_lzrestore_tek5	tek/tek.c	/^static int tek_lzrestore_tek5(int srcsiz, UCHAR *src, int outsiz, UCHAR *outbuf)$/;"	f	file:
+tek_rdget0	haribote/tek.c	/^static int tek_rdget0(struct tek_STR_RNGDEC *rd, int n, int i)$/;"	f	file:
+tek_rdget0	tek/autodec_.c	/^static int tek_rdget0(struct tek_STR_RNGDEC *rd, int n, int i)$/;"	f	file:
+tek_rdget0	tek/tek.c	/^static int tek_rdget0(struct tek_STR_RNGDEC *rd, int n, int i)$/;"	f	file:
+tek_rdget1	haribote/tek.c	/^static int tek_rdget1(struct tek_STR_RNGDEC *rd, tek_TPRB *prob0, int n, int j, struct tek_STR_BITMODEL *bm)$/;"	f	file:
+tek_rdget1	tek/autodec_.c	/^static int tek_rdget1(struct tek_STR_RNGDEC *rd, tek_TPRB *prob0, int n, int j, struct tek_STR_BITMODEL *bm)$/;"	f	file:
+tek_rdget1	tek/tek.c	/^static int tek_rdget1(struct tek_STR_RNGDEC *rd, tek_TPRB *prob0, int n, int j, struct tek_STR_BITMODEL *bm)$/;"	f	file:
+tek_revbit	haribote/tek.c	/^static UINT32 tek_revbit(UINT32 data, int len)$/;"	f	file:
+tek_revbit	tek/autodec_.c	/^static UINT32 tek_revbit(UINT32 data, int len)$/;"	f	file:
+tek_revbit	tek/tek.c	/^static UINT32 tek_revbit(UINT32 data, int len)$/;"	f	file:
+tek_setbm5	haribote/tek.c	/^static void tek_setbm5(struct tek_STR_BITMODEL *bm, int t, int m)$/;"	f	file:
+tek_setbm5	tek/autodec_.c	/^static void tek_setbm5(struct tek_STR_BITMODEL *bm, int t, int m)$/;"	f	file:
+tek_setbm5	tek/tek.c	/^static void tek_setbm5(struct tek_STR_BITMODEL *bm, int t, int m)$/;"	f	file:
+textview	tview/tview.c	/^void textview(int win, int w, int h, int xskip, char *p, int tab, int lang)$/;"	f
+time	haribote/bootpack.h	/^	unsigned short time, date, clustno;$/;"	m	struct:FILEINFO
+timeout	haribote/bootpack.h	/^	unsigned int timeout;$/;"	m	struct:TIMER
+timer	haribote/bootpack.h	/^	struct TIMER *timer;$/;"	m	struct:CONSOLE	typeref:struct:CONSOLE::TIMER
+timer_alloc	haribote/timer.c	/^struct TIMER *timer_alloc(void)$/;"	f
+timer_cancel	haribote/timer.c	/^int timer_cancel(struct TIMER *timer)$/;"	f
+timer_cancelall	haribote/timer.c	/^void timer_cancelall(struct FIFO32 *fifo)$/;"	f
+timer_free	haribote/timer.c	/^void timer_free(struct TIMER *timer)$/;"	f
+timer_init	haribote/timer.c	/^void timer_init(struct TIMER *timer, struct FIFO32 *fifo, int data)$/;"	f
+timer_settime	haribote/timer.c	/^void timer_settime(struct TIMER *timer, unsigned int timeout)$/;"	f
+timerctl	haribote/timer.c	/^struct TIMERCTL timerctl;$/;"	v	typeref:struct:TIMERCTL
+timers0	haribote/bootpack.h	/^	struct TIMER timers0[MAX_TIMER];$/;"	m	struct:TIMERCTL	typeref:struct:TIMERCTL::TIMER
+tmsk	haribote/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+tmsk	tek/autodec_.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+tmsk	tek/tek.c	/^	UINT32 prb0, prb1, tmsk, ntm, lt, lt0, dmy4;$/;"	m	struct:tek_STR_BITMODEL	file:
+top	haribote/bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
+tss	haribote/bootpack.h	/^	struct TSS32 tss;$/;"	m	struct:TASK	typeref:struct:TASK::TSS32
+type	haribote/bootpack.h	/^	unsigned char name[8], ext[3], type;$/;"	m	struct:FILEINFO
+value	gview/jpeg.c	/^    unsigned char  value[256];$/;"	m	struct:__anon1	file:
+vmode	haribote/bootpack.h	/^	char vmode; \/* 显卡模式为多少位彩色 *\/$/;"	m	struct:BOOTINFO
+vram	haribote/bootpack.h	/^	char *vram;$/;"	m	struct:BOOTINFO
+vram	haribote/bootpack.h	/^	unsigned char *vram, *map;$/;"	m	struct:SHTCTL
+vx0	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+vy0	haribote/bootpack.h	/^	int bxsize, bysize, vx0, vy0, col_inv, height, flags;$/;"	m	struct:SHEET
+wait	invader/invader.c	/^void wait(int i, int timer, char *keyflag)$/;"	f
+wait_KBC_sendready	haribote/keyboard.c	/^void wait_KBC_sendready(void) $/;"	f
+waittimer	mmlplay/mmlplay.c	/^void waittimer(int timer, int time)$/;"	f
+width	gview/jpeg.c	/^    int width;$/;"	m	struct:__anon2	file:
+width_buf	gview/jpeg.c	/^    int width_buf;$/;"	m	struct:__anon2	file:
+work	gview/gview.c	/^	int work[64 * 1024 \/ 4];$/;"	m	struct:DLL_STRPICENV	file:
+work	gview/jpeg.c	/^struct DLL_STRPICENV { int work[16384]; };$/;"	m	struct:DLL_STRPICENV	file:
+x	haribote/bootpack.h	/^	int x, y, btn;$/;"	m	struct:MOUSE_DEC
+xsize	haribote/bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
+y	haribote/bootpack.h	/^	int x, y, btn;$/;"	m	struct:MOUSE_DEC
+ysize	haribote/bootpack.h	/^	int xsize, ysize, top;$/;"	m	struct:SHTCTL
